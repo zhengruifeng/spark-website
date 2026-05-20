@@ -23,7 +23,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658) SPIP: Add geospatial types in Spark (12 commits)
 - [[SPARK-55227]](https://issues.apache.org/jira/browse/SPARK-55227) RDD API compatibility (11 commits)
 - [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (11 commits)
-- [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (11 commits)
+- [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (10 commits)
 - [[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555) Support heterogeneous K8s executor management (9 commits)
 - [[SPARK-54357]](https://issues.apache.org/jira/browse/SPARK-54357) Improve SparkConnect usability and performance (8 commits)
 - [[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156) Add missing parameters for Pandas API on Spark (8 commits)
@@ -77,8 +77,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56799]](https://issues.apache.org/jira/browse/SPARK-56799) Adds an in-graph node search to the SQL execution detail page next to the SPARK-56792 zoom toolbar: a magnifying-glass button (or `/` keyboard shortcut) opens a compact search input with a match counter and prev/next buttons, performing case-insensitive substring matches against operator names.
 - [[SPARK-31561]](https://issues.apache.org/jira/browse/SPARK-31561) Adds the SQL `QUALIFY` clause to Spark SQL, allowing queries like `SELECT a, ROW_NUMBER() OVER (...) AS rn FROM t QUALIFY rn = 1` to filter on window-function results without an extra subquery or CTE.
 - [[SPARK-36082]](https://issues.apache.org/jira/browse/SPARK-36082) Restricts the single-column null-aware anti-join broadcast-hash optimization (which builds the right side as a broadcast hash relation) to cases where the right side actually fits within the broadcast threshold; previously the planner picked it unconditionally once the logical pattern matched, even on right sides above the broadcast threshold.
-- [[SPARK-41398]](https://issues.apache.org/jira/browse/SPARK-41398) This PR relaxes the current constraint of Storage-Partitioned Join which requires that the partition keys after runtime filtering to be exact the same as the partition keys before the filtering.
-- [[SPARK-43752]](https://issues.apache.org/jira/browse/SPARK-43752) Adds `DEFAULT` keyword resolution for V2 write commands (`AppendData`, `OverwriteByExpression`, `OverwritePartitionsDynamic`).
 - [[SPARK-44065]](https://issues.apache.org/jira/browse/SPARK-44065) Extends `OptimizeSkewedJoin` to split skewed partitions of `BroadcastHashJoin` stream plans when `localShuffleReader` is disabled.
 - [[SPARK-44571]](https://issues.apache.org/jira/browse/SPARK-44571) The PR enhances the query optimization process by extending the existing `MergeScalarSubqueries` rule to also merge non-grouping aggregate subplans that return a single row.
 - [[SPARK-47672]](https://issues.apache.org/jira/browse/SPARK-47672) Updates Spark SQL’s filter pushdown optimizer to avoid pushing filters past projections when doing so would likely cause expensive expressions (e.g., UDFs) to be evaluated twice, improving performance while keeping query results unchanged.
@@ -207,7 +205,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-53615]](https://issues.apache.org/jira/browse/SPARK-53615) The PR introduces an iterator API for Arrow grouped aggregation UDFs in PySpark.
 - [[SPARK-53616]](https://issues.apache.org/jira/browse/SPARK-53616) The PR introduces an iterator API for pandas grouped aggregation UDFs, allowing batch-by-batch processing to improve memory efficiency.
 - [[SPARK-54194]](https://issues.apache.org/jira/browse/SPARK-54194) The PR implements compression for unresolved proto plans in Spark Connect to improve stability and address issues with oversized messages that exceed gRPC message limits.
-- [[SPARK-54285]](https://issues.apache.org/jira/browse/SPARK-54285) The PR addresses performance issues in timestamp conversion by caching timezone information locally.
 - [[SPARK-54340]](https://issues.apache.org/jira/browse/SPARK-54340) The PR introduces a script that allows developers to use viztracer for profiling PySpark daemons and workers without modifying the source code.
 - [[SPARK-54555]](https://issues.apache.org/jira/browse/SPARK-54555) The PR enables Arrow-optimized Python UDFs and Arrow-based PySpark IPC by default in Spark 4.2.0.
 - [[SPARK-54572]](https://issues.apache.org/jira/browse/SPARK-54572) The PR introduces a script and supporting files to enable native debugging in VSCode for PySpark code, including driver code, UDFs, workers, and daemons, enhancing the debugging experience.
@@ -393,7 +390,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Support heterogeneous K8s executor management** ([[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555))
   - [[SPARK-55166]](https://issues.apache.org/jira/browse/SPARK-55166) Upgrade Spark’s `kubernetes-client` dependency to version 7.5.2 to pick up the latest upstream changes.
   - [[SPARK-55850]](https://issues.apache.org/jira/browse/SPARK-55850) Upgrades Spark’s `kubernetes-client` dependency to version 7.6.0 to support Kubernetes 1.35.
-- [[SPARK-43752]](https://issues.apache.org/jira/browse/SPARK-43752) Adds `DEFAULT` keyword resolution for V2 write commands (`AppendData`, `OverwriteByExpression`, `OverwritePartitionsDynamic`).
 - [[SPARK-45720]](https://issues.apache.org/jira/browse/SPARK-45720) The PR upgrades the Kinesis Client Library (KCL) to version 2.7.2, allowing for the removal of the AWS SDK for Java 1.x dependency in Spark.
 - [[SPARK-47086]](https://issues.apache.org/jira/browse/SPARK-47086) The PR upgrades Jetty to 12.1.5, Jersey to 3.1.11, and Servlet to 6.0 in Apache Spark's build, core, and web UI components.
 - [[SPARK-54161]](https://issues.apache.org/jira/browse/SPARK-54161) The PR upgrades `extra-enforcer-rules` to version 1.11.0 to leverage the latest features and bug fixes from the updated version.
