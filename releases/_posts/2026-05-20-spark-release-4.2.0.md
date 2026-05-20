@@ -37,18 +37,24 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Improve Spark History Server Scalability** ([[SPARK-56287]](https://issues.apache.org/jira/browse/SPARK-56287))
   - [[SPARK-55793]](https://issues.apache.org/jira/browse/SPARK-55793) Adds support for configuring Spark History Server to monitor event logs from multiple directories (comma-separated in `spark.history.fs.logDirectory`), optionally naming each source via `spark.history.fs.logDirectory.names`, and updates the History UI to show and filter by a new “Log Source” column (with the event log directory section collapsing when multiple sources are set).
   - [[SPARK-56234]](https://issues.apache.org/jira/browse/SPARK-56234) Adds a new config `spark.history.fs.update.scanDisabledPathPatterns` that allows disabling periodic log directory scanning by path pattern in SHS.
+- [[SPARK-51165]](https://issues.apache.org/jira/browse/SPARK-51165) Proposes enabling `spark.master.rest.enabled` by default in Apache Spark 4.1.0.
 - [[SPARK-53807]](https://issues.apache.org/jira/browse/SPARK-53807) Addresses race condition issues between `unlock` and `releaseAllLocksForTask` methods in the `BlockInfoManager` class.
 - [[SPARK-54219]](https://issues.apache.org/jira/browse/SPARK-54219) Introduces support for a new configuration `spark.cleaner.referenceTracking.blocking.timeout`.
 - [[SPARK-54312]](https://issues.apache.org/jira/browse/SPARK-54312) Addresses an issue in the Apache Spark standalone worker where tasks for sending heartbeats and cleaning the work directory were scheduled multiple times if the worker registered multiple times due to heartbeat timeouts or disconnection from the master.
 - [[SPARK-54313]](https://issues.apache.org/jira/browse/SPARK-54313) Introduces a `--extra-properties-file` option in `spark-submit` to support configuration layering, allowing users to specify multiple properties files.
 - [[SPARK-54556]](https://issues.apache.org/jira/browse/SPARK-54556) Addresses handling shuffle checksum mismatches by rolling back and resubmitting succeeding shuffle map stages.
+- [[SPARK-54808]](https://issues.apache.org/jira/browse/SPARK-54808) Extends the qualified naming ability to session temporary views, allowing users to explicitly disambiguate between a session temporary view and a persisted view.
 - [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enables the checksum-based indeterminate shuffle retry feature by default.
 - [[SPARK-55051]](https://issues.apache.org/jira/browse/SPARK-55051) Updates `JavaUtils.byteStringAs` to accept IEC binary unit suffixes like `Ki`, `KiB`, `Mi`, `MiB`, `Gi`, `GiB`, `Ti`, `TiB`, and `Pi`, `PiB` when parsing byte-size configuration values.
 - [[SPARK-55809]](https://issues.apache.org/jira/browse/SPARK-55809) Re-implements `Utils.getHeapHistogram` to use `DiagnosticCommandMBean` in-process instead of spawning `jmap` as a subprocess.
+- [[SPARK-55964]](https://issues.apache.org/jira/browse/SPARK-55964) Adds a SQL config allowing users to choose whether functions in persisted schemas with name collisions against BUILTIN or SESSION are shadowed by builtin functions when partially qualified (e.g., `builtin.foo()`).
+- [[SPARK-55991]](https://issues.apache.org/jira/browse/SPARK-55991) Fixes SQL parameter substitution to correctly handle Unicode supplementary characters (e.g., emojis) so the SQL text isn’t corrupted during marker replacement.
 - [[SPARK-56279]](https://issues.apache.org/jira/browse/SPARK-56279) Modifies `MessageEncoder` to emit the header `ByteBuf` and `FileRegion` as separate objects for `FileSegmentManagedBuffer`, enabling native transports (EPOLL/KQUEUE) to use optimized `sendfile()`/`splice()` zero-copy paths instead of falling back to user-space copy via `FileRegion.transferTo()`.
+- [[SPARK-56298]](https://issues.apache.org/jira/browse/SPARK-56298) Changes the default of `spark.master.rest.virtualThread.enabled` from `false` to `true`.
 - [[SPARK-56302]](https://issues.apache.org/jira/browse/SPARK-56302) Eagerly nulls intermediate objects during task result serialization in `Executor.TaskRunner.run()` to reduce peak heap memory usage.
 - [[SPARK-56330]](https://issues.apache.org/jira/browse/SPARK-56330) Adds a new `TaskInterruptListener` DeveloperApi interface that fires immediately when a task is interrupted via `markInterrupted`, enabling push-style reactions to task cancellation.
 - [[SPARK-56491]](https://issues.apache.org/jira/browse/SPARK-56491) Adds a `getAllAsJavaMap` method to the `SparkConf` trait that returns `java.util.Map[String, String]`.
+- [[SPARK-56501]](https://issues.apache.org/jira/browse/SPARK-56501) Introduces the `SET PATH` command with structured session state on `CatalogManager`, gated by the new master switch `spark.sql.path.enabled` (default `false`).
 
 ### SQL Foundation
 - **Change Data Capture (CDC) Support** ([[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668))
@@ -85,10 +91,12 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-52326]](https://issues.apache.org/jira/browse/SPARK-52326) Introduces partition-related events for external catalog operations such as create, drop, alter, and rename.
 - [[SPARK-52407]](https://issues.apache.org/jira/browse/SPARK-52407) Introduces support for Theta Sketches in Spark SQL by adding seven new functions.
 - [[SPARK-52729]](https://issues.apache.org/jira/browse/SPARK-52729) Exposes a DSv2 API for metadata-only tables, `CREATE VIEW`, and `ALTER VIEW ...
+- [[SPARK-52857]](https://issues.apache.org/jira/browse/SPARK-52857) Adds a new SQL expression `is_valid_variant(v)` that returns `true` if the variant is well-formed and `false` if it is malformed, instead of throwing `MALFORMED_VARIANT` like other variant expressions.
 - [[SPARK-53469]](https://issues.apache.org/jira/browse/SPARK-53469) Enables shuffle cleanup in the Thrift server by honoring the existing configuration `spark.sql.classic.shuffleDependency.fileCleanup.enabled`.
 - [[SPARK-53573]](https://issues.apache.org/jira/browse/SPARK-53573) Proposes expanding the IDENTIFIER() clause to be usable in all places identifiers can appear in SQL.
 - [[SPARK-53991]](https://issues.apache.org/jira/browse/SPARK-53991) Introduces SQL support for KLL quantile sketches in Apache Spark, leveraging the Apache DataSketches library.
 - [[SPARK-54022]](https://issues.apache.org/jira/browse/SPARK-54022) Ensures that DSv2 table resolution is aware of cached tables to prevent silent cache misses.
+- [[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119) Extends metric-view DDL support to DSv2 catalogs by routing `CREATE VIEW ...
 - [[SPARK-54134]](https://issues.apache.org/jira/browse/SPARK-54134) Optimizes memory usage for Arrow in Spark by compressing Arrow IPC data during serialization, addressing OOM issues encountered in PySpark when loading data with `toArrow` or `toPandas`.
 - [[SPARK-54157]](https://issues.apache.org/jira/browse/SPARK-54157) Addresses an issue with refreshing DSv2 tables in Spark's Dataset API.
 - [[SPARK-54179]](https://issues.apache.org/jira/browse/SPARK-54179) Adds native Spark SQL support for Apache DataSketches Tuple sketches, introducing 18 new SQL functions (including 6 aggregates) to build, inspect, and perform union/intersection/difference operations on tuple sketches for approximate distinct counting with associated summary values.
@@ -96,6 +104,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54220]](https://issues.apache.org/jira/browse/SPARK-54220) Introduces support for handling NullType columns in Parquet files by utilizing the `UNKNOWN` logical type annotation.
 - [[SPARK-54226]](https://issues.apache.org/jira/browse/SPARK-54226) Extends Arrow compression to Pandas UDFs to optimize memory usage, building on a previous feature added for `toArrow` and `toPandas`.
 - [[SPARK-54292]](https://issues.apache.org/jira/browse/SPARK-54292) Enhances the SQL pipe operator syntax by allowing aggregate functions and `GROUP BY` in `|> SELECT` pipe operators, similar to their previous usage in `|> AGGREGATE` operators.
+- [[SPARK-54306]](https://issues.apache.org/jira/browse/SPARK-54306) Updates the parquet writer to annotate variant columns with the Parquet variant logical type annotation.
 - [[SPARK-54354]](https://issues.apache.org/jira/browse/SPARK-54354) Fixes an issue where Spark hangs instead of throwing an OutOfMemoryError (OOM) when there isn't enough JVM heap memory for a broadcast hashed relation.
 - [[SPARK-54405]](https://issues.apache.org/jira/browse/SPARK-54405) Introduces functionality for creating and querying metric views in Apache Spark.
 - [[SPARK-54682]](https://issues.apache.org/jira/browse/SPARK-54682) Enhances the DESCRIBE PROCEDURE command in Apache Spark SQL to display detailed parameter information for V2 procedures, including parameter mode, name, data type, default values, and comments.
@@ -106,6 +115,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54753]](https://issues.apache.org/jira/browse/SPARK-54753) Addresses a memory leak issue with the ArtifactManager in Spark.
 - [[SPARK-54759]](https://issues.apache.org/jira/browse/SPARK-54759) Adds SQL Standard CURSOR support to Spark SQL Scripting, introducing `DECLARE CURSOR AS`, `OPEN ...
 - [[SPARK-54785]](https://issues.apache.org/jira/browse/SPARK-54785) Introduces new SQL aggregate functions for merging multiple binary KLL sketch representations: `kll_merge_agg_bigint`, `kll_merge_agg_float`, and `kll_merge_agg_double`.
+- [[SPARK-54803]](https://issues.apache.org/jira/browse/SPARK-54803) Adds support for the `BY NAME` parameter to `INSERT INTO ...
 - [[SPARK-54812]](https://issues.apache.org/jira/browse/SPARK-54812) Prevents Spark SQL command result DataFrames (e.g., `CREATE TABLE`, `SHOW TABLES`) from being re-executed when `resultDf.cache()` is called by skipping caching for all `Command` results, avoiding unintended side effects or errors and stopping `SHOW` results from refreshing via `cache()`.
 - [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enables the checksum-based indeterminate shuffle retry feature by default.
 - [[SPARK-54840]](https://issues.apache.org/jira/browse/SPARK-54840) Optimizes ORC serialization performance by pre-allocating `OrcList` with the exact size needed, avoiding dynamic resizing and reducing the overhead of repeated array resizing and element copying.
@@ -113,6 +123,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54854]](https://issues.apache.org/jira/browse/SPARK-54854) Introduces a UUIDv7 `queryId` to SparkListenerSQLExecutionStart for better global uniqueness and time-ordering in SQL execution events.
 - [[SPARK-54870]](https://issues.apache.org/jira/browse/SPARK-54870) Adds collation support for char/varchar data types and extends the feature to CTAS (Create Table As Select) and RTAS (Replace Table As Select) commands, introducing a new feature for handling string collation in these contexts.
 - [[SPARK-54878]](https://issues.apache.org/jira/browse/SPARK-54878) Adds a `sortKeys` option (default `false`) to the `to_json` function that sorts JSON object keys alphabetically when enabled.
+- [[SPARK-54971]](https://issues.apache.org/jira/browse/SPARK-54971) Introduces a new SQL syntax, `WITH SCHEMA EVOLUTION`, for the `INSERT` command.
 - [[SPARK-55019]](https://issues.apache.org/jira/browse/SPARK-55019) Modifies the semantics of the DROP TABLE command to allow it to operate on views.
 - [[SPARK-55030]](https://issues.apache.org/jira/browse/SPARK-55030) Adds two new Spark SQL functions, `vector_norm` and `vector_normalize`, to compute Lp norms and unit-length normalization for `ARRAY<FLOAT>` vectors (defaulting to L2 and supporting L1/L2/∞ degrees).
 - [[SPARK-55031]](https://issues.apache.org/jira/browse/SPARK-55031) Adds two new Spark SQL aggregate functions, `vector_sum` and `vector_avg`, to compute element-wise sum and average over grouped `ARRAY<FLOAT>` vectors, with validation for consistent vector dimensions and skipping NULL/invalid vectors.
@@ -183,10 +194,13 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55104]](https://issues.apache.org/jira/browse/SPARK-55104) Adds Spark Connect support for `DataStreamReader.name()` in Scala and Python, enabling users to assign validated source names (ASCII letters/digits/underscores) to streaming sources for API parity with classic Spark.
 - [[SPARK-55179]](https://issues.apache.org/jira/browse/SPARK-55179) For PySpark Connect, make `df.col_name` skip eager column-name validation (like `df["col_name"]`), so invalid attribute columns such as `df.abc`/`df._abc` return a `Column` and only fail later during analysis or execution.
 - [[SPARK-55239]](https://issues.apache.org/jira/browse/SPARK-55239) Enable launching `SparkConnectServer` in YARN cluster deploy mode, leveraging existing support to discover the server location on the cluster.
+- [[SPARK-55264]](https://issues.apache.org/jira/browse/SPARK-55264) Adds a new `ExecuteOutput` command to the Spark Connect pipelines protobuf so clients can directly execute multiple flows that write to an output.
+- [[SPARK-55278]](https://issues.apache.org/jira/browse/SPARK-55278) Introduces the foundational module structure and core abstractions for a language-agnostic UDF worker framework.
 - [[SPARK-55314]](https://issues.apache.org/jira/browse/SPARK-55314) Spark Connect now propagates observed-metrics collection failures back to the client (via new error fields in `ExecutePlanResponse.ObservedMetrics`) so that `Observation.get` raises the underlying exception instead of silently returning empty metrics.
 - [[SPARK-55606]](https://issues.apache.org/jira/browse/SPARK-55606) Implements the server-side Spark Connect GetStatus API by tracking execution termination details across active/inactive operations, using those caches to report status, and adding a plugin interface to handle custom proto extensions.
 - [[SPARK-55691]](https://issues.apache.org/jira/browse/SPARK-55691) Adds an experimental Spark Connect client implementation of the GetStatus API, including new client methods to request operation statuses and accompanying mocked-service and end-to-end tests for real operation lifecycles.
 - [[SPARK-55887]](https://issues.apache.org/jira/browse/SPARK-55887) Updates Spark Connect’s `SparkConnectPlanExecution` to run `CollectLimitExec` and `CollectTailExec` via `executeCollect()` (instead of `execute()`), enabling the existing optimized `executeTake()`/`executeTail()` behavior so `head()`/`take()`/`tail()` avoid scanning all partitions.
+- [[SPARK-56284]](https://issues.apache.org/jira/browse/SPARK-56284) Introduces protobuf definitions for the UDF worker specification (SPIP SPARK-55278): `common.proto` for shared types and `worker_spec.proto` for the specification.
 - [[SPARK-56322]](https://issues.apache.org/jira/browse/SPARK-56322) Fixes a `TypeError` when self-joining a DataFrame that has `.observe()` metrics.
 - [[SPARK-56395]](https://issues.apache.org/jira/browse/SPARK-56395) First of two PRs implementing `NEAREST BY` top-K ranking joins.
 - [[SPARK-56614]](https://issues.apache.org/jira/browse/SPARK-56614) Adds an internal SQL config `spark.sql.analyzer.strictDataFrameColumnResolution` (default `true`) that controls how `UnresolvedAttribute`s carrying a `PLAN_ID_TAG` (Spark Connect DataFrame columns) are resolved in `ColumnResolutionHelper`.
@@ -269,6 +283,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55662]](https://issues.apache.org/jira/browse/SPARK-55662) Adds `axis=1` support for `DataFrame.idxmin`, aligning its behavior with the existing `idxmax(axis=1)` implementation.
 
 ### Structured Streaming
+- [[SPARK-38498]](https://issues.apache.org/jira/browse/SPARK-38498) Introduces support for adding customized `StreamingListener` to `StreamingContext` through configuration, allowing users to specify listeners using `spark.streaming.extraListeners`.
 - [[SPARK-54063]](https://issues.apache.org/jira/browse/SPARK-54063) Adds the functionality for the StateStoreProvider to force the creation of a snapshot during a commit when it detects lag in snapshot creation due to too many changelogs.
 - [[SPARK-54106]](https://issues.apache.org/jira/browse/SPARK-54106) Reintroduces a state store row checksum implementation to detect and prevent data corruption at the row level for both HDFS and RocksDB state stores.
 - [[SPARK-54121]](https://issues.apache.org/jira/browse/SPARK-54121) Introduces an automatic snapshot repair mechanism for the state store in the Structured Streaming component of Apache Spark.
@@ -315,6 +330,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 ### Declarative Pipelines
 - **SPIP: Declarative Pipelines** ([[SPARK-51727]](https://issues.apache.org/jira/browse/SPARK-51727))
   - [[SPARK-52463]](https://issues.apache.org/jira/browse/SPARK-52463) Introduces support for the `cluster_by` argument in Python Pipelines APIs, specifically within the `table` and `materialized_view` decorators.
+  - [[SPARK-54020]](https://issues.apache.org/jira/browse/SPARK-54020) Introduces support for using `spark.sql(...)` within query functions in Spark Declarative Pipelines.
   - [[SPARK-54191]](https://issues.apache.org/jira/browse/SPARK-54191) Adds a new feature to the Defineflow Proto by introducing the 'once' option, which supports creating one-time back-fill flows.
 
 ### Geospatial
@@ -357,6 +373,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55496]](https://issues.apache.org/jira/browse/SPARK-55496) Spark on Kubernetes now allows reusing existing executor PVCs that have been expanded to a larger capacity than originally requested, instead of ignoring them during PVC reuse.
   - [[SPARK-55639]](https://issues.apache.org/jira/browse/SPARK-55639) Adds support for “recovery-mode” Kubernetes executors so that when the driver detects executor OOM failures it can launch replacement executors configured to run only a single task per JVM, with a config (`spark.kubernetes.allocation.recoveryMode.enabled`) to enable/disable the feature.
   - [[SPARK-54780]](https://issues.apache.org/jira/browse/SPARK-54780) Updates the Kubernetes documentation in Apache Spark to recommend using K8s v1.33 or newer for the upcoming Spark 4.2.0 release.
+  - [[SPARK-55068]](https://issues.apache.org/jira/browse/SPARK-55068) Upgrade Spark’s Fabric8 `kubernetes-client` dependency to version 7.5.1 to align with testing against Kubernetes v1.35 and pick up the latest Kubernetes features and bug fixes.
   - [[SPARK-55075]](https://issues.apache.org/jira/browse/SPARK-55075) Adds tracking of Kubernetes executor pod creation failures via `ExecutorFailureTracker` so Spark can stop retrying once maximum executor failures are reached.
   - [[SPARK-55431]](https://issues.apache.org/jira/browse/SPARK-55431) Set Kubernetes executor pods’ container `resizePolicy` explicitly to `NotRequired` to align with Spark’s `restartPolicy=Never` behavior as in-place pod resize becomes stable in newer Kubernetes versions.
   - [[SPARK-55432]](https://issues.apache.org/jira/browse/SPARK-55432) Adds support for the built-in Kubernetes in-place vertical scaling plugin `ExecutorResizePlugin` for Spark executors.
@@ -435,7 +452,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55677]](https://issues.apache.org/jira/browse/SPARK-55677) Upgrade the build dependency `commons-cli` to version 1.11.0 (no behavior change).
 - [[SPARK-55688]](https://issues.apache.org/jira/browse/SPARK-55688) Upgrade the `aircompressor` dependency to version 2.0.3.
 - [[SPARK-55803]](https://issues.apache.org/jira/browse/SPARK-55803) Upgrades the lz4-java dependency to version 1.10.4 to restore performance that regressed in earlier versions.
-- [[SPARK-55831]](https://issues.apache.org/jira/browse/SPARK-55831) Adds a new YARN client-mode config `spark.yarn.am.defaultJavaOptions` that, when set, is prepended to `spark.yarn.am.extraJavaOptions` for the YARN ApplicationMaster.
 - [[SPARK-55841]](https://issues.apache.org/jira/browse/SPARK-55841) Upgrade Spark’s Jackson dependencies to version 2.21.1.
 - [[SPARK-55894]](https://issues.apache.org/jira/browse/SPARK-55894) Upgrade Apache ZooKeeper dependency to version 3.9.5 for Apache Spark 4.2.0.
 - [[SPARK-55936]](https://issues.apache.org/jira/browse/SPARK-55936) Upgrades Spark’s `kubernetes-client` dependency to version 7.6.1.
@@ -455,29 +471,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56437]](https://issues.apache.org/jira/browse/SPARK-56437) Upgrades Jetty from 12.1.7 to 12.1.8, a patch-level release bringing upstream bug fixes with no API changes.
 - [[SPARK-56439]](https://issues.apache.org/jira/browse/SPARK-56439) Upgrades `joda-time` from 2.14.0 to 2.14.1, a patch-level release with upstream bug fixes.
 - [[SPARK-56441]](https://issues.apache.org/jira/browse/SPARK-56441) Upgrades `lz4-java` from 1.10.4 to 1.11.0.
-
-### Other
-- [[SPARK-38498]](https://issues.apache.org/jira/browse/SPARK-38498) Introduces support for adding customized `StreamingListener` to `StreamingContext` through configuration, allowing users to specify listeners using `spark.streaming.extraListeners`.
-- [[SPARK-41916]](https://issues.apache.org/jira/browse/SPARK-41916) Updates the Torch distributor to support multiple torchrun processes per task when the number of GPUs per task (`task.gpu.amount`) is greater than 1, which is a common use case.
-- [[SPARK-51165]](https://issues.apache.org/jira/browse/SPARK-51165) Proposes enabling `spark.master.rest.enabled` by default in Apache Spark 4.1.0.
-- [[SPARK-52857]](https://issues.apache.org/jira/browse/SPARK-52857) Adds a new SQL expression `is_valid_variant(v)` that returns `true` if the variant is well-formed and `false` if it is malformed, instead of throwing `MALFORMED_VARIANT` like other variant expressions.
-- [[SPARK-54020]](https://issues.apache.org/jira/browse/SPARK-54020) Introduces support for using `spark.sql(...)` within query functions in Spark Declarative Pipelines.
-- [[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119) Extends metric-view DDL support to DSv2 catalogs by routing `CREATE VIEW ...
-- [[SPARK-54306]](https://issues.apache.org/jira/browse/SPARK-54306) Updates the parquet writer to annotate variant columns with the Parquet variant logical type annotation.
-- [[SPARK-54803]](https://issues.apache.org/jira/browse/SPARK-54803) Adds support for the `BY NAME` parameter to `INSERT INTO ...
-- [[SPARK-54808]](https://issues.apache.org/jira/browse/SPARK-54808) Extends the qualified naming ability to session temporary views, allowing users to explicitly disambiguate between a session temporary view and a persisted view.
-- [[SPARK-54971]](https://issues.apache.org/jira/browse/SPARK-54971) Introduces a new SQL syntax, `WITH SCHEMA EVOLUTION`, for the `INSERT` command.
-- [[SPARK-55068]](https://issues.apache.org/jira/browse/SPARK-55068) Upgrade Spark’s Fabric8 `kubernetes-client` dependency to version 7.5.1 to align with testing against Kubernetes v1.35 and pick up the latest Kubernetes features and bug fixes.
-- [[SPARK-55155]](https://issues.apache.org/jira/browse/SPARK-55155) Extends the SQL `SET CATALOG` statement to accept foldable SQL expressions (and resolve session variables directly), enabling dynamically computed catalog names without needing to wrap them in `IDENTIFIER()`.
-- [[SPARK-55264]](https://issues.apache.org/jira/browse/SPARK-55264) Adds a new `ExecuteOutput` command to the Spark Connect pipelines protobuf so clients can directly execute multiple flows that write to an output.
-- [[SPARK-55278]](https://issues.apache.org/jira/browse/SPARK-55278) Introduces the foundational module structure and core abstractions for a language-agnostic UDF worker framework.
-- [[SPARK-55689]](https://issues.apache.org/jira/browse/SPARK-55689) Adds a new `withSchemaEvolution()` method to the `DataFrameWriter` and `DataFrameWriterV2` APIs, mirroring the existing `MergeIntoWriter.withSchemaEvolution()`.
-- [[SPARK-55690]](https://issues.apache.org/jira/browse/SPARK-55690) Adds schema evolution support for DataSource V2 INSERT operations (AppendData, OverwriteByExpression, OverwritePartitionsDynamic) so that, when a table declares `AUTOMATIC_SCHEMA_EVOLUTION`, Spark can detect new columns or nested fields in the INSERT source and automatically alter the target table schema (respecting INSERT by-name vs by-position resolution).
-- [[SPARK-55964]](https://issues.apache.org/jira/browse/SPARK-55964) Adds a SQL config allowing users to choose whether functions in persisted schemas with name collisions against BUILTIN or SESSION are shadowed by builtin functions when partially qualified (e.g., `builtin.foo()`).
-- [[SPARK-55991]](https://issues.apache.org/jira/browse/SPARK-55991) Fixes SQL parameter substitution to correctly handle Unicode supplementary characters (e.g., emojis) so the SQL text isn’t corrupted during marker replacement.
-- [[SPARK-56284]](https://issues.apache.org/jira/browse/SPARK-56284) Introduces protobuf definitions for the UDF worker specification (SPIP SPARK-55278): `common.proto` for shared types and `worker_spec.proto` for the specification.
-- [[SPARK-56298]](https://issues.apache.org/jira/browse/SPARK-56298) Changes the default of `spark.master.rest.virtualThread.enabled` from `false` to `true`.
-- [[SPARK-56501]](https://issues.apache.org/jira/browse/SPARK-56501) Introduces the `SET PATH` command with structured session state on `CatalogManager`, gated by the new master switch `spark.sql.path.enabled` (default `false`).
 
 ### Credits
 
