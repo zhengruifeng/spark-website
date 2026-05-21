@@ -34,8 +34,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54357]](https://issues.apache.org/jira/browse/SPARK-54357) Improve SparkConnect usability and performance (11 commits)
 - [[SPARK-55722]](https://issues.apache.org/jira/browse/SPARK-55722) Optimize Vectorized Data Loading (11 commits)
 - [[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159) Extract Arrow batch transformers from serializers for better composability (10 commits)
-- [[SPARK-56223]](https://issues.apache.org/jira/browse/SPARK-56223) Polish type annotations for pyspark (10 commits)
 - [[SPARK-54016]](https://issues.apache.org/jira/browse/SPARK-54016) Improve K8s support in Spark 4.1.0 (9 commits)
+- [[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156) Add missing parameters for Pandas API on Spark (8 commits)
 
 ### Spark Core
 - **Improve Spark History Server Scalability** ([[SPARK-56287]](https://issues.apache.org/jira/browse/SPARK-56287))
@@ -71,7 +71,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54556]](https://issues.apache.org/jira/browse/SPARK-54556) Addresses handling shuffle checksum mismatches by rolling back and resubmitting succeeding shuffle map stages.
 - [[SPARK-54808]](https://issues.apache.org/jira/browse/SPARK-54808) Extends the qualified naming ability to session temporary views, allowing users to explicitly disambiguate between a session temporary view and a persisted view.
 - [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enables the checksum-based indeterminate shuffle retry feature by default.
-- [[SPARK-55021]](https://issues.apache.org/jira/browse/SPARK-55021) Introduce `SparkTestSuite` as the base class for all scalatest styles
 - [[SPARK-55051]](https://issues.apache.org/jira/browse/SPARK-55051) Updates `JavaUtils.byteStringAs` to accept IEC binary unit suffixes like `Ki`, `KiB`, `Mi`, `MiB`, `Gi`, `GiB`, `Ti`, `TiB`, and `Pi`, `PiB` when parsing byte-size configuration values.
 - [[SPARK-55964]](https://issues.apache.org/jira/browse/SPARK-55964) Adds a SQL config allowing users to choose whether functions in persisted schemas with name collisions against BUILTIN or SESSION are shadowed by builtin functions when partially qualified (e.g., `builtin.foo()`).
 - [[SPARK-55991]](https://issues.apache.org/jira/browse/SPARK-55991) Fixes SQL parameter substitution to correctly handle Unicode supplementary characters (e.g., emojis) so the SQL text isn’t corrupted during marker replacement.
@@ -83,6 +82,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56501]](https://issues.apache.org/jira/browse/SPARK-56501) Introduces the `SET PATH` command with structured session state on `CatalogManager`, gated by the new master switch `spark.sql.path.enabled` (default `false`).
 
 ### SQL Foundation
+- **Refactor Scala/SQL Tests** ([[SPARK-54819]](https://issues.apache.org/jira/browse/SPARK-54819))
+- **Improve JDBC example and test coverage** ([[SPARK-55581]](https://issues.apache.org/jira/browse/SPARK-55581))
 - **Support `MERGE INTO` Schema Evolution** ([[SPARK-54274]](https://issues.apache.org/jira/browse/SPARK-54274))
   - [[SPARK-53482]](https://issues.apache.org/jira/browse/SPARK-53482) Enhances the MERGE INTO functionality to support scenarios where the source dataset has fewer nested fields than the target.
   - [[SPARK-54621]](https://issues.apache.org/jira/browse/SPARK-54621) Modifies the behavior of the 'struct coercion' feature for the MERGE INTO operation in Spark SQL.
@@ -213,8 +214,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54878]](https://issues.apache.org/jira/browse/SPARK-54878) Adds a `sortKeys` option (default `false`) to the `to_json` function that sorts JSON object keys alphabetically when enabled.
 - [[SPARK-54971]](https://issues.apache.org/jira/browse/SPARK-54971) Introduces a new SQL syntax, `WITH SCHEMA EVOLUTION`, for the `INSERT` command.
 - [[SPARK-55019]](https://issues.apache.org/jira/browse/SPARK-55019) Modifies the semantics of the DROP TABLE command to allow it to operate on views.
-- [[SPARK-55022]](https://issues.apache.org/jira/browse/SPARK-55022) Remove unnecessary mixins with `SharedSparkSession`
-- [[SPARK-55023]](https://issues.apache.org/jira/browse/SPARK-55023) Remove unnecessary `BeforeAndAfterAll` and `BeforeAndAfterEach`
 - [[SPARK-55030]](https://issues.apache.org/jira/browse/SPARK-55030) Adds two new Spark SQL functions, `vector_norm` and `vector_normalize`, to compute Lp norms and unit-length normalization for `ARRAY<FLOAT>` vectors (defaulting to L2 and supporting L1/L2/∞ degrees).
 - [[SPARK-55031]](https://issues.apache.org/jira/browse/SPARK-55031) Adds two new Spark SQL aggregate functions, `vector_sum` and `vector_avg`, to compute element-wise sum and average over grouped `ARRAY<FLOAT>` vectors, with validation for consistent vector dimensions and skipping NULL/invalid vectors.
 - [[SPARK-55044]](https://issues.apache.org/jira/browse/SPARK-55044) Keep the metadata in toArrowSchema/fromArrowSchema
@@ -229,21 +228,14 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55528]](https://issues.apache.org/jira/browse/SPARK-55528) Adds default collation support for SQL UDFs so they can inherit schema-level collations or specify a `DEFAULT COLLATION` in `CREATE FUNCTION`, applying it to uncollated `STRING` parameters/return types and string literals (while explicit collations still take precedence).
 - [[SPARK-55533]](https://issues.apache.org/jira/browse/SPARK-55533) Add SQL support for `IGNORE NULLS` / `RESPECT NULLS` clauses to `collect_set`, matching `collect_list` behavior so users can explicitly skip nulls or include a null in the collected set.
 - [[SPARK-55558]](https://issues.apache.org/jira/browse/SPARK-55558) Adds support for union/intersection/difference set operations between DataSketches TupleSketch and ThetaSketch by introducing six new Spark SQL functions: `tuple_union_theta_{double,integer}`, `tuple_intersection_theta_{double,integer}`, and `tuple_difference_theta_{double,integer}`.
-- [[SPARK-55578]](https://issues.apache.org/jira/browse/SPARK-55578) Improve `DockerJDBCIntegrationSuite` to support `sleepBeforeTesting`
-- [[SPARK-55580]](https://issues.apache.org/jira/browse/SPARK-55580) Use `spark` instead of `sqlContext` in `docker-integration-tests`
-- [[SPARK-55582]](https://issues.apache.org/jira/browse/SPARK-55582) Add `StarRocksIntegrationSuite`
-- [[SPARK-55590]](https://issues.apache.org/jira/browse/SPARK-55590) Add `mysql-connector-j` test dependency to `sql/core` module
 - [[SPARK-55596]](https://issues.apache.org/jira/browse/SPARK-55596) Enhances partition filtering for DataSource V2 SQL data sources by leveraging available partition statistics.
 - [[SPARK-55631]](https://issues.apache.org/jira/browse/SPARK-55631) ALTER TABLE commands now invalidate the cache for DataSource V2 tables so cached data reflects table changes.
-- [[SPARK-55637]](https://issues.apache.org/jira/browse/SPARK-55637) Generalize `postgres-krb-setup.sh` to find config files
 - [[SPARK-55689]](https://issues.apache.org/jira/browse/SPARK-55689) Adds a new `withSchemaEvolution()` method to the `DataFrameWriter` and `DataFrameWriterV2` APIs, mirroring the existing `MergeIntoWriter.withSchemaEvolution()`.
 - [[SPARK-55690]](https://issues.apache.org/jira/browse/SPARK-55690) Adds schema evolution support for DataSource V2 INSERT operations (AppendData, OverwriteByExpression, OverwritePartitionsDynamic) so that, when a table declares `AUTOMATIC_SCHEMA_EVOLUTION`, Spark can detect new columns or nested fields in the INSERT source and automatically alter the target table schema (respecting INSERT by-name vs by-position resolution).
 - [[SPARK-55702]](https://issues.apache.org/jira/browse/SPARK-55702) Spark SQL now supports the `FILTER (WHERE ...)` clause on aggregate functions used in window expressions, so these queries run successfully instead of failing with an `AnalysisException`.
 - [[SPARK-55716]](https://issues.apache.org/jira/browse/SPARK-55716) Adds an opt-in setting (`spark.sql.fileSource.insert.enforceNotNull`) to enforce NOT NULL constraints on inserts into V1 file-based data source tables by preserving catalog nullability, injecting null checks during insertion, and fixing column metadata (`IS_NULLABLE`) to reflect actual nullability.
 - [[SPARK-55855]](https://issues.apache.org/jira/browse/SPARK-55855) Adds the public Java interfaces (`TransactionInfo`, `Transaction`, `TransactionalCatalogPlugin`) and the Spark-side machinery (pre-analysis transaction initiation, a `TransactionAwareCatalogManager` that intercepts catalog lookups, `TransactionalExec` callback injection at planning, commit at `V2ExistingTableWriteExec`, and idempotent abort/close wrapped around every QE operation) that DSv2 connectors need for transactional DML.
 - [[SPARK-55857]](https://issues.apache.org/jira/browse/SPARK-55857) Propagates `spark.sql.files.ignoreMissingFiles` into Parquet and ORC schema inference (`mergeSchema`) so files that vanish between listing and footer/schema reads are skipped instead of failing with `FileNotFoundException`.
-- [[SPARK-55909]](https://issues.apache.org/jira/browse/SPARK-55909) Introduce trait `SparkSessionProvider`
-- [[SPARK-55910]](https://issues.apache.org/jira/browse/SPARK-55910) Merge SQLTestUtilsBase/SQLTestUtils into QueryTestBase/QueryTest
 - [[SPARK-55928]](https://issues.apache.org/jira/browse/SPARK-55928) Adds a `ConfigBindingPolicy` framework that requires new Spark SQL configs to declare whether their values are session-propagated, persisted at view/UDF creation time, or not applicable, replaces the hardcoded retained-analysis allowlist with a dynamic policy-based lookup in the Analyzer, annotates the previously allowlisted configs with the appropriate policy, and introduces a test to enforce that future configs declare a binding policy (with an exceptions list for existing configs).
 - [[SPARK-55978]](https://issues.apache.org/jira/browse/SPARK-55978) Adds ANSI SQL `TABLESAMPLE SYSTEM` block sampling alongside the existing BERNOULLI row sampling, with grammar accepting an optional SYSTEM/BERNOULLI qualifier (both non-reserved keywords; default Bernoulli for backward compatibility).
 - [[SPARK-55995]](https://issues.apache.org/jira/browse/SPARK-55995) Adds support for the SQL type syntax `TIMESTAMP WITH LOCAL TIME ZONE` to represent `TimestampType`, complementing `TIMESTAMP WITHOUT TIME ZONE` for `TimestampNTZType`.
@@ -256,30 +248,19 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56046]](https://issues.apache.org/jira/browse/SPARK-56046) Adds a `resultType()` method to SPJ `Reducer` to return the correct type of reduced partition keys.
 - [[SPARK-56047]](https://issues.apache.org/jira/browse/SPARK-56047) Extends `UnionEstimation` to propagate `distinctCount` column statistics through Union, enabling downstream operators like `AggregateEstimation` and `JoinEstimation` to produce accurate CBO estimates.
 - [[SPARK-56089]](https://issues.apache.org/jira/browse/SPARK-56089) Replaces the naive `log(x + sqrt(x^2 ± 1))` formula in `Asinh` and `Acosh` with the full fdlibm algorithm used by OpenJDK, glibc, Python, PostgreSQL, and DuckDB.
-- [[SPARK-56153]](https://issues.apache.org/jira/browse/SPARK-56153) Add trait `QueryTestBase`
 - [[SPARK-56182]](https://issues.apache.org/jira/browse/SPARK-56182) Extends `KeyedShuffleSpec` to support storage-partitioned joins where one side uses an identity transform (`AttributeReference`) and the other uses an arbitrary `TransformExpression` (e.g., bucket).
 - [[SPARK-56251]](https://issues.apache.org/jira/browse/SPARK-56251) Adds a default `fetchSize` of 1000 for the PostgreSQL JDBC dialect to prevent loading entire tables into memory.
-- [[SPARK-56314]](https://issues.apache.org/jira/browse/SPARK-56314) Avoid uncessary RDD->DataFrame conversion in `SQLTestData`
-- [[SPARK-56332]](https://issues.apache.org/jira/browse/SPARK-56332) Use `sql.SparkSession` in `trait SQLTestData`
 - [[SPARK-56346]](https://issues.apache.org/jira/browse/SPARK-56346) Extends `OptimizeMetadataOnlyDeleteFromTable` with a second-pass fallback that converts partition-column filters to `PartitionPredicate`s when standard V2 filter translation fails.
 - [[SPARK-56395]](https://issues.apache.org/jira/browse/SPARK-56395) First of two PRs implementing `NEAREST BY` top-K ranking joins.
 - [[SPARK-56412]](https://issues.apache.org/jira/browse/SPARK-56412) Adds the engine-side foundation for the language-agnostic UDF framework (SPIP SPARK-55278) under a new `udf/worker/core` module.
-- [[SPARK-56483]](https://issues.apache.org/jira/browse/SPARK-56483) Use abstract SparkSession/DataFrame in SQLTestUtilsBase
 - [[SPARK-56489]](https://issues.apache.org/jira/browse/SPARK-56489) Adds the `CURRENT_PATH()` builtin function returning the current SQL resolution search path as a comma-separated string of qualified schema names (e.g.
 - [[SPARK-56509]](https://issues.apache.org/jira/browse/SPARK-56509) Introduces `LastAttemptAccumulator`, a trait mixable into any `AccumulatorV2` subclass that tracks per-(stageId, stageAttemptId, taskAttemptNumber) partial values and aggregates only values from the latest attempt of each partition — solving the long-standing problem that regular accumulators sum across all task attempts (so e.g.
 - [[SPARK-56520]](https://issues.apache.org/jira/browse/SPARK-56520) Persists the effective SQL resolution path at CREATE-time for views and SQL functions when `spark.sql.path.enabled` is true (stored as JSON in `view.resolutionPath`/`function.resolutionPath` properties), and surfaces it in `DESCRIBE EXTENDED`/`DESCRIBE FORMATTED` (as `SQL Path`) and `DESCRIBE ...
 - [[SPARK-56521]](https://issues.apache.org/jira/browse/SPARK-56521) Extends `PartitionPredicate` support in DSv2 from static pushdown into runtime filters (DPP and scalar subqueries).
 - [[SPARK-56551]](https://issues.apache.org/jira/browse/SPARK-56551) Adds `numDeletedRows` and `numCopiedRows` operation metrics for DSv2 DELETE queries, computed in `WritingSparkTask`, to give users better visibility into what a DELETE actually did.
-- [[SPARK-56557]](https://issues.apache.org/jira/browse/SPARK-56557) Use abstract SparkSession in SparkPlanTest
-- [[SPARK-56560]](https://issues.apache.org/jira/browse/SPARK-56560) Replace SQLTestUtils/SQLTestUtilsBase with QueryTest/QueryTestBase
-- [[SPARK-56563]](https://issues.apache.org/jira/browse/SPARK-56563) Merge SparkPlanTest into QueryTest/QueryTestBase
-- [[SPARK-56585]](https://issues.apache.org/jira/browse/SPARK-56585) Replace SparkPlanTest with QueryTest
-- [[SPARK-56591]](https://issues.apache.org/jira/browse/SPARK-56591) Remove redundant QueryTest mixin from SharedSparkSession subclasses
 - [[SPARK-56594]](https://issues.apache.org/jira/browse/SPARK-56594) Adds a new scalar SQL function `time_bucket(bucket_size, ts[, origin])` that aligns a timestamp to the start of a fixed-size half-open bucket `[start, start + bucket_size)`.
-- [[SPARK-56595]](https://issues.apache.org/jira/browse/SPARK-56595) Move non-anyfun helpers from QueryTest to QueryTestBase
 - [[SPARK-56598]](https://issues.apache.org/jira/browse/SPARK-56598) Custom metrics support for TruncatableTable
 - [[SPARK-56605]](https://issues.apache.org/jira/browse/SPARK-56605) Wires the resolution engine to use the live SQL `PATH` for unqualified table, function, and variable lookup (when `spark.sql.path.enabled = true`), via a new `sqlResolutionPathEntries` on `CatalogManager` that replaces the legacy `resolutionSearchPath`.
-- [[SPARK-56609]](https://issues.apache.org/jira/browse/SPARK-56609) Remove redundant SparkFunSuite mixin from QueryTest/PlanTest subclasses
 - [[SPARK-56647]](https://issues.apache.org/jira/browse/SPARK-56647) Optimize storage of SparkSQL Last Attempt Metrics
 - [[SPARK-56677]](https://issues.apache.org/jira/browse/SPARK-56677) Extends `PlanMerger` to propagate filter conditions through `Join` nodes when merging similar subplans, so two scalar subqueries that share a join but differ only in a filter on one side can now be merged into a single scan with the second subquery's result derived via an aggregate `FILTER` clause.
 - [[SPARK-56680]](https://issues.apache.org/jira/browse/SPARK-56680) DSv2 INSERT and Insert-Only MERGE Metrics
@@ -319,8 +300,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-54369]](https://issues.apache.org/jira/browse/SPARK-54369) Fix `PythonPipelineSuite` flakiness via `Set` instead of `Seq`
   - [[SPARK-54375]](https://issues.apache.org/jira/browse/SPARK-54375) Add `assume` to cases in `PythonPipelineSuite` to skip tests when PyConnect dependencies is not available
 - **Fix broken tests in Spark Connect 4.0 client <> master server** ([[SPARK-54477]](https://issues.apache.org/jira/browse/SPARK-54477))
-  - [[SPARK-54481]](https://issues.apache.org/jira/browse/SPARK-54481) Reenable a few spark connect tests
-  - [[SPARK-54482]](https://issues.apache.org/jira/browse/SPARK-54482) Reeanble `test_apply_in_pandas_returning_column_names_*` for Spark Connect 4.0 client <> master server
 - **Change Data Capture (CDC) Support** ([[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668))
   - [[SPARK-55949]](https://issues.apache.org/jira/browse/SPARK-55949) Adds the DataFrame API (`spark.read.changes("table")`) and Spark Connect support for CDC queries, complementing the SQL `CHANGES` clause.
   - [[SPARK-55950]](https://issues.apache.org/jira/browse/SPARK-55950) Adds `changes()` method to PySpark `DataFrameReader` and `DataStreamReader` for both classic and Spark Connect modes, exposing the CDC (Change Data Capture) API to Python users for batch and streaming reads.
@@ -345,6 +324,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56614]](https://issues.apache.org/jira/browse/SPARK-56614) Adds an internal SQL config `spark.sql.analyzer.strictDataFrameColumnResolution` (default `true`) that controls how `UnresolvedAttribute`s carrying a `PLAN_ID_TAG` (Spark Connect DataFrame columns) are resolved in `ColumnResolutionHelper`.
 
 ### PySpark
+- **Micro-benchmark PySpark Eval Types** ([[SPARK-55724]](https://issues.apache.org/jira/browse/SPARK-55724))
 - **Pandas UDF with PyArrow Backend** ([[SPARK-54955]](https://issues.apache.org/jira/browse/SPARK-54955))
   - [[SPARK-55462]](https://issues.apache.org/jira/browse/SPARK-55462) Support `UserDefinedType` in `convert_numpy` for the Arrow-to-Pandas conversion flow.
   - [[SPARK-54965]](https://issues.apache.org/jira/browse/SPARK-54965) Factor out legacy pa.Array -> pd.Series converter
@@ -361,7 +341,10 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55464]](https://issues.apache.org/jira/browse/SPARK-55464) Support GeographyType in convert_numpy
   - [[SPARK-55465]](https://issues.apache.org/jira/browse/SPARK-55465) Support GeometryType in convert_numpy
   - [[SPARK-56073]](https://issues.apache.org/jira/browse/SPARK-56073) Simplify the build of `PythonRunnerConfMap`
+- **Refactor PythonEvalType processing logic** ([[SPARK-55388]](https://issues.apache.org/jira/browse/SPARK-55388))
 - **Monitor behaviour changes from upstream** ([[SPARK-54936]](https://issues.apache.org/jira/browse/SPARK-54936))
+- **Polish type annotations for pyspark** ([[SPARK-56223]](https://issues.apache.org/jira/browse/SPARK-56223))
+- **Refactor PySpark Serializers** ([[SPARK-55384]](https://issues.apache.org/jira/browse/SPARK-55384))
 - **Extract Arrow batch transformers from serializers for better composability** ([[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159))
   - [[SPARK-55162]](https://issues.apache.org/jira/browse/SPARK-55162) Extract transformers from ArrowStreamUDFSerializer
   - [[SPARK-55168]](https://issues.apache.org/jira/browse/SPARK-55168) Use ArrowBatchTransformer.flatten_struct in GroupArrowUDFSerializer
@@ -370,14 +353,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55175]](https://issues.apache.org/jira/browse/SPARK-55175) Extract `to_pandas` transformer from serializers
   - [[SPARK-55197]](https://issues.apache.org/jira/browse/SPARK-55197) Extract `_write_stream_start` helper to deduplicate START_ARROW_STREAM signal logic
   - [[SPARK-55336]](https://issues.apache.org/jira/browse/SPARK-55336) Let createDF use create_batch logic for decoupling
-- **Polish type annotations for pyspark** ([[SPARK-56223]](https://issues.apache.org/jira/browse/SPARK-56223))
-  - [[SPARK-56224]](https://issues.apache.org/jira/browse/SPARK-56224) Polish type annotations for accumulators.py
-  - [[SPARK-56262]](https://issues.apache.org/jira/browse/SPARK-56262) Remove the unnecessary mypy check disable for types
-  - [[SPARK-56270]](https://issues.apache.org/jira/browse/SPARK-56270) Fix type hints and import issue for find_spark_home
-  - [[SPARK-56271]](https://issues.apache.org/jira/browse/SPARK-56271) Fix type hint and remove unused method for _globals.py
-  - [[SPARK-56311]](https://issues.apache.org/jira/browse/SPARK-56311) Add type hints for daemon.py
-  - [[SPARK-56313]](https://issues.apache.org/jira/browse/SPARK-56313) Add type hint for rddsampler.py
-  - [[SPARK-56377]](https://issues.apache.org/jira/browse/SPARK-56377) Add type hint for shuffle.py
 - **Upgrade mypy to latest version** ([[SPARK-54953]](https://issues.apache.org/jira/browse/SPARK-54953))
   - [[SPARK-54954]](https://issues.apache.org/jira/browse/SPARK-54954) Fix remote related type hints in util.py
   - [[SPARK-54991]](https://issues.apache.org/jira/browse/SPARK-54991) Correct type hint for streaming/listener.py
@@ -390,6 +365,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-54229]](https://issues.apache.org/jira/browse/SPARK-54229) Make PySparkLogger in UDFs store one log entry per log function call
   - [[SPARK-54246]](https://issues.apache.org/jira/browse/SPARK-54246) Add the user guide for python worker logging
   - [[SPARK-54323]](https://issues.apache.org/jira/browse/SPARK-54323) Change the way to access logs to TVF instead of system view
+- **Improve test coverage on pyspark** ([[SPARK-54453]](https://issues.apache.org/jira/browse/SPARK-54453))
 - **Support Python 3.14** ([[SPARK-54286]](https://issues.apache.org/jira/browse/SPARK-54286))
   - [[SPARK-54287]](https://issues.apache.org/jira/browse/SPARK-54287) Adds support for Python 3.14 in the `pyspark-client` and `pyspark-connect` components of Apache Spark 4.1.0.
   - [[SPARK-54065]](https://issues.apache.org/jira/browse/SPARK-54065) Enable `test_in_memory_data_source` in Python 3.14
@@ -411,20 +387,15 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-53616]](https://issues.apache.org/jira/browse/SPARK-53616) Introduces an iterator API for pandas grouped aggregation UDFs, allowing batch-by-batch processing to improve memory efficiency.
 - [[SPARK-54194]](https://issues.apache.org/jira/browse/SPARK-54194) Implements compression for unresolved proto plans in Spark Connect to improve stability and address issues with oversized messages that exceed gRPC message limits.
 - [[SPARK-54278]](https://issues.apache.org/jira/browse/SPARK-54278) Simplify `pyspark/util.py` doctests by removing Python 3.9+ condition
-- [[SPARK-54316]](https://issues.apache.org/jira/browse/SPARK-54316) Consolidate `GroupPandasIterUDFSerializer` with `GroupPandasUDFSerializer`
 - [[SPARK-54340]](https://issues.apache.org/jira/browse/SPARK-54340) Introduces a script that allows developers to use viztracer for profiling PySpark daemons and workers without modifying the source code.
-- [[SPARK-54438]](https://issues.apache.org/jira/browse/SPARK-54438) Consolidate ArrowStreamAggArrowIterUDFSerializer into ArrowStreamAggArrowUDFSerializer
 - [[SPARK-54517]](https://issues.apache.org/jira/browse/SPARK-54517) Added utility decorators for Spark Connect parity tests
 - [[SPARK-54555]](https://issues.apache.org/jira/browse/SPARK-54555) Enables Arrow-optimized Python UDFs and Arrow-based PySpark IPC by default in Spark 4.2.0.
 - [[SPARK-54572]](https://issues.apache.org/jira/browse/SPARK-54572) Introduces a script and supporting files to enable native debugging in VSCode for PySpark code, including driver code, UDFs, workers, and daemons, enhancing the debugging experience.
-- [[SPARK-54589]](https://issues.apache.org/jira/browse/SPARK-54589) Consolidate ArrowStreamAggPandasIterUDFSerializer into ArrowStreamAggPandasUDFSerializer
 - [[SPARK-54617]](https://issues.apache.org/jira/browse/SPARK-54617) Allows Arrow grouped iter aggregate UDFs to be registered and used in SQL queries, expanding their usage beyond just the DataFrame API.
-- [[SPARK-54623]](https://issues.apache.org/jira/browse/SPARK-54623) Add coverage test for UDTF null checker
 - [[SPARK-54631]](https://issues.apache.org/jira/browse/SPARK-54631) Adds profiler support for Arrow Grouped Iter Aggregate UDFs by including the `SQL_GROUPED_AGG_ARROW_ITER_UDF` in the profiler warning list.
 - [[SPARK-54640]](https://issues.apache.org/jira/browse/SPARK-54640) Replaces `select.select` with `select.poll` in `worker.py` for UNIX systems to address a known limitation where `select.select` fails to work with file descriptors greater than 1024, which can occur on systems under heavy load.
 - [[SPARK-54722]](https://issues.apache.org/jira/browse/SPARK-54722) Introduces `SQL_GROUPED_AGG_PANDAS_ITER_UDF` support in `UDFRegistration.register()`, allowing Pandas Grouped Iter Aggregate UDFs to be used in SQL.
 - [[SPARK-54738]](https://issues.apache.org/jira/browse/SPARK-54738) Adds profiler support for Pandas Grouped Iter Aggregate UDFs in PySpark.
-- [[SPARK-54790]](https://issues.apache.org/jira/browse/SPARK-54790) Add UDTF analyze coverage tests
 - [[SPARK-54849]](https://issues.apache.org/jira/browse/SPARK-54849) Upgrades the minimum version of `pyarrow` to 18.0.0 to address a security issue and benefit from the removal of the numpy dependency, simplifying dependency management.
 - [[SPARK-54925]](https://issues.apache.org/jira/browse/SPARK-54925) Introduces an optional capability to dump thread info for all PySpark processes, which can be used for debugging purposes, particularly when tests hang.
 - [[SPARK-54962]](https://issues.apache.org/jira/browse/SPARK-54962) Addresses a correctness issue in Pandas UDF related to handling nullable integer columns.
@@ -432,49 +403,16 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55096]](https://issues.apache.org/jira/browse/SPARK-55096) Updates the pandas minimum required version in `connect/setup.py` to match the Spark 4.1 dependency bump to pandas 2.2.0.
 - [[SPARK-55142]](https://issues.apache.org/jira/browse/SPARK-55142) Apply Python 3.12 for PySpark Tests in PR build
 - [[SPARK-55161]](https://issues.apache.org/jira/browse/SPARK-55161) Enables perf/memory profiling for Python data sources via the new `pyspark.sql.pyspark.dataSource.profiler` configuration, and notes that the existing UDF profiler config will no longer log Python data source read/write operations.
-- [[SPARK-55194]](https://issues.apache.org/jira/browse/SPARK-55194) Remove GroupArrowUDFSerializer by moving flatten logic to mapper
 - [[SPARK-55358]](https://issues.apache.org/jira/browse/SPARK-55358) Do not apt-get install `python3-xxx`
-- [[SPARK-55389]](https://issues.apache.org/jira/browse/SPARK-55389) Consolidate `SQL_MAP_ARROW_ITER_UDF` wrapper, mapper, and serializer logic
-- [[SPARK-55390]](https://issues.apache.org/jira/browse/SPARK-55390) Consolidate SQL_SCALAR_ARROW_UDF wrapper, mapper, and serializer logic
 - [[SPARK-55459]](https://issues.apache.org/jira/browse/SPARK-55459) Optimizes PySpark’s `wrap_grouped_map_pandas_udf` to eliminate a costly double-`concat` pattern, fixing a ~3× `applyInPandas` performance regression for large-group, few-column workloads by switching to a single per-column concatenation approach.
-- [[SPARK-55502]](https://issues.apache.org/jira/browse/SPARK-55502) Unify UDF and UDTF Arrow conversion error handling
-- [[SPARK-55506]](https://issues.apache.org/jira/browse/SPARK-55506) Pass explicit input schema to `to_pandas` in `CogroupPandasUDFSerializer`
 - [[SPARK-55507]](https://issues.apache.org/jira/browse/SPARK-55507) Add None check for field.metadata in is_geometry and is_geography
-- [[SPARK-55577]](https://issues.apache.org/jira/browse/SPARK-55577) Refactor SQL_SCALAR_ARROW_ITER_UDF wrapper, mapper, and serializer logic
-- [[SPARK-55579]](https://issues.apache.org/jira/browse/SPARK-55579) Rename PySpark error classes to be eval-type-agnostic
-- [[SPARK-55608]](https://issues.apache.org/jira/browse/SPARK-55608) Refactor SQL_GROUPED_MAP_ARROW_UDF and SQL_GROUPED_MAP_ARROW_ITER_UDF
 - [[SPARK-55610]](https://issues.apache.org/jira/browse/SPARK-55610) Adds `getExecutorInfos()` to `StatusTracker` in PySpark (non-connect), exposing executor details like host, port, cache size, running tasks, and storage memory that were previously only available in Scala.
-- [[SPARK-55726]](https://issues.apache.org/jira/browse/SPARK-55726) Add ASV microbenchmark for grouped map pandas UDF
-- [[SPARK-55754]](https://issues.apache.org/jira/browse/SPARK-55754) Add ASV microbenchmarks for scalar Arrow UDF eval types
 - [[SPARK-55788]](https://issues.apache.org/jira/browse/SPARK-55788) Makes Pandas UDFs consistently use Pandas’ integer `ExtensionDtype` (instead of varying based on batch nullability), controlled by the new config `spark.sql.execution.pythonUDF.pandas.preferIntExtensionDtype`.
-- [[SPARK-55899]](https://issues.apache.org/jira/browse/SPARK-55899) Add ASV microbenchmark for SQL_ARROW_BATCHED_UDF
-- [[SPARK-55902]](https://issues.apache.org/jira/browse/SPARK-55902) Refactor SQL_ARROW_BATCHED_UDF
-- [[SPARK-55947]](https://issues.apache.org/jira/browse/SPARK-55947) Add ASV micro-benchmarks for SQL_GROUPED_MAP_ARROW_UDF and SQL_GROUPED_MAP_ARROW_ITER_UDF
 - [[SPARK-56056]](https://issues.apache.org/jira/browse/SPARK-56056) Adds viztracer profiling support for simpler workers, complementing the existing daemon worker profiling in `run-with-viztracer`.
-- [[SPARK-56085]](https://issues.apache.org/jira/browse/SPARK-56085) Add ASV micro-benchmarks for SQL_GROUPED_AGG_ARROW_UDF and SQL_GROUPED_AGG_ARROW_ITER_UDF
-- [[SPARK-56120]](https://issues.apache.org/jira/browse/SPARK-56120) Add ASV micro-benchmarks for SQL_WINDOW_AGG_ARROW_UDF
-- [[SPARK-56123]](https://issues.apache.org/jira/browse/SPARK-56123) Refactor SQL_GROUPED_AGG_ARROW_UDF and SQL_GROUPED_AGG_ARROW_ITER_UDF
 - [[SPARK-56186]](https://issues.apache.org/jira/browse/SPARK-56186) Removes PyPy support from PySpark, cleaning up PyPy-specific code paths and conditional logic.
-- [[SPARK-56189]](https://issues.apache.org/jira/browse/SPARK-56189) Refactor SQL_WINDOW_AGG_ARROW_UDF
 - [[SPARK-56221]](https://issues.apache.org/jira/browse/SPARK-56221) Adds feature parity between `spark.catalog.*` API and DDL commands, including new methods: `listCachedTables()`, `dropTable`/`dropView`, `createDatabase`/`dropDatabase`, `listPartitions`, `listViews`, `getTableProperties`, `getCreateTableString`, `truncateTable`, `analyzeTable`, and the new `SHOW CACHED TABLES` SQL command.
-- [[SPARK-56222]](https://issues.apache.org/jira/browse/SPARK-56222) Create ArrowStreamGroupSerializer and ArrowStreamCoGroupSerializer
-- [[SPARK-56244]](https://issues.apache.org/jira/browse/SPARK-56244) Refine benchmark class layout in bench_eval_type.py
-- [[SPARK-56342]](https://issues.apache.org/jira/browse/SPARK-56342) Tighten type hints for refactored eval type functions in worker.py
-- [[SPARK-56348]](https://issues.apache.org/jira/browse/SPARK-56348) Remove unused ArrowBatchUDFSerializer
-- [[SPARK-56349]](https://issues.apache.org/jira/browse/SPARK-56349) Remove unused ArrowStreamAggArrowUDFSerializer
-- [[SPARK-56359]](https://issues.apache.org/jira/browse/SPARK-56359) Remove unused ArrowStreamArrowUDFSerializer
-- [[SPARK-56381]](https://issues.apache.org/jira/browse/SPARK-56381) Add ASV microbenchmark for SQL_COGROUPED_MAP_ARROW_UDF
-- [[SPARK-56424]](https://issues.apache.org/jira/browse/SPARK-56424) Add ASV benchmark for SQL_SCALAR_PANDAS_UDF
 - [[SPARK-56463]](https://issues.apache.org/jira/browse/SPARK-56463) Disallows unpickling of User Defined Types (UDTs) for security purposes.
-- [[SPARK-56475]](https://issues.apache.org/jira/browse/SPARK-56475) Add ASV benchmark for SQL_SCALAR_PANDAS_ITER_UDF
-- [[SPARK-56477]](https://issues.apache.org/jira/browse/SPARK-56477) Refactor SQL_GROUPED_MAP_PANDAS_UDF
 - [[SPARK-56518]](https://issues.apache.org/jira/browse/SPARK-56518) Adds the `current_path()` function to PySpark to match the JVM-side `CURRENT_PATH()` added in SPARK-56489.
-- [[SPARK-56562]](https://issues.apache.org/jira/browse/SPARK-56562) Add ASV microbenchmark for SQL_GROUPED_AGG_PANDAS_UDF
-- [[SPARK-56584]](https://issues.apache.org/jira/browse/SPARK-56584) Generalize `RESULT_TYPE_MISMATCH_FOR_ARROW_UDF` error class and remove dead `SCHEMA_MISMATCH_FOR_ARROW_PYTHON_UDF`
-- [[SPARK-56629]](https://issues.apache.org/jira/browse/SPARK-56629) Add ASV microbenchmark for SQL_COGROUPED_MAP_PANDAS_UDF
-- [[SPARK-56649]](https://issues.apache.org/jira/browse/SPARK-56649) Add ASV microbenchmark for SQL_GROUPED_MAP_PANDAS_ITER_UDF
-- [[SPARK-56657]](https://issues.apache.org/jira/browse/SPARK-56657) Add ASV microbenchmark for SQL_MAP_PANDAS_ITER_UDF
-- [[SPARK-56658]](https://issues.apache.org/jira/browse/SPARK-56658) Add ASV microbenchmark for SQL_WINDOW_AGG_PANDAS_UDF
 - [[SPARK-56768]](https://issues.apache.org/jira/browse/SPARK-56768) Share SBT compile artifact across pyspark CI jobs
 
 ### Pandas API on Spark
@@ -773,13 +711,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 
 ### Build and Infrastructure
 - **Maintain Project Infra for Spark 4.1.0** ([[SPARK-54268]](https://issues.apache.org/jira/browse/SPARK-54268))
-  - [[SPARK-54140]](https://issues.apache.org/jira/browse/SPARK-54140) Add `libwebp-dev` to fix `dev/spark-test-image/lint/Dockerfile` building
-  - [[SPARK-54141]](https://issues.apache.org/jira/browse/SPARK-54141) Add `libwebp-dev` to fix `dev/infra/Dockerfile` building
-  - [[SPARK-54143]](https://issues.apache.org/jira/browse/SPARK-54143) Add `branch-4.1` Daily GitHub Action jobs
-  - [[SPARK-54148]](https://issues.apache.org/jira/browse/SPARK-54148) Add `libwebp-dev` to all `dev/spark-test-image/*/Dockerfile`
-  - [[SPARK-54159]](https://issues.apache.org/jira/browse/SPARK-54159) Fix `pip install` commands to use proper quotation marks
-  - [[SPARK-54164]](https://issues.apache.org/jira/browse/SPARK-54164) Add `branch-4.1` to daily `Publish Snapshot` GitHub Action job
-  - [[SPARK-54241]](https://issues.apache.org/jira/browse/SPARK-54241) Enable `NOLINT_ON_COMPILE` for all PySpark GitHub Action jobs
+- **Apache Spark 4.1.0 Dependency Audit and Cleanup** ([[SPARK-54284]](https://issues.apache.org/jira/browse/SPARK-54284))
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
   - [[SPARK-55670]](https://issues.apache.org/jira/browse/SPARK-55670) Add `-Dio.netty.noUnsafe=false` to enable Java 25 support
   - [[SPARK-55678]](https://issues.apache.org/jira/browse/SPARK-55678) Add daily test for Java 25
@@ -807,8 +739,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54524]](https://issues.apache.org/jira/browse/SPARK-54524) Fix Connect JDBC driver dependencies
 - [[SPARK-54597]](https://issues.apache.org/jira/browse/SPARK-54597) Upgrades the `lz4-java` library to version 1.10.0, transitioning to a new repository for continued support and maintenance.
 - [[SPARK-54632]](https://issues.apache.org/jira/browse/SPARK-54632) Enable ruff on our CI and lint-python
-- [[SPARK-54702]](https://issues.apache.org/jira/browse/SPARK-54702) Recognize existing coverage object to install worker hooks
-- [[SPARK-54724]](https://issues.apache.org/jira/browse/SPARK-54724) Hook worker exception handler to dump report before sending exception
 - [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enables the checksum-based indeterminate shuffle retry feature by default.
 - [[SPARK-55193]](https://issues.apache.org/jira/browse/SPARK-55193) Use `CompressionHandler` as a replacement for the deprecated `GzipHandler` in `JettyUtils`
 - [[SPARK-55547]](https://issues.apache.org/jira/browse/SPARK-55547) Enable the GitHub Issues feature for the Apache Spark repository.
@@ -819,7 +749,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 ### Other
 - [[SPARK-53666]](https://issues.apache.org/jira/browse/SPARK-53666) Add script to generate llms.txt file for Spark main website
 - [[SPARK-54692]](https://issues.apache.org/jira/browse/SPARK-54692) Add python_worker_logs tvf doc to API reference
-- [[SPARK-55586]](https://issues.apache.org/jira/browse/SPARK-55586) Add `jdbc.py` Example
 - [[SPARK-56815]](https://issues.apache.org/jira/browse/SPARK-56815) Document Java 25 support
 
 ### Version upgrade of Java and Scala libraries
