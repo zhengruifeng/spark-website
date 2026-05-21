@@ -28,7 +28,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (12 commits)
 - [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (11 commits)
 - [[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156) Add missing parameters for Pandas API on Spark (8 commits)
-- [[SPARK-55722]](https://issues.apache.org/jira/browse/SPARK-55722) Optimize Vectorized Data Loading (8 commits)
 - [[SPARK-55400]](https://issues.apache.org/jira/browse/SPARK-55400) Reduce K8s control plane overhead (6 commits)
 - [[SPARK-55556]](https://issues.apache.org/jira/browse/SPARK-55556) Improve Web Security (5 commits)
 - [[SPARK-54274]](https://issues.apache.org/jira/browse/SPARK-54274) Support `MERGE INTO` Schema Evolution (4 commits)
@@ -36,6 +35,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56287]](https://issues.apache.org/jira/browse/SPARK-56287) Improve Spark History Server Scalability (4 commits)
 - [[SPARK-33392]](https://issues.apache.org/jira/browse/SPARK-33392) Align DSv2 commands to DSv1 implementation (4 commits)
 - [[SPARK-41589]](https://issues.apache.org/jira/browse/SPARK-41589) PyTorch Distributor (3 commits)
+- [[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159) Extract Arrow batch transformers from serializers for better composability (3 commits)
 
 ### Spark Core
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
@@ -72,15 +72,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 
 ### SQL Foundation
 - **Improve JDBC example and test coverage** ([[SPARK-55581]](https://issues.apache.org/jira/browse/SPARK-55581))
-- **Optimize Vectorized Data Loading** ([[SPARK-55722]](https://issues.apache.org/jira/browse/SPARK-55722))
-  - [[SPARK-55517]](https://issues.apache.org/jira/browse/SPARK-55517) Optimize `VectorizedPlainValuesReader.readBytes()` with direct array access for heap buffers
-  - [[SPARK-55652]](https://issues.apache.org/jira/browse/SPARK-55652) Optimize `VectorizedPlainValuesReader.readShorts()` with direct array access for heap buffers
-  - [[SPARK-55683]](https://issues.apache.org/jira/browse/SPARK-55683) Optimize VectorizedPlainValuesReader.readUnsignedLongs
-  - [[SPARK-55739]](https://issues.apache.org/jira/browse/SPARK-55739) Optimize `OnHeapColumnVector.putIntsLittleEndian/putLongsLittleEndian` using Platform.copyMemory on little-endian platforms
-  - [[SPARK-55885]](https://issues.apache.org/jira/browse/SPARK-55885) Optimize vectorized Parquet boolean reading with lookup-table expansion and batch buffer reads
-  - [[SPARK-55962]](https://issues.apache.org/jira/browse/SPARK-55962) Use `getShort` instead of `getInt` casting in `putShortsFromIntsLittleEndian` on Little Endian platforms
-  - [[SPARK-56438]](https://issues.apache.org/jira/browse/SPARK-56438) Optimize VectorizedPlainValuesReader.readBinary for direct ByteBuffer by eliminating intermediate byte[] copy
-  - [[SPARK-56522]](https://issues.apache.org/jira/browse/SPARK-56522) Batch PACKED null/non-null runs in VectorizedRleValuesReader
 - **Change Data Capture (CDC) Support** ([[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668))
   - [[SPARK-55948]](https://issues.apache.org/jira/browse/SPARK-55948) Add DSv2 CDC connector API, analyzer resolution, and SQL CHANGES clause
   - [[SPARK-55952]](https://issues.apache.org/jira/browse/SPARK-55952) Post Process for CDC batch query: drop carry-overs
@@ -115,6 +106,9 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Search path support** ([[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806))
   - [[SPARK-54807]](https://issues.apache.org/jira/browse/SPARK-54807) Support SYSTEM.BUILTIN and SYSTEM.SESSION for function resolution
   - [[SPARK-56639]](https://issues.apache.org/jira/browse/SPARK-56639) Frozen PATH semantics
+- **Optimize Vectorized Data Loading** ([[SPARK-55722]](https://issues.apache.org/jira/browse/SPARK-55722))
+  - [[SPARK-55962]](https://issues.apache.org/jira/browse/SPARK-55962) Use `getShort` instead of `getInt` casting in `putShortsFromIntsLittleEndian` on Little Endian platforms
+  - [[SPARK-56522]](https://issues.apache.org/jira/browse/SPARK-56522) Batch PACKED null/non-null runs in VectorizedRleValuesReader
 - **SPIP: Row-level operations in Data Source V2** ([[SPARK-35801]](https://issues.apache.org/jira/browse/SPARK-35801))
   - [[SPARK-53652]](https://issues.apache.org/jira/browse/SPARK-53652) Codegen For MergeRowExec
   - [[SPARK-56524]](https://issues.apache.org/jira/browse/SPARK-56524) UPDATE Operation Metrics
@@ -202,7 +196,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56594]](https://issues.apache.org/jira/browse/SPARK-56594) Add time_bucket scalar function for interval-based timestamp bucketing
 - [[SPARK-56598]](https://issues.apache.org/jira/browse/SPARK-56598) Custom metrics support for TruncatableTable
 - [[SPARK-56605]](https://issues.apache.org/jira/browse/SPARK-56605) Wire resolution engine to use SQL PATH for table, function, and variable lookup
-- [[SPARK-56647]](https://issues.apache.org/jira/browse/SPARK-56647) Optimize storage of SparkSQL Last Attempt Metrics
 - [[SPARK-56677]](https://issues.apache.org/jira/browse/SPARK-56677) Propagate filter conditions through Join nodes in PlanMerger
 - [[SPARK-56680]](https://issues.apache.org/jira/browse/SPARK-56680) DSv2 INSERT Operation Metrics
 - [[SPARK-56771]](https://issues.apache.org/jira/browse/SPARK-56771) Flip the config for geospatial support to true
