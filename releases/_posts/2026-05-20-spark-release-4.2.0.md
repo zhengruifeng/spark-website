@@ -18,15 +18,15 @@ To download Apache Spark 4.2.0, visit the <a href="{{site.baseurl}}/downloads.ht
 You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql=project%20%3D%20SPARK%20AND%20fixVersion%20%3D%204.2.0">detailed changes</a>.
 
 ### Highlights
-- [[SPARK-55139]](https://issues.apache.org/jira/browse/SPARK-55139) Support Pandas 3 (47 commits)
+- [[SPARK-55139]](https://issues.apache.org/jira/browse/SPARK-55139) Support Pandas 3 (45 commits)
 - [[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760) Spark Web UI Modernization (39 commits)
-- [[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555) Support heterogeneous K8s executor management (20 commits)
+- [[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555) Support heterogeneous K8s executor management (19 commits)
 - [[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658) SPIP: Add geospatial types in Spark (16 commits)
 - [[SPARK-54955]](https://issues.apache.org/jira/browse/SPARK-54955) Pandas UDF with PyArrow Backend (15 commits)
 - [[SPARK-56603]](https://issues.apache.org/jira/browse/SPARK-56603) Improve K8s Resource Manager API (14 commits)
 - [[SPARK-55227]](https://issues.apache.org/jira/browse/SPARK-55227) RDD API compatibility (13 commits)
 - [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (12 commits)
-- [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (11 commits)
+- [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (10 commits)
 - [[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156) Add missing parameters for Pandas API on Spark (8 commits)
 - [[SPARK-55400]](https://issues.apache.org/jira/browse/SPARK-55400) Reduce K8s control plane overhead (6 commits)
 - [[SPARK-55556]](https://issues.apache.org/jira/browse/SPARK-55556) Improve Web Security (5 commits)
@@ -34,8 +34,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54953]](https://issues.apache.org/jira/browse/SPARK-54953) Upgrade mypy to latest version (4 commits)
 - [[SPARK-56287]](https://issues.apache.org/jira/browse/SPARK-56287) Improve Spark History Server Scalability (4 commits)
 - [[SPARK-33392]](https://issues.apache.org/jira/browse/SPARK-33392) Align DSv2 commands to DSv1 implementation (4 commits)
-- [[SPARK-41589]](https://issues.apache.org/jira/browse/SPARK-41589) PyTorch Distributor (3 commits)
 - [[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159) Extract Arrow batch transformers from serializers for better composability (3 commits)
+- [[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806) Search path support (3 commits)
 
 ### Spark Core
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
@@ -58,11 +58,9 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-53807]](https://issues.apache.org/jira/browse/SPARK-53807) Fix a race condition issue between `unlock` and `releaseAllLocksForTask` in `BlockInfoManager for write locks
 - [[SPARK-54219]](https://issues.apache.org/jira/browse/SPARK-54219) Driver can't create thread causing ContextCleaner stuck and stuck stop process
 - [[SPARK-54313]](https://issues.apache.org/jira/browse/SPARK-54313) Add --extra-properties-file option for configuration layering in spark-submit
-- [[SPARK-54556]](https://issues.apache.org/jira/browse/SPARK-54556) Ensure succeeding stages will be re-submitted and fully-retry when shuffle checksum detected
 - [[SPARK-54808]](https://issues.apache.org/jira/browse/SPARK-54808) Support SYSTEM.SESSION for temporary view resolution
 - [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enable checksum based indeterminate shuffle retry by default
 - [[SPARK-55051]](https://issues.apache.org/jira/browse/SPARK-55051) Byte string accepts KiB, MiB, GiB, TiB, PiB
-- [[SPARK-55964]](https://issues.apache.org/jira/browse/SPARK-55964) By default, prevent shadowing of system schemas
 - [[SPARK-56279]](https://issues.apache.org/jira/browse/SPARK-56279) Enable zero-copy sendfile for FileRegion in native Netty transports
 - [[SPARK-56298]](https://issues.apache.org/jira/browse/SPARK-56298) Enable `spark.master.rest.virtualThread.enabled` by default
 - [[SPARK-56302]](https://issues.apache.org/jira/browse/SPARK-56302) Free memories as soon as possible to reduce memory pressure handling large task results
@@ -114,13 +112,11 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56524]](https://issues.apache.org/jira/browse/SPARK-56524) UPDATE Operation Metrics
 - [[SPARK-31561]](https://issues.apache.org/jira/browse/SPARK-31561) Add QUALIFY Clause
 - [[SPARK-36082]](https://issues.apache.org/jira/browse/SPARK-36082) when the right side is small enough to use SingleColumn Null Aware Anti Join
-- [[SPARK-44065]](https://issues.apache.org/jira/browse/SPARK-44065) Optimize BroadcastHashJoin skew when localShuffleReader is disabled
 - [[SPARK-44571]](https://issues.apache.org/jira/browse/SPARK-44571) Eliminate the Join by combine multiple Aggregates
 - [[SPARK-46830]](https://issues.apache.org/jira/browse/SPARK-46830) Introducing collation concept into Spark
 - [[SPARK-47672]](https://issues.apache.org/jira/browse/SPARK-47672) Avoid double evaluation of non-trivial projected elements from filter pushdown
 - [[SPARK-51518]](https://issues.apache.org/jira/browse/SPARK-51518) Support | as an alternative to |> for the operator pipe token
 - [[SPARK-51712]](https://issues.apache.org/jira/browse/SPARK-51712) Swallow non-fatal Throwables when resolving tables in spark.catalog.listTables()
-- [[SPARK-52326]](https://issues.apache.org/jira/browse/SPARK-52326) Add partitions related external catalog events
 - [[SPARK-52729]](https://issues.apache.org/jira/browse/SPARK-52729) Add MetadataOnlyTable and CREATE/ALTER VIEW support for DS v2 catalogs
 - [[SPARK-53469]](https://issues.apache.org/jira/browse/SPARK-53469) Ability to cleanup shuffle generated from SQL executed in thrift server
 - [[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119) Metrics & semantic modeling in Spark
@@ -132,15 +128,11 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54718]](https://issues.apache.org/jira/browse/SPARK-54718) Preserve attributes names during CTE newInstance()
 - [[SPARK-54720]](https://issues.apache.org/jira/browse/SPARK-54720) Create an empty DataFrame with a schema
 - [[SPARK-54735]](https://issues.apache.org/jira/browse/SPARK-54735) Properly preserve column comments in view with SCHEMA EVOLUTION
-- [[SPARK-54753]](https://issues.apache.org/jira/browse/SPARK-54753) memory leak in Apache Spark 4.0.1 as we persist/unpersist the dataset
 - [[SPARK-54759]](https://issues.apache.org/jira/browse/SPARK-54759) Support for cursors in SQL Scripting
 - [[SPARK-54760]](https://issues.apache.org/jira/browse/SPARK-54760) DelegatingCatalogExtension supports both V1 and V2 functions
-- [[SPARK-54785]](https://issues.apache.org/jira/browse/SPARK-54785) Add support for binary sketch aggregations in KLL
 - [[SPARK-54803]](https://issues.apache.org/jira/browse/SPARK-54803) Support BY NAME with INSERT INTO ... REPLACE WHERE
 - [[SPARK-54812]](https://issues.apache.org/jira/browse/SPARK-54812) Make executable commands not execute on resultDf.cache()
-- [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enable checksum based indeterminate shuffle retry by default
 - [[SPARK-54840]](https://issues.apache.org/jira/browse/SPARK-54840) OrcList Pre-allocation
-- [[SPARK-54852]](https://issues.apache.org/jira/browse/SPARK-54852) NOT IN subquery returns incorrect results with a collated table
 - [[SPARK-54854]](https://issues.apache.org/jira/browse/SPARK-54854) Add queryId (UUIDv7) to SQL Execution Events
 - [[SPARK-54864]](https://issues.apache.org/jira/browse/SPARK-54864) Add plan normalization for recursive CTEs
 - [[SPARK-54870]](https://issues.apache.org/jira/browse/SPARK-54870) collation support for char/varchar and CTAS/RTAS
@@ -152,7 +144,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55044]](https://issues.apache.org/jira/browse/SPARK-55044) Keep the metadata in toArrowSchema/fromArrowSchema
 - [[SPARK-55064]](https://issues.apache.org/jira/browse/SPARK-55064) Query level indeterminate shuffle retry
 - [[SPARK-55155]](https://issues.apache.org/jira/browse/SPARK-55155) Support foldable expression for SET CATALOG
-- [[SPARK-55250]](https://issues.apache.org/jira/browse/SPARK-55250) Reduce Hive client calls on CREATE NAMESPACE
 - [[SPARK-55256]](https://issues.apache.org/jira/browse/SPARK-55256) [SQL] Support IGNORE NULLS / RESPECT NULLS for array_agg and collect_list
 - [[SPARK-55322]](https://issues.apache.org/jira/browse/SPARK-55322) Add Overload for MaxBy / MinBy with k > 1
 - [[SPARK-55341]](https://issues.apache.org/jira/browse/SPARK-55341) Add disk only optional feature flag when adding cached blocks
@@ -167,25 +158,17 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55690]](https://issues.apache.org/jira/browse/SPARK-55690) Implement schema evolution for DSv2 AppendData, OverwriteByExpression, OverwritePartitionsDynamic
 - [[SPARK-55694]](https://issues.apache.org/jira/browse/SPARK-55694) Block constraints in CTAS/RTAS
 - [[SPARK-55702]](https://issues.apache.org/jira/browse/SPARK-55702) Support filter predicate in window aggregate functions
-- [[SPARK-55716]](https://issues.apache.org/jira/browse/SPARK-55716) V1 file-based DataSource writes silently accept null values into NOT NULL columns
 - [[SPARK-55855]](https://issues.apache.org/jira/browse/SPARK-55855) Add foundations for the DSv2 Transaction API
 - [[SPARK-55857]](https://issues.apache.org/jira/browse/SPARK-55857) [SQL] Support ignoreMissingFiles when inferring schema during schema evolution
 - [[SPARK-55928]](https://issues.apache.org/jira/browse/SPARK-55928) New linter for config effectiveness in views, UDFs and procedures
 - [[SPARK-55978]](https://issues.apache.org/jira/browse/SPARK-55978) [Improvement] Block/Split Sampling SQL Augmentation
 - [[SPARK-55995]](https://issues.apache.org/jira/browse/SPARK-55995) Support TIMESTAMP WITH LOCAL TIME ZONE in SQL syntax
 - [[SPARK-56001]](https://issues.apache.org/jira/browse/SPARK-56001) Recognizing the existence of the SQL Syntax REPLACE ON/USING for SQL INSERT statements in the Parser
-- [[SPARK-56019]](https://issues.apache.org/jira/browse/SPARK-56019) Close JDBC connection on task kill to unblock native socket reads
-- [[SPARK-56031]](https://issues.apache.org/jira/browse/SPARK-56031) NATURAL JOIN ignores case-insensitive column matching
-- [[SPARK-56032]](https://issues.apache.org/jira/browse/SPARK-56032) Support subexpression elimination in FilterExec whole-stage codegen
-- [[SPARK-56034]](https://issues.apache.org/jira/browse/SPARK-56034) Push down Join through Union when the right side is broadcastable
 - [[SPARK-56045]](https://issues.apache.org/jira/browse/SPARK-56045) Parquet UNKNOWN Type Regression at Spark 4.1
 - [[SPARK-56046]](https://issues.apache.org/jira/browse/SPARK-56046) Typed SPJ partition key reducers
-- [[SPARK-56047]](https://issues.apache.org/jira/browse/SPARK-56047) Propagate distinctCount through Union in CBO statistics estimation
-- [[SPARK-56089]](https://issues.apache.org/jira/browse/SPARK-56089) Align asinh/acosh with fdlibm algorithm for cross-engine compatibility
 - [[SPARK-56152]](https://issues.apache.org/jira/browse/SPARK-56152) Support implicit cast from string to time
 - [[SPARK-56182]](https://issues.apache.org/jira/browse/SPARK-56182) Allow SPJ reducing identity to other transforms
 - [[SPARK-56251]](https://issues.apache.org/jira/browse/SPARK-56251) Avoid loading all data to memory by default for PostgresSQL jdbc connector
-- [[SPARK-56346]](https://issues.apache.org/jira/browse/SPARK-56346) Use PartitionPredicate in DSV2 Metadata Only Delete
 - [[SPARK-56395]](https://issues.apache.org/jira/browse/SPARK-56395) SPIP: NEAREST BY Top-K Ranking Join
 - [[SPARK-56412]](https://issues.apache.org/jira/browse/SPARK-56412) Implement WorkerDispatcher for direct worker that are spawned as local processes
 - [[SPARK-56489]](https://issues.apache.org/jira/browse/SPARK-56489) Support for PATH syntax
@@ -219,12 +202,10 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55104]](https://issues.apache.org/jira/browse/SPARK-55104) Add Spark Connect support for DataStreamReader.name()
 - [[SPARK-55179]](https://issues.apache.org/jira/browse/SPARK-55179) Skip eager column name validation in df.col_name
 - [[SPARK-55239]](https://issues.apache.org/jira/browse/SPARK-55239) Allow to launch SparkConnectServer in YARN cluster mode
-- [[SPARK-55264]](https://issues.apache.org/jira/browse/SPARK-55264) Add Spark Connect command for directly executing flows
 - [[SPARK-55278]](https://issues.apache.org/jira/browse/SPARK-55278) SPIP: Language-agnostic UDF Protocol for Spark
 - [[SPARK-55314]](https://issues.apache.org/jira/browse/SPARK-55314) Propagate observed metrics errors to client
 - [[SPARK-55606]](https://issues.apache.org/jira/browse/SPARK-55606) [CONNECT] Server-side implementation of GetStatus API
 - [[SPARK-55691]](https://issues.apache.org/jira/browse/SPARK-55691) [CONNECT] Client-side implementation of GetStatus API
-- [[SPARK-55887]](https://issues.apache.org/jira/browse/SPARK-55887) Special handling for `CollectLimitExec/CollectTailExec` to avoid full table scans
 - [[SPARK-56226]](https://issues.apache.org/jira/browse/SPARK-56226) Catch analysis errors before `InternalFrame.__init__` in `.loc`
 - [[SPARK-56284]](https://issues.apache.org/jira/browse/SPARK-56284) Key worker abstraction for language-agnostic UDF protocol
 - [[SPARK-56322]](https://issues.apache.org/jira/browse/SPARK-56322) [CONNECT][PYTHON] Self-joining an observed DataFrame raises TypeError in observations property
@@ -273,27 +254,21 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55730]](https://issues.apache.org/jira/browse/SPARK-55730) Not make timezone lower case
   - [[SPARK-56310]](https://issues.apache.org/jira/browse/SPARK-56310) Handle pandas 3 string dtype in DataFrame.toPandas
 - [[SPARK-50111]](https://issues.apache.org/jira/browse/SPARK-50111) PySpark and PS Plotting Improvement
-- [[SPARK-51966]](https://issues.apache.org/jira/browse/SPARK-51966) Replace select.select() with select.poll() when running on POSIX os
 - [[SPARK-53615]](https://issues.apache.org/jira/browse/SPARK-53615) Introduce iterator API for arrow grouped agg UDF
 - [[SPARK-53616]](https://issues.apache.org/jira/browse/SPARK-53616) Introduce iterator API for pandas grouped agg UDF
 - [[SPARK-54555]](https://issues.apache.org/jira/browse/SPARK-54555) Enable Arrow-optimized Python UDFs by default
 - [[SPARK-54572]](https://issues.apache.org/jira/browse/SPARK-54572) Support VSCode breakpoint for development
 - [[SPARK-54617]](https://issues.apache.org/jira/browse/SPARK-54617) Register Arrow Grouped Iter Aggregate UDF for SQL usage
 - [[SPARK-54631]](https://issues.apache.org/jira/browse/SPARK-54631) Add profiler support for Arrow Grouped Iter Aggregate UDF
-- [[SPARK-54640]](https://issues.apache.org/jira/browse/SPARK-54640) Replace select.select with select.poll in worker
 - [[SPARK-54722]](https://issues.apache.org/jira/browse/SPARK-54722) Register Pandas Grouped Iter Aggregate UDF for SQL usage
 - [[SPARK-54738]](https://issues.apache.org/jira/browse/SPARK-54738) Add profiler support for Pandas Grouped Iter Aggregate UDF
-- [[SPARK-54849]](https://issues.apache.org/jira/browse/SPARK-54849) Upgrade the minimum version of `pyarrow` to 18.0.0
 - [[SPARK-54925]](https://issues.apache.org/jira/browse/SPARK-54925) Add the capability in pyspark to dump thread info from all processes
-- [[SPARK-54962]](https://issues.apache.org/jira/browse/SPARK-54962) Fix nullable integers handling in Pandas UDF
 - [[SPARK-55055]](https://issues.apache.org/jira/browse/SPARK-55055) Support SparkSession.Builder.create for PySpark Classic #53820
 - [[SPARK-55096]](https://issues.apache.org/jira/browse/SPARK-55096) Update pandas minimum version in `connect/setup.py`
 - [[SPARK-55161]](https://issues.apache.org/jira/browse/SPARK-55161) Support profilers on python data source
-- [[SPARK-55459]](https://issues.apache.org/jira/browse/SPARK-55459) Fix 3x performance regression in applyInPandas for large groups
 - [[SPARK-55507]](https://issues.apache.org/jira/browse/SPARK-55507) is_geometry and is_geography crash with TypeError when struct field has no metadata
 - [[SPARK-55610]](https://issues.apache.org/jira/browse/SPARK-55610) Introduce getExecutorInfos to SparkStatusTracker in PySpark
 - [[SPARK-55788]](https://issues.apache.org/jira/browse/SPARK-55788) Support ExtensionDType for integers in Pandas UDF
-- [[SPARK-56056]](https://issues.apache.org/jira/browse/SPARK-56056) Support simple worker profiling with viztracer
 - [[SPARK-56186]](https://issues.apache.org/jira/browse/SPARK-56186) Retire pypy
 - [[SPARK-56221]](https://issues.apache.org/jira/browse/SPARK-56221) Feature parity between spark.catalog.* vs DDL commands
 - [[SPARK-56463]](https://issues.apache.org/jira/browse/SPARK-56463) Disallow unpickling UDT
@@ -322,7 +297,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56118]](https://issues.apache.org/jira/browse/SPARK-56118) Match pandas 3.0 bool handling in GroupBy.quantile
   - [[SPARK-56122]](https://issues.apache.org/jira/browse/SPARK-56122) Use pandas-aware numeric dtype check in Series.cov
   - [[SPARK-56167]](https://issues.apache.org/jira/browse/SPARK-56167) Align astype with pandas 3 default string behavior
-  - [[SPARK-56168]](https://issues.apache.org/jira/browse/SPARK-56168) Relax groupby diff-length assertions for pandas 3
   - [[SPARK-56187]](https://issues.apache.org/jira/browse/SPARK-56187) Fix Series.argsort null ordering for pandas 3
   - [[SPARK-56188]](https://issues.apache.org/jira/browse/SPARK-56188) Align Series.map({}) with pandas 3 empty-dict behavior
   - [[SPARK-56245]](https://issues.apache.org/jira/browse/SPARK-56245) Fix DataFrame.eval inplace assignment on pandas 3
@@ -346,7 +320,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-46168]](https://issues.apache.org/jira/browse/SPARK-46168) Add axis parameter to DataFrame idxmax
   - [[SPARK-46166]](https://issues.apache.org/jira/browse/SPARK-46166) Add axis and skipna parameters to DataFrame.any
 - [[SPARK-47996]](https://issues.apache.org/jira/browse/SPARK-47996) Pandas-on-Spark incompletely implements merge methods
-- [[SPARK-47997]](https://issues.apache.org/jira/browse/SPARK-47997) Pandas-on-Spark incompletely implements DataFrame.drop
 - [[SPARK-54337]](https://issues.apache.org/jira/browse/SPARK-54337) Expose __dataframe__ interchange protocol on pyspark RDD, SQL DataFrame, and pandas DataFrame APIs
 - [[SPARK-55662]](https://issues.apache.org/jira/browse/SPARK-55662) pyspark.pandas.DataFrame.idxmin axis implementation
 
@@ -376,7 +349,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55121]](https://issues.apache.org/jira/browse/SPARK-55121) Add DataStreamReader.name() to Classic PySpark
 - [[SPARK-55123]](https://issues.apache.org/jira/browse/SPARK-55123) Add SequentialUnionOffset for tracking sequential source processing
 - [[SPARK-55129]](https://issues.apache.org/jira/browse/SPARK-55129) Introduce State Store API and key encoders for event-time as a first class
-- [[SPARK-55144]](https://issues.apache.org/jira/browse/SPARK-55144) Introduce new state format version for performant stream-stream join
 - [[SPARK-55145]](https://issues.apache.org/jira/browse/SPARK-55145) Reflect the new RocksDB key encoders in SPARK-55129 to Avro
 - [[SPARK-55146]](https://issues.apache.org/jira/browse/SPARK-55146) State repartition pyspark API
 - [[SPARK-55304]](https://issues.apache.org/jira/browse/SPARK-55304) Introduce Admission Control and Trigger.AvailableNow into Python Data Source - reader
@@ -385,7 +357,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55728]](https://issues.apache.org/jira/browse/SPARK-55728) Introduce RocksDB conf for file checksum threadpool size
 - [[SPARK-55729]](https://issues.apache.org/jira/browse/SPARK-55729) Support state format v4 of stream-stream join in state data source (reader)
 - [[SPARK-55751]](https://issues.apache.org/jira/browse/SPARK-55751) Add metrics on how often state stores are loaded from cloud storage
-- [[SPARK-55973]](https://issues.apache.org/jira/browse/SPARK-55973) Optimization around state in stream-stream join with LeftSemi join type
 - [[SPARK-55999]](https://issues.apache.org/jira/browse/SPARK-55999) Enable `spark.sql.streaming.stateStore.forceSnapshotUploadOnLag` by default
 - [[SPARK-56216]](https://issues.apache.org/jira/browse/SPARK-56216) Integrate checkpoint V2 with auto-repair snapshot
 - [[SPARK-56384]](https://issues.apache.org/jira/browse/SPARK-56384) Support Update mode in Stream-Stream Non-Outer Join
@@ -462,7 +433,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Support heterogeneous K8s executor management** ([[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555))
   - [[SPARK-55496]](https://issues.apache.org/jira/browse/SPARK-55496) Support reuse of scaled PVCs
   - [[SPARK-55639]](https://issues.apache.org/jira/browse/SPARK-55639) Support Recovery-mode K8s Executor
-  - [[SPARK-54780]](https://issues.apache.org/jira/browse/SPARK-54780) Drop K8s v1.32 Support
   - [[SPARK-55075]](https://issues.apache.org/jira/browse/SPARK-55075) Track executor pod creation errors with ExecutorFailureTracker
   - [[SPARK-55431]](https://issues.apache.org/jira/browse/SPARK-55431) Set `resizePolicy` to `NotRequired` explicitly for executor pods
   - [[SPARK-55432]](https://issues.apache.org/jira/browse/SPARK-55432) Support built-in K8s `ExecutorResizePlugin`
@@ -502,7 +472,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54553]](https://issues.apache.org/jira/browse/SPARK-54553) Supports receiving podgroup JSON format configurations when using Volcano
 - [[SPARK-54916]](https://issues.apache.org/jira/browse/SPARK-54916) Enable `volcano` profile by default
 - [[SPARK-55653]](https://issues.apache.org/jira/browse/SPARK-55653) Support `NetworkPolicy` for Spark executor pods
-- [[SPARK-55831]](https://issues.apache.org/jira/browse/SPARK-55831) Support spark.yarn.am.defaultJavaOptions
 - [[SPARK-56834]](https://issues.apache.org/jira/browse/SPARK-56834) Use Java `25-jre` instead of `21-jre` image in K8s Dockerfile
 
 ### Connectors
@@ -516,12 +485,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
   - [[SPARK-55670]](https://issues.apache.org/jira/browse/SPARK-55670) Add `-Dio.netty.noUnsafe=false` to enable Arrow Java 25 support
   - [[SPARK-55678]](https://issues.apache.org/jira/browse/SPARK-55678) Add daily test for Java 25
-- [[SPARK-47086]](https://issues.apache.org/jira/browse/SPARK-47086) Upgrade Jetty to 12
-- [[SPARK-54597]](https://issues.apache.org/jira/browse/SPARK-54597) Upgrade `lz4-java` to 1.10.0
-- [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enable checksum based indeterminate shuffle retry by default
 - [[SPARK-55193]](https://issues.apache.org/jira/browse/SPARK-55193) Use CompressionHandler as a replacement for the deprecated GzipHandler in JettyUtils
-- [[SPARK-55547]](https://issues.apache.org/jira/browse/SPARK-55547) Enable `GitHub Issues` feature
-- [[SPARK-56209]](https://issues.apache.org/jira/browse/SPARK-56209) Upgrade `vertx` to 4.5.26
 
 ### Version upgrade of Java and Scala libraries
 
