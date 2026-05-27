@@ -18,16 +18,15 @@ To download Apache Spark 4.2.0, visit the <a href="{{site.baseurl}}/downloads.ht
 You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql=project%20%3D%20SPARK%20AND%20fixVersion%20%3D%204.2.0">detailed changes</a>.
 
 ### Highlights
-- [[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760) Spark Web UI Modernization (39 commits)
-- [[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555) Support heterogeneous K8s executor management (19 commits)
-- [[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658) SPIP: Add geospatial types in Spark (16 commits)
+- [[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760) Spark Web UI Modernization (37 commits)
+- [[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555) Support heterogeneous K8s executor management (18 commits)
+- [[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658) SPIP: Add geospatial types in Spark (15 commits)
 - [[SPARK-56603]](https://issues.apache.org/jira/browse/SPARK-56603) Improve K8s Resource Manager API (14 commits)
 - [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (10 commits)
 - [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (10 commits)
 - [[SPARK-56249]](https://issues.apache.org/jira/browse/SPARK-56249) Auto CDC support (9 commits)
 - [[SPARK-55400]](https://issues.apache.org/jira/browse/SPARK-55400) Reduce K8s control plane overhead (6 commits)
 - [[SPARK-55556]](https://issues.apache.org/jira/browse/SPARK-55556) Improve Web Security (5 commits)
-- [[SPARK-54274]](https://issues.apache.org/jira/browse/SPARK-54274) Support `MERGE INTO` Schema Evolution (4 commits)
 - [[SPARK-56287]](https://issues.apache.org/jira/browse/SPARK-56287) Improve Spark History Server Scalability (4 commits)
 - [[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119) Metrics & semantic modeling in Spark (3 commits)
 - [[SPARK-56395]](https://issues.apache.org/jira/browse/SPARK-56395) SPIP: NEAREST BY Top-K Ranking Join
@@ -48,10 +47,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-46830]](https://issues.apache.org/jira/browse/SPARK-46830) Introducing collation concept into Spark
 - [[SPARK-53807]](https://issues.apache.org/jira/browse/SPARK-53807) Fix a race condition issue between `unlock` and `releaseAllLocksForTask` in `BlockInfoManager for write locks
 - [[SPARK-54219]](https://issues.apache.org/jira/browse/SPARK-54219) Driver can't create thread causing ContextCleaner stuck and stuck stop process
-- [[SPARK-54313]](https://issues.apache.org/jira/browse/SPARK-54313) Add --extra-properties-file option for configuration layering in spark-submit
 - [[SPARK-55051]](https://issues.apache.org/jira/browse/SPARK-55051) Byte string accepts KiB, MiB, GiB, TiB, PiB
 - [[SPARK-55064]](https://issues.apache.org/jira/browse/SPARK-55064) Query level indeterminate shuffle retry
-- [[SPARK-55239]](https://issues.apache.org/jira/browse/SPARK-55239) Allow to launch SparkConnectServer in YARN cluster mode
 - [[SPARK-55528]](https://issues.apache.org/jira/browse/SPARK-55528) Default collation support for SQL UDFs
 - [[SPARK-56279]](https://issues.apache.org/jira/browse/SPARK-56279) Enable zero-copy sendfile for FileRegion in native Netty transports
 - [[SPARK-56298]](https://issues.apache.org/jira/browse/SPARK-56298) Enable `spark.master.rest.virtualThread.enabled` by default
@@ -68,7 +65,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55295]](https://issues.apache.org/jira/browse/SPARK-55295) Extend the ST_GeomFromWKB function to take an optional SRID value
   - [[SPARK-55339]](https://issues.apache.org/jira/browse/SPARK-55339) Implement WKT writer for Geo objects
   - [[SPARK-55449]](https://issues.apache.org/jira/browse/SPARK-55449) Enable WKB parsing and writing for Geography
-  - [[SPARK-55507]](https://issues.apache.org/jira/browse/SPARK-55507) is_geometry and is_geography crash with TypeError when struct field has no metadata
   - [[SPARK-55530]](https://issues.apache.org/jira/browse/SPARK-55530) Support Geo result sets in Hive and Thrift server
   - [[SPARK-55539]](https://issues.apache.org/jira/browse/SPARK-55539) Allow casting from GeometryType to GeographyType
   - [[SPARK-55541]](https://issues.apache.org/jira/browse/SPARK-55541) Support Geometry and Geography in catalyst type converters
@@ -92,10 +88,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-54808]](https://issues.apache.org/jira/browse/SPARK-54808) Support SYSTEM.SESSION for temporary view resolution
   - [[SPARK-56639]](https://issues.apache.org/jira/browse/SPARK-56639) Frozen PATH semantics
   - [[SPARK-56939]](https://issues.apache.org/jira/browse/SPARK-56939) Resolve deadlock between USE and function lookup
-- **Support `MERGE INTO` Schema Evolution** ([[SPARK-54274]](https://issues.apache.org/jira/browse/SPARK-54274))
-  - [[SPARK-54621]](https://issues.apache.org/jira/browse/SPARK-54621) Merge Into Update Set * preserve nested fields if coerceNestedTypes is enabled
-  - [[SPARK-56054]](https://issues.apache.org/jira/browse/SPARK-56054) Fix aliased nested fields ignored for schema evolution in MERGE
-  - [[SPARK-56472]](https://issues.apache.org/jira/browse/SPARK-56472) Fix MERGE schema evolution with WHEN MATCHED THEN DELETE
 - **Align DSv2 commands to DSv1 implementation** ([[SPARK-33392]](https://issues.apache.org/jira/browse/SPARK-33392))
   - [[SPARK-33902]](https://issues.apache.org/jira/browse/SPARK-33902) CREATE TABLE LIKE FOR V2
   - [[SPARK-39660]](https://issues.apache.org/jira/browse/SPARK-39660) Support v2 DESCRIBE TABLE .. PARTITION
@@ -104,9 +96,9 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Metrics & semantic modeling in Spark** ([[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119))
   - [[SPARK-54405]](https://issues.apache.org/jira/browse/SPARK-54405) Query metric view with dimensions and measures
   - [[SPARK-54403]](https://issues.apache.org/jira/browse/SPARK-54403) YAML parser to read metric view definition
-- **Optimize Vectorized Data Loading** ([[SPARK-55722]](https://issues.apache.org/jira/browse/SPARK-55722))
-  - [[SPARK-55962]](https://issues.apache.org/jira/browse/SPARK-55962) Use `getShort` instead of `getInt` casting in `putShortsFromIntsLittleEndian` on Little Endian platforms
-  - [[SPARK-56522]](https://issues.apache.org/jira/browse/SPARK-56522) Batch PACKED null/non-null runs in VectorizedRleValuesReader
+- **Support `MERGE INTO` Schema Evolution** ([[SPARK-54274]](https://issues.apache.org/jira/browse/SPARK-54274))
+  - [[SPARK-54621]](https://issues.apache.org/jira/browse/SPARK-54621) Merge Into Update Set * preserve nested fields if coerceNestedTypes is enabled
+  - [[SPARK-56472]](https://issues.apache.org/jira/browse/SPARK-56472) Fix MERGE schema evolution with WHEN MATCHED THEN DELETE
 - **SPIP: Row-level operations in Data Source V2** ([[SPARK-35801]](https://issues.apache.org/jira/browse/SPARK-35801))
   - [[SPARK-53652]](https://issues.apache.org/jira/browse/SPARK-53652) Codegen For MergeRowExec
   - [[SPARK-56524]](https://issues.apache.org/jira/browse/SPARK-56524) UPDATE Operation Metrics
@@ -139,7 +131,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54854]](https://issues.apache.org/jira/browse/SPARK-54854) Add queryId (UUIDv7) to SQL Execution Events
 - [[SPARK-54864]](https://issues.apache.org/jira/browse/SPARK-54864) Add plan normalization for recursive CTEs
 - [[SPARK-54870]](https://issues.apache.org/jira/browse/SPARK-54870) collation support for char/varchar and CTAS/RTAS
-- [[SPARK-54878]](https://issues.apache.org/jira/browse/SPARK-54878) Support sort_keys option inside to_json
 - [[SPARK-54971]](https://issues.apache.org/jira/browse/SPARK-54971) Recognizing the existence of the SQL Syntax WITH SCHEMA EVOLUTION for SQL INSERT statements in the Parser
 - [[SPARK-55019]](https://issues.apache.org/jira/browse/SPARK-55019) Allow DROP TABLE to drop VIEW
 - [[SPARK-55030]](https://issues.apache.org/jira/browse/SPARK-55030) Add support for vector_norm, vector_normalize functions
@@ -147,7 +138,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55256]](https://issues.apache.org/jira/browse/SPARK-55256) [SQL] Support IGNORE NULLS / RESPECT NULLS for array_agg and collect_list
 - [[SPARK-55304]](https://issues.apache.org/jira/browse/SPARK-55304) Introduce Admission Control and Trigger.AvailableNow into Python Data Source - reader
 - [[SPARK-55322]](https://issues.apache.org/jira/browse/SPARK-55322) Add Overload for MaxBy / MinBy with k > 1
-- [[SPARK-55341]](https://issues.apache.org/jira/browse/SPARK-55341) Add disk only optional feature flag when adding cached blocks
 - [[SPARK-55356]](https://issues.apache.org/jira/browse/SPARK-55356) Support alias in Spark SQL PIVOT
 - [[SPARK-55453]](https://issues.apache.org/jira/browse/SPARK-55453) LIKE returns wrong results for emoji
 - [[SPARK-55533]](https://issues.apache.org/jira/browse/SPARK-55533) Support IGNORE NULLS / RESPECT NULLS for collect_set
@@ -157,7 +147,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55631]](https://issues.apache.org/jira/browse/SPARK-55631) ALTER TABLE should invalidate cache
 - [[SPARK-55689]](https://issues.apache.org/jira/browse/SPARK-55689) Support schema evolution in DSv2 INSERTs
 - [[SPARK-55690]](https://issues.apache.org/jira/browse/SPARK-55690) Implement schema evolution for DSv2 AppendData, OverwriteByExpression, OverwritePartitionsDynamic
-- [[SPARK-55694]](https://issues.apache.org/jira/browse/SPARK-55694) Block constraints in CTAS/RTAS
 - [[SPARK-55702]](https://issues.apache.org/jira/browse/SPARK-55702) Support filter predicate in window aggregate functions
 - [[SPARK-55729]](https://issues.apache.org/jira/browse/SPARK-55729) Support state format v4 of stream-stream join in state data source (reader)
 - [[SPARK-55855]](https://issues.apache.org/jira/browse/SPARK-55855) Add foundations for the DSv2 Transaction API
@@ -178,6 +167,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56509]](https://issues.apache.org/jira/browse/SPARK-56509) SparkSQL Last Attempt Metrics
 - [[SPARK-56520]](https://issues.apache.org/jira/browse/SPARK-56520) Persist PATH for VIEWs, FUNCTIONS, expose with DESCRIBE
 - [[SPARK-56521]](https://issues.apache.org/jira/browse/SPARK-56521) Support PartitionPredicate in runtime filters
+- [[SPARK-56522]](https://issues.apache.org/jira/browse/SPARK-56522) Batch PACKED null/non-null runs in VectorizedRleValuesReader
 - [[SPARK-56551]](https://issues.apache.org/jira/browse/SPARK-56551) DSv2 DELETE Operation Metrics
 - [[SPARK-56594]](https://issues.apache.org/jira/browse/SPARK-56594) Add time_bucket scalar function for interval-based timestamp bucketing
 - [[SPARK-56598]](https://issues.apache.org/jira/browse/SPARK-56598) Custom metrics support for TruncatableTable
@@ -220,7 +210,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-50111]](https://issues.apache.org/jira/browse/SPARK-50111) PySpark and PS Plotting Improvement
 - [[SPARK-54314]](https://issues.apache.org/jira/browse/SPARK-54314) Improve Server-Side debuggability in Spark Connect by capturing client application's file name and line numbers in PySpark
 - [[SPARK-55047]](https://issues.apache.org/jira/browse/SPARK-55047) [CONNECT] Add client-side limit for local relation size
-- [[SPARK-55314]](https://issues.apache.org/jira/browse/SPARK-55314) Propagate observed metrics errors to client
 - [[SPARK-55606]](https://issues.apache.org/jira/browse/SPARK-55606) [CONNECT] Server-side implementation of GetStatus API
 - [[SPARK-55691]](https://issues.apache.org/jira/browse/SPARK-55691) [CONNECT] Client-side implementation of GetStatus API
 
@@ -270,20 +259,17 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Refactor PythonEvalType processing logic** ([[SPARK-55388]](https://issues.apache.org/jira/browse/SPARK-55388))
 - **Polish type annotations for pyspark** ([[SPARK-56223]](https://issues.apache.org/jira/browse/SPARK-56223))
 - **Refactor PySpark Serializers** ([[SPARK-55384]](https://issues.apache.org/jira/browse/SPARK-55384))
+- **Improve lint on PySpark** ([[SPARK-54543]](https://issues.apache.org/jira/browse/SPARK-54543))
 - **Python worker logging infrastructure** ([[SPARK-53754]](https://issues.apache.org/jira/browse/SPARK-53754))
 - **Improve test coverage on pyspark** ([[SPARK-54453]](https://issues.apache.org/jira/browse/SPARK-54453))
 - **Extract Arrow batch transformers from serializers for better composability** ([[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159))
   - [[SPARK-55168]](https://issues.apache.org/jira/browse/SPARK-55168) Refactor GroupArrowUDFSerializer to use ArrowBatchTransformer.flatten_struct
   - [[SPARK-55169]](https://issues.apache.org/jira/browse/SPARK-55169) Refactor ArrowStreamArrowUDTFSerializer to use ArrowBatchTransformer.flatten_struct
   - [[SPARK-55336]](https://issues.apache.org/jira/browse/SPARK-55336) Factor out ArrowStreamPandasSerializer._create_batch logic for createDataFrame
-- **Improve lint on PySpark** ([[SPARK-54543]](https://issues.apache.org/jira/browse/SPARK-54543))
-  - [[SPARK-54544]](https://issues.apache.org/jira/browse/SPARK-54544) Enable F811 for flake8
-  - [[SPARK-54632]](https://issues.apache.org/jira/browse/SPARK-54632) Add ruff to the lint system
 - [[SPARK-53615]](https://issues.apache.org/jira/browse/SPARK-53615) Introduce iterator API for arrow grouped agg UDF
 - [[SPARK-53616]](https://issues.apache.org/jira/browse/SPARK-53616) Introduce iterator API for pandas grouped agg UDF
 - [[SPARK-54337]](https://issues.apache.org/jira/browse/SPARK-54337) Expose __dataframe__ interchange protocol on pyspark RDD, SQL DataFrame, and pandas DataFrame APIs
 - [[SPARK-54555]](https://issues.apache.org/jira/browse/SPARK-54555) Enable Arrow-optimized Python UDFs by default
-- [[SPARK-54572]](https://issues.apache.org/jira/browse/SPARK-54572) Support VSCode breakpoint for development
 - [[SPARK-54617]](https://issues.apache.org/jira/browse/SPARK-54617) Register Arrow Grouped Iter Aggregate UDF for SQL usage
 - [[SPARK-54631]](https://issues.apache.org/jira/browse/SPARK-54631) Add profiler support for Arrow Grouped Iter Aggregate UDF
 - [[SPARK-54722]](https://issues.apache.org/jira/browse/SPARK-54722) Register Pandas Grouped Iter Aggregate UDF for SQL usage
@@ -308,7 +294,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-46167]](https://issues.apache.org/jira/browse/SPARK-46167) Add axis, pct and na_option parameter to DataFrame.rank
   - [[SPARK-46168]](https://issues.apache.org/jira/browse/SPARK-46168) Add axis parameter to DataFrame idxmax
   - [[SPARK-46166]](https://issues.apache.org/jira/browse/SPARK-46166) Add axis and skipna parameters to DataFrame.any
-- [[SPARK-47996]](https://issues.apache.org/jira/browse/SPARK-47996) Pandas-on-Spark incompletely implements merge methods
 - [[SPARK-55662]](https://issues.apache.org/jira/browse/SPARK-55662) pyspark.pandas.DataFrame.idxmin axis implementation
 
 ### Structured Streaming
@@ -362,7 +347,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56882]](https://issues.apache.org/jira/browse/SPARK-56882) Implement SCD1 Batch Processor; Target Column Projection
   - [[SPARK-56953]](https://issues.apache.org/jira/browse/SPARK-56953) Implement SCD1 Batch Processor; foreachBatch Callback
   - [[SPARK-56956]](https://issues.apache.org/jira/browse/SPARK-56956) AutoCDC Flow Execution; Introduce AutoCDC Flow Dataclasses
-- [[SPARK-55155]](https://issues.apache.org/jira/browse/SPARK-55155) Support foldable expression for SET CATALOG
 
 ### Web UI
 - **Spark Web UI Modernization** ([[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760))
@@ -384,7 +368,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55776]](https://issues.apache.org/jira/browse/SPARK-55776) Fix data-title to data-bs-title for timeline tooltips after Bootstrap 5 upgrade
   - [[SPARK-55779]](https://issues.apache.org/jira/browse/SPARK-55779) Add Scala helper for inline tooltip markup in Spark UI pages
   - [[SPARK-55784]](https://issues.apache.org/jira/browse/SPARK-55784) Add table-hover class for interactive table row highlighting
-  - [[SPARK-55810]](https://issues.apache.org/jira/browse/SPARK-55810) Missing space between button and table
   - [[SPARK-55834]](https://issues.apache.org/jira/browse/SPARK-55834) Use tabbed layout for Environment page sections
   - [[SPARK-55837]](https://issues.apache.org/jira/browse/SPARK-55837) Render Environment page tables client-side via REST API
   - [[SPARK-55839]](https://issues.apache.org/jira/browse/SPARK-55839) Add export config button to Environment page
@@ -399,7 +382,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56239]](https://issues.apache.org/jira/browse/SPARK-56239) Fix SQL tab client-side DataTables: default API limit, date format, and appId resolution
   - [[SPARK-56259]](https://issues.apache.org/jira/browse/SPARK-56259) Fix SHS application list table header/data column mismatch
   - [[SPARK-56331]](https://issues.apache.org/jira/browse/SPARK-56331) Truncate long node labels in SQL plan visualization
-  - [[SPARK-56354]](https://issues.apache.org/jira/browse/SPARK-56354) Lazy-load vis-timeline resources only on pages that use timeline views
   - [[SPARK-56587]](https://issues.apache.org/jira/browse/SPARK-56587) Show table name in WriteDelta UI node
   - [[SPARK-56792]](https://issues.apache.org/jira/browse/SPARK-56792) Support pan and zoom for SQL plan visualization
   - [[SPARK-56799]](https://issues.apache.org/jira/browse/SPARK-56799) Search and highlight nodes in SQL plan visualization
@@ -417,7 +399,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55432]](https://issues.apache.org/jira/browse/SPARK-55432) Support built-in K8s `ExecutorResizePlugin`
   - [[SPARK-54422]](https://issues.apache.org/jira/browse/SPARK-54422) Increase `spark.kubernetes.allocation.batch.size` to 20
   - [[SPARK-55134]](https://issues.apache.org/jira/browse/SPARK-55134) If the executor’s resource request is greater than its limit, the driver is expected to exit
-  - [[SPARK-55342]](https://issues.apache.org/jira/browse/SPARK-55342) Fix `ExecutorPodsLifecycleEventHandler` to `ExecutorPodsLifecycleManager`
   - [[SPARK-55359]](https://issues.apache.org/jira/browse/SPARK-55359) Promote `TaskResourceRequest` to `Stable`
   - [[SPARK-55485]](https://issues.apache.org/jira/browse/SPARK-55485) Add `Constants.POD_DELETION_COST` for reuse
   - [[SPARK-55649]](https://issues.apache.org/jira/browse/SPARK-55649) Promote `Kubernetes(Driver|Executor)?FeatureConfigStep` traits to `Stable`
@@ -462,7 +443,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 
 ### Connectors
 - [[SPARK-53469]](https://issues.apache.org/jira/browse/SPARK-53469) Ability to cleanup shuffle generated from SQL executed in thrift server
-- [[SPARK-55062]](https://issues.apache.org/jira/browse/SPARK-55062) from_protobuf and to_protobuf do not support proto2 extensions
 - [[SPARK-55928]](https://issues.apache.org/jira/browse/SPARK-55928) New linter for config effectiveness in views, UDFs and procedures
 
 ### Build and Infrastructure
@@ -479,7 +459,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56834]](https://issues.apache.org/jira/browse/SPARK-56834) Use Java `25-jre` instead of `21-jre` image in K8s Dockerfile
 - **Remove pre-built test JAR and class files from the repository** ([[SPARK-56352]](https://issues.apache.org/jira/browse/SPARK-56352))
 - **Share compile artifact across CI jobs** ([[SPARK-56830]](https://issues.apache.org/jira/browse/SPARK-56830))
-- [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enable checksum based indeterminate shuffle retry by default
 
 ### Version upgrade of Java and Scala libraries
 
