@@ -18,24 +18,19 @@ To download Apache Spark 4.2.0, visit the <a href="{{site.baseurl}}/downloads.ht
 You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql=project%20%3D%20SPARK%20AND%20fixVersion%20%3D%204.2.0">detailed changes</a>.
 
 ### Highlights
-- [[SPARK-55139]](https://issues.apache.org/jira/browse/SPARK-55139) Support Pandas 3 (39 commits)
 - [[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760) Spark Web UI Modernization (39 commits)
 - [[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555) Support heterogeneous K8s executor management (19 commits)
 - [[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658) SPIP: Add geospatial types in Spark (16 commits)
-- [[SPARK-54955]](https://issues.apache.org/jira/browse/SPARK-54955) Pandas UDF with PyArrow Backend (15 commits)
 - [[SPARK-56603]](https://issues.apache.org/jira/browse/SPARK-56603) Improve K8s Resource Manager API (14 commits)
-- [[SPARK-55227]](https://issues.apache.org/jira/browse/SPARK-55227) RDD API compatibility (11 commits)
 - [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (10 commits)
 - [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (10 commits)
 - [[SPARK-56249]](https://issues.apache.org/jira/browse/SPARK-56249) Auto CDC support (9 commits)
-- [[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156) Add missing parameters for Pandas API on Spark (8 commits)
 - [[SPARK-55400]](https://issues.apache.org/jira/browse/SPARK-55400) Reduce K8s control plane overhead (6 commits)
 - [[SPARK-55556]](https://issues.apache.org/jira/browse/SPARK-55556) Improve Web Security (5 commits)
 - [[SPARK-54274]](https://issues.apache.org/jira/browse/SPARK-54274) Support `MERGE INTO` Schema Evolution (4 commits)
-- [[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806) Search path support (4 commits)
 - [[SPARK-56287]](https://issues.apache.org/jira/browse/SPARK-56287) Improve Spark History Server Scalability (4 commits)
 - [[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119) Metrics & semantic modeling in Spark (3 commits)
-- [[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159) Extract Arrow batch transformers from serializers for better composability (3 commits)
+- [[SPARK-56395]](https://issues.apache.org/jira/browse/SPARK-56395) SPIP: NEAREST BY Top-K Ranking Join
 
 ### Spark Core
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
