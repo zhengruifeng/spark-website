@@ -20,7 +20,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 ### Highlights
 - [[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760) Spark Web UI Modernization (37 commits)
 - [[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555) Support heterogeneous K8s executor management (17 commits)
-- [[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658) SPIP: Add geospatial types in Spark (15 commits)
+- [[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658) SPIP: Add geospatial types in Spark (16 commits)
 - [[SPARK-56603]](https://issues.apache.org/jira/browse/SPARK-56603) Improve K8s Resource Manager API (14 commits)
 - [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (10 commits)
 - [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (10 commits)
@@ -62,6 +62,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55790]](https://issues.apache.org/jira/browse/SPARK-55790) Build a complete SRS registry using PROJ 9.7.1 data
   - [[SPARK-56682]](https://issues.apache.org/jira/browse/SPARK-56682) Extend the ST_AsBinary function to take an optional endianness
   - [[SPARK-56771]](https://issues.apache.org/jira/browse/SPARK-56771) Enable `spark.sql.geospatial.enabled` by default
+  - [[SPARK-57083]](https://issues.apache.org/jira/browse/SPARK-57083) Preserve geography SRID across encoders, Parquet readers, and Python conversion
 - **Improve JDBC example and test coverage** ([[SPARK-55581]](https://issues.apache.org/jira/browse/SPARK-55581))
 - **Search path support** ([[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806))
   - [[SPARK-54807]](https://issues.apache.org/jira/browse/SPARK-54807) Support SYSTEM.BUILTIN and SYSTEM.SESSION for function resolution
