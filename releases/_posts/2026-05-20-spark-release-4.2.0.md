@@ -18,24 +18,24 @@ To download Apache Spark 4.2.0, visit the <a href="{{site.baseurl}}/downloads.ht
 You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql=project%20%3D%20SPARK%20AND%20fixVersion%20%3D%204.2.0">detailed changes</a>.
 
 ### Highlights
-- [[SPARK-55139]](https://issues.apache.org/jira/browse/SPARK-55139) Support Pandas 3 (45 commits)
+- [[SPARK-55139]](https://issues.apache.org/jira/browse/SPARK-55139) Support Pandas 3 (39 commits)
 - [[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760) Spark Web UI Modernization (39 commits)
 - [[SPARK-55555]](https://issues.apache.org/jira/browse/SPARK-55555) Support heterogeneous K8s executor management (19 commits)
 - [[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658) SPIP: Add geospatial types in Spark (16 commits)
 - [[SPARK-54955]](https://issues.apache.org/jira/browse/SPARK-54955) Pandas UDF with PyArrow Backend (15 commits)
 - [[SPARK-56603]](https://issues.apache.org/jira/browse/SPARK-56603) Improve K8s Resource Manager API (14 commits)
-- [[SPARK-55227]](https://issues.apache.org/jira/browse/SPARK-55227) RDD API compatibility (13 commits)
-- [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (12 commits)
+- [[SPARK-55227]](https://issues.apache.org/jira/browse/SPARK-55227) RDD API compatibility (11 commits)
 - [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (10 commits)
+- [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (10 commits)
 - [[SPARK-56249]](https://issues.apache.org/jira/browse/SPARK-56249) Auto CDC support (9 commits)
 - [[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156) Add missing parameters for Pandas API on Spark (8 commits)
 - [[SPARK-55400]](https://issues.apache.org/jira/browse/SPARK-55400) Reduce K8s control plane overhead (6 commits)
 - [[SPARK-55556]](https://issues.apache.org/jira/browse/SPARK-55556) Improve Web Security (5 commits)
-- [[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119) Metrics & semantic modeling in Spark (4 commits)
 - [[SPARK-54274]](https://issues.apache.org/jira/browse/SPARK-54274) Support `MERGE INTO` Schema Evolution (4 commits)
 - [[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806) Search path support (4 commits)
 - [[SPARK-56287]](https://issues.apache.org/jira/browse/SPARK-56287) Improve Spark History Server Scalability (4 commits)
-- [[SPARK-55689]](https://issues.apache.org/jira/browse/SPARK-55689) Support schema evolution in DSv2 INSERTs (4 commits)
+- [[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119) Metrics & semantic modeling in Spark (3 commits)
+- [[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159) Extract Arrow batch transformers from serializers for better composability (3 commits)
 
 ### Spark Core
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
@@ -68,13 +68,13 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 ### SQL Foundation
 - **Improve JDBC example and test coverage** ([[SPARK-55581]](https://issues.apache.org/jira/browse/SPARK-55581))
 - **SPIP: Add geospatial types in Spark** ([[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658))
-  - [[SPARK-56771]](https://issues.apache.org/jira/browse/SPARK-56771) Enable `spark.sql.geospatial.enabled` by default
   - [[SPARK-55238]](https://issues.apache.org/jira/browse/SPARK-55238) Move the SRS mapping Java classes to sql/api/src/main/java
   - [[SPARK-55259]](https://issues.apache.org/jira/browse/SPARK-55259) Implement Parquet schema conversion for Geo types
   - [[SPARK-55260]](https://issues.apache.org/jira/browse/SPARK-55260) Implement Parquet write support for Geo types
   - [[SPARK-55261]](https://issues.apache.org/jira/browse/SPARK-55261) Implement Parquet read support for Geo types
   - [[SPARK-55262]](https://issues.apache.org/jira/browse/SPARK-55262) Block Geo types in all file based data sources except Parquet
   - [[SPARK-55541]](https://issues.apache.org/jira/browse/SPARK-55541) Support Geometry and Geography in catalyst type converters
+  - [[SPARK-56771]](https://issues.apache.org/jira/browse/SPARK-56771) Enable `spark.sql.geospatial.enabled` by default
 - **Change Data Capture (CDC) Support** ([[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668))
   - [[SPARK-55948]](https://issues.apache.org/jira/browse/SPARK-55948) Add DSv2 CDC connector API, analyzer resolution, and SQL CHANGES clause
   - [[SPARK-55952]](https://issues.apache.org/jira/browse/SPARK-55952) Post Process for CDC batch query: drop carry-overs
@@ -119,7 +119,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-53652]](https://issues.apache.org/jira/browse/SPARK-53652) Codegen For MergeRowExec
   - [[SPARK-56524]](https://issues.apache.org/jira/browse/SPARK-56524) UPDATE Operation Metrics
 - [[SPARK-31561]](https://issues.apache.org/jira/browse/SPARK-31561) Add QUALIFY Clause
-- [[SPARK-36082]](https://issues.apache.org/jira/browse/SPARK-36082) when the right side is small enough to use SingleColumn Null Aware Anti Join
+- [[SPARK-43752]](https://issues.apache.org/jira/browse/SPARK-43752) default column value should support v2 write commands
 - [[SPARK-44571]](https://issues.apache.org/jira/browse/SPARK-44571) Eliminate the Join by combine multiple Aggregates
 - [[SPARK-46830]](https://issues.apache.org/jira/browse/SPARK-46830) Introducing collation concept into Spark
 - [[SPARK-47672]](https://issues.apache.org/jira/browse/SPARK-47672) Avoid double evaluation of non-trivial projected elements from filter pushdown
@@ -161,7 +161,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55039]](https://issues.apache.org/jira/browse/SPARK-55039) Add IDENTIFIED BY syntax for naming streaming sources
 - [[SPARK-55054]](https://issues.apache.org/jira/browse/SPARK-55054) Add IDENTIFIED BY support for streaming table-valued functions
 - [[SPARK-55057]](https://issues.apache.org/jira/browse/SPARK-55057) Add streaming source naming infrastructure and resolution pipeline
-- [[SPARK-55155]](https://issues.apache.org/jira/browse/SPARK-55155) Support foldable expression for SET CATALOG
 - [[SPARK-55256]](https://issues.apache.org/jira/browse/SPARK-55256) [SQL] Support IGNORE NULLS / RESPECT NULLS for array_agg and collect_list
 - [[SPARK-55304]](https://issues.apache.org/jira/browse/SPARK-55304) Introduce Admission Control and Trigger.AvailableNow into Python Data Source - reader
 - [[SPARK-55322]](https://issues.apache.org/jira/browse/SPARK-55322) Add Overload for MaxBy / MinBy with k > 1
@@ -182,7 +181,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55729]](https://issues.apache.org/jira/browse/SPARK-55729) Support state format v4 of stream-stream join in state data source (reader)
 - [[SPARK-55855]](https://issues.apache.org/jira/browse/SPARK-55855) Add foundations for the DSv2 Transaction API
 - [[SPARK-55857]](https://issues.apache.org/jira/browse/SPARK-55857) [SQL] Support ignoreMissingFiles when inferring schema during schema evolution
-- [[SPARK-55978]](https://issues.apache.org/jira/browse/SPARK-55978) [Improvement] Block/Split Sampling SQL Augmentation
+- [[SPARK-55964]](https://issues.apache.org/jira/browse/SPARK-55964) By default, prevent shadowing of system schemas
 - [[SPARK-55995]](https://issues.apache.org/jira/browse/SPARK-55995) Support TIMESTAMP WITH LOCAL TIME ZONE in SQL syntax
 - [[SPARK-55999]](https://issues.apache.org/jira/browse/SPARK-55999) Enable `spark.sql.streaming.stateStore.forceSnapshotUploadOnLag` by default
 - [[SPARK-56001]](https://issues.apache.org/jira/browse/SPARK-56001) Recognizing the existence of the SQL Syntax REPLACE ON/USING for SQL INSERT statements in the Parser
@@ -205,8 +204,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56605]](https://issues.apache.org/jira/browse/SPARK-56605) Wire resolution engine to use SQL PATH for table, function, and variable lookup
 - [[SPARK-56677]](https://issues.apache.org/jira/browse/SPARK-56677) Propagate filter conditions through Join nodes in PlanMerger
 - [[SPARK-56680]](https://issues.apache.org/jira/browse/SPARK-56680) DSv2 INSERT Operation Metrics
-- [[SPARK-56700]](https://issues.apache.org/jira/browse/SPARK-56700) Remove package protection on .name() API
-- [[SPARK-56883]](https://issues.apache.org/jira/browse/SPARK-56883) Improve DESCRIBE FUNCTION for SQL UDF
 
 ### Spark Connect
 - **Fix broken tests in Spark Connect 4.0 client <> master server** ([[SPARK-54477]](https://issues.apache.org/jira/browse/SPARK-54477))
@@ -230,7 +227,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55691]](https://issues.apache.org/jira/browse/SPARK-55691) [CONNECT] Client-side implementation of GetStatus API
 - [[SPARK-56284]](https://issues.apache.org/jira/browse/SPARK-56284) Key worker abstraction for language-agnostic UDF protocol
 - [[SPARK-56395]](https://issues.apache.org/jira/browse/SPARK-56395) SPIP: NEAREST BY Top-K Ranking Join
-- [[SPARK-56614]](https://issues.apache.org/jira/browse/SPARK-56614) Add config for strict DataFrame column resolution
 
 ### PySpark
 - **Monitor behaviour changes from upstream** ([[SPARK-54936]](https://issues.apache.org/jira/browse/SPARK-54936))
@@ -251,14 +247,13 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55465]](https://issues.apache.org/jira/browse/SPARK-55465) Support GeometryType in convert_numpy
 - **Polish type annotations for pyspark** ([[SPARK-56223]](https://issues.apache.org/jira/browse/SPARK-56223))
 - **Refactor PySpark Serializers** ([[SPARK-55384]](https://issues.apache.org/jira/browse/SPARK-55384))
+- **Python worker logging infrastructure** ([[SPARK-53754]](https://issues.apache.org/jira/browse/SPARK-53754))
 - **RDD API compatibility** ([[SPARK-55227]](https://issues.apache.org/jira/browse/SPARK-55227))
   - [[SPARK-55090]](https://issues.apache.org/jira/browse/SPARK-55090) Implement DataFrame.toJSON in Python Client
   - [[SPARK-55229]](https://issues.apache.org/jira/browse/SPARK-55229) Implement DataFrame.zipWithIndex in PySpark Classic
-  - [[SPARK-56253]](https://issues.apache.org/jira/browse/SPARK-56253) Make spark.read.json accept DataFrame input
   - [[SPARK-56255]](https://issues.apache.org/jira/browse/SPARK-56255) Make spark.read.csv accept DataFrame input
   - [[SPARK-56256]](https://issues.apache.org/jira/browse/SPARK-56256) Implement SparkSession.emptyDataFrame in Python
   - [[SPARK-55249]](https://issues.apache.org/jira/browse/SPARK-55249) Make DataFrame.toJSON able to return dataframe
-- **Python worker logging infrastructure** ([[SPARK-53754]](https://issues.apache.org/jira/browse/SPARK-53754))
 - **Improve test coverage on pyspark** ([[SPARK-54453]](https://issues.apache.org/jira/browse/SPARK-54453))
 - **Extract Arrow batch transformers from serializers for better composability** ([[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159))
   - [[SPARK-55168]](https://issues.apache.org/jira/browse/SPARK-55168) Refactor GroupArrowUDFSerializer to use ArrowBatchTransformer.flatten_struct
@@ -271,7 +266,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56310]](https://issues.apache.org/jira/browse/SPARK-56310) Handle pandas 3 string dtype in DataFrame.toPandas
 - [[SPARK-53615]](https://issues.apache.org/jira/browse/SPARK-53615) Introduce iterator API for arrow grouped agg UDF
 - [[SPARK-53616]](https://issues.apache.org/jira/browse/SPARK-53616) Introduce iterator API for pandas grouped agg UDF
-- [[SPARK-54179]](https://issues.apache.org/jira/browse/SPARK-54179) Add Native Support for Apache Tuple Sketches
 - [[SPARK-54337]](https://issues.apache.org/jira/browse/SPARK-54337) Expose __dataframe__ interchange protocol on pyspark RDD, SQL DataFrame, and pandas DataFrame APIs
 - [[SPARK-54555]](https://issues.apache.org/jira/browse/SPARK-54555) Enable Arrow-optimized Python UDFs by default
 - [[SPARK-54572]](https://issues.apache.org/jira/browse/SPARK-54572) Support VSCode breakpoint for development
@@ -289,7 +283,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55179]](https://issues.apache.org/jira/browse/SPARK-55179) Skip eager column name validation in df.col_name
 - [[SPARK-55610]](https://issues.apache.org/jira/browse/SPARK-55610) Introduce getExecutorInfos to SparkStatusTracker in PySpark
 - [[SPARK-55788]](https://issues.apache.org/jira/browse/SPARK-55788) Support ExtensionDType for integers in Pandas UDF
-- [[SPARK-56186]](https://issues.apache.org/jira/browse/SPARK-56186) Retire pypy
 - [[SPARK-56322]](https://issues.apache.org/jira/browse/SPARK-56322) [CONNECT][PYTHON] Self-joining an observed DataFrame raises TypeError in observations property
 - [[SPARK-56463]](https://issues.apache.org/jira/browse/SPARK-56463) Disallow unpickling UDT
 - [[SPARK-56518]](https://issues.apache.org/jira/browse/SPARK-56518) Fix test_function_parity testcase
@@ -310,16 +303,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55901]](https://issues.apache.org/jira/browse/SPARK-55901) Raise an error from Series.replace() with no arguments
   - [[SPARK-56016]](https://issues.apache.org/jira/browse/SPARK-56016) Preserve named Series columns in concat with ignore_index on pandas 3
   - [[SPARK-56219]](https://issues.apache.org/jira/browse/SPARK-56219) Align groupby idxmax and idxmin skipna=False behavior with pandas 2/3
-  - [[SPARK-55700]](https://issues.apache.org/jira/browse/SPARK-55700) Fix handling integer keys on Series with non-integer index
-  - [[SPARK-56060]](https://issues.apache.org/jira/browse/SPARK-56060) Handle pandas 3 null string conversion in describe() for empty timestamp frames
-  - [[SPARK-56080]](https://issues.apache.org/jira/browse/SPARK-56080) Align Series.argmax/argmin with pandas 3.0 NA handling
-  - [[SPARK-56081]](https://issues.apache.org/jira/browse/SPARK-56081) Align idxmax and idxmin NA handling with pandas 3
-  - [[SPARK-56113]](https://issues.apache.org/jira/browse/SPARK-56113) Improve pandas 3 string restoration in pandas-on-Spark
-  - [[SPARK-56118]](https://issues.apache.org/jira/browse/SPARK-56118) Match pandas 3.0 bool handling in GroupBy.quantile
-  - [[SPARK-56122]](https://issues.apache.org/jira/browse/SPARK-56122) Use pandas-aware numeric dtype check in Series.cov
-  - [[SPARK-56167]](https://issues.apache.org/jira/browse/SPARK-56167) Align astype with pandas 3 default string behavior
-  - [[SPARK-56187]](https://issues.apache.org/jira/browse/SPARK-56187) Fix Series.argsort null ordering for pandas 3
-  - [[SPARK-56188]](https://issues.apache.org/jira/browse/SPARK-56188) Align Series.map({}) with pandas 3 empty-dict behavior
   - [[SPARK-56245]](https://issues.apache.org/jira/browse/SPARK-56245) Fix DataFrame.eval inplace assignment on pandas 3
   - [[SPARK-55140]](https://issues.apache.org/jira/browse/SPARK-55140) Do not convert builtin functions for pandas 3 anymore
   - [[SPARK-55154]](https://issues.apache.org/jira/browse/SPARK-55154) Remove fastpath to pd.Series
@@ -330,9 +313,19 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55409]](https://issues.apache.org/jira/browse/SPARK-55409) Handle an unexpected keyword argument error from read_excel with pandas 3
   - [[SPARK-55472]](https://issues.apache.org/jira/browse/SPARK-55472) Raise AttributeError from methods removed in pandas 3
   - [[SPARK-55625]](https://issues.apache.org/jira/browse/SPARK-55625) Fix StringOps to make `str` dtype work properly
+  - [[SPARK-55700]](https://issues.apache.org/jira/browse/SPARK-55700) Fix handling integer keys on Series with non-integer index
   - [[SPARK-55843]](https://issues.apache.org/jira/browse/SPARK-55843) Handle the unit of datetime64 and timedelta64 dtypes
   - [[SPARK-55946]](https://issues.apache.org/jira/browse/SPARK-55946) Set up __pandas_priority__ so mixed binary ops dispatch correctly to pandas-on-Spark
   - [[SPARK-55989]](https://issues.apache.org/jira/browse/SPARK-55989) Preserve non-int64 index dtypes in `restore_index`
+  - [[SPARK-56060]](https://issues.apache.org/jira/browse/SPARK-56060) Handle pandas 3 null string conversion in describe() for empty timestamp frames
+  - [[SPARK-56080]](https://issues.apache.org/jira/browse/SPARK-56080) Align Series.argmax/argmin with pandas 3.0 NA handling
+  - [[SPARK-56081]](https://issues.apache.org/jira/browse/SPARK-56081) Align idxmax and idxmin NA handling with pandas 3
+  - [[SPARK-56113]](https://issues.apache.org/jira/browse/SPARK-56113) Improve pandas 3 string restoration in pandas-on-Spark
+  - [[SPARK-56118]](https://issues.apache.org/jira/browse/SPARK-56118) Match pandas 3.0 bool handling in GroupBy.quantile
+  - [[SPARK-56122]](https://issues.apache.org/jira/browse/SPARK-56122) Use pandas-aware numeric dtype check in Series.cov
+  - [[SPARK-56167]](https://issues.apache.org/jira/browse/SPARK-56167) Align astype with pandas 3 default string behavior
+  - [[SPARK-56187]](https://issues.apache.org/jira/browse/SPARK-56187) Fix Series.argsort null ordering for pandas 3
+  - [[SPARK-56188]](https://issues.apache.org/jira/browse/SPARK-56188) Align Series.map({}) with pandas 3 empty-dict behavior
   - [[SPARK-56226]](https://issues.apache.org/jira/browse/SPARK-56226) Catch analysis errors before `InternalFrame.__init__` in `.loc`
 - **Add missing parameters for Pandas API on Spark** ([[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156))
   - [[SPARK-46162]](https://issues.apache.org/jira/browse/SPARK-46162) Improve axis parameter for DataFrame.nunique to support columns
@@ -386,13 +379,13 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 
 ### Geospatial
 - **SPIP: Add geospatial types in Spark** ([[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658))
-  - [[SPARK-56682]](https://issues.apache.org/jira/browse/SPARK-56682) Extend the ST_AsBinary function to take an optional endianness
   - [[SPARK-55295]](https://issues.apache.org/jira/browse/SPARK-55295) Extend the ST_GeomFromWKB function to take an optional SRID value
   - [[SPARK-55339]](https://issues.apache.org/jira/browse/SPARK-55339) Implement WKT writer for Geo objects
   - [[SPARK-55449]](https://issues.apache.org/jira/browse/SPARK-55449) Enable WKB parsing and writing for Geography
   - [[SPARK-55530]](https://issues.apache.org/jira/browse/SPARK-55530) Support Geo result sets in Hive and Thrift server
   - [[SPARK-55539]](https://issues.apache.org/jira/browse/SPARK-55539) Allow casting from GeometryType to GeographyType
   - [[SPARK-55640]](https://issues.apache.org/jira/browse/SPARK-55640) Propagate WKB parsing errors for Geometry and Geography
+  - [[SPARK-56682]](https://issues.apache.org/jira/browse/SPARK-56682) Extend the ST_AsBinary function to take an optional endianness
 
 ### Web UI
 - **Spark Web UI Modernization** ([[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760))
@@ -404,12 +397,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55961]](https://issues.apache.org/jira/browse/SPARK-55961) Make SQL plan viz side panel collapsible to avoid overlapping with the plan graph
   - [[SPARK-55971]](https://issues.apache.org/jira/browse/SPARK-55971) Add Jobs table section to SQL execution detail page
   - [[SPARK-56002]](https://issues.apache.org/jira/browse/SPARK-56002) Make SQL plan visualization metrics table sortable
-  - [[SPARK-56792]](https://issues.apache.org/jira/browse/SPARK-56792) Support pan and zoom for SQL plan visualization
-  - [[SPARK-56799]](https://issues.apache.org/jira/browse/SPARK-56799) Search and highlight nodes in SQL plan visualization
-  - [[SPARK-56809]](https://issues.apache.org/jira/browse/SPARK-56809) Show description on SQL execution detail page
-  - [[SPARK-55839]](https://issues.apache.org/jira/browse/SPARK-55839) Add export config button to Environment page
-  - [[SPARK-56048]](https://issues.apache.org/jira/browse/SPARK-56048) Add copy plan text and share link buttons to SQL execution detail page
-  - [[SPARK-56049]](https://issues.apache.org/jira/browse/SPARK-56049) Add search/filter for metrics in SQL plan visualization side panel
   - [[SPARK-55764]](https://issues.apache.org/jira/browse/SPARK-55764) Use delegated event listener for Bootstrap 5 Tooltip lazy initialization
   - [[SPARK-55766]](https://issues.apache.org/jira/browse/SPARK-55766) Support dark mode using Bootstrap 5 CSS custom properties
   - [[SPARK-55767]](https://issues.apache.org/jira/browse/SPARK-55767) Use Bootstrap 5 Offcanvas for detail panels on Environment/Executor pages
@@ -421,15 +408,21 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55810]](https://issues.apache.org/jira/browse/SPARK-55810) Missing space between button and table
   - [[SPARK-55834]](https://issues.apache.org/jira/browse/SPARK-55834) Use tabbed layout for Environment page sections
   - [[SPARK-55837]](https://issues.apache.org/jira/browse/SPARK-55837) Render Environment page tables client-side via REST API
+  - [[SPARK-55839]](https://issues.apache.org/jira/browse/SPARK-55839) Add export config button to Environment page
   - [[SPARK-55863]](https://issues.apache.org/jira/browse/SPARK-55863) Add footer to Spark Web UI with user, version, and uptime
   - [[SPARK-55875]](https://issues.apache.org/jira/browse/SPARK-55875) Switch SQL tab query listing to client-side DataTables
   - [[SPARK-55927]](https://issues.apache.org/jira/browse/SPARK-55927) Remove `jquery.mustache.js`
   - [[SPARK-55985]](https://issues.apache.org/jira/browse/SPARK-55985) Remove `jquery.blockUI.min.js`
+  - [[SPARK-56048]](https://issues.apache.org/jira/browse/SPARK-56048) Add copy plan text and share link buttons to SQL execution detail page
+  - [[SPARK-56049]](https://issues.apache.org/jira/browse/SPARK-56049) Add search/filter for metrics in SQL plan visualization side panel
   - [[SPARK-56143]](https://issues.apache.org/jira/browse/SPARK-56143) Remove `jquery.cookies`
   - [[SPARK-56239]](https://issues.apache.org/jira/browse/SPARK-56239) Fix SQL tab client-side DataTables: default API limit, date format, and appId resolution
   - [[SPARK-56259]](https://issues.apache.org/jira/browse/SPARK-56259) Fix SHS application list table header/data column mismatch
   - [[SPARK-56331]](https://issues.apache.org/jira/browse/SPARK-56331) Truncate long node labels in SQL plan visualization
   - [[SPARK-56354]](https://issues.apache.org/jira/browse/SPARK-56354) Lazy-load vis-timeline resources only on pages that use timeline views
+  - [[SPARK-56792]](https://issues.apache.org/jira/browse/SPARK-56792) Support pan and zoom for SQL plan visualization
+  - [[SPARK-56799]](https://issues.apache.org/jira/browse/SPARK-56799) Search and highlight nodes in SQL plan visualization
+  - [[SPARK-56809]](https://issues.apache.org/jira/browse/SPARK-56809) Show description on SQL execution detail page
   - [[SPARK-56811]](https://issues.apache.org/jira/browse/SPARK-56811) Restore sub-execution grouping on SQL tab listing
 - **Improve Web Security** ([[SPARK-55556]](https://issues.apache.org/jira/browse/SPARK-55556))
   - [[SPARK-55193]](https://issues.apache.org/jira/browse/SPARK-55193) Use CompressionHandler as a replacement for the deprecated GzipHandler in JettyUtils
@@ -497,16 +490,13 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55678]](https://issues.apache.org/jira/browse/SPARK-55678) Add daily test for Java 25
 - [[SPARK-54830]](https://issues.apache.org/jira/browse/SPARK-54830) Enable checksum based indeterminate shuffle retry by default
 - [[SPARK-55278]](https://issues.apache.org/jira/browse/SPARK-55278) SPIP: Language-agnostic UDF Protocol for Spark
-- [[SPARK-56395]](https://issues.apache.org/jira/browse/SPARK-56395) SPIP: NEAREST BY Top-K Ranking Join
 
 ### Version upgrade of Java and Scala libraries
 
-| Library Name | Version Change |
-| :------------------------------- | :------------------ |
-| HdrHistogram | -> 2.1.12 (NEW) |
+| Library | Change |
+|---|---|
 | RoaringBitmap | 1.3.0 -> 1.6.10 |
 | aircompressor | 2.0.2 -> 2.0.3 |
-| aliyun-java-core | -> 0.2.11-beta (NEW) |
 | aliyun-sdk-oss | 3.13.2 -> 3.18.1 |
 | analyticsaccelerator-s3 | 1.3.0 -> 1.3.1 |
 | arpack | 3.0.4 -> 3.2.0 |
@@ -524,8 +514,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | commons-lang3 | 3.19.0 -> 3.20.0 |
 | commons-text | 1.14.0 -> 1.15.0 |
 | compress-lzf | 1.1.2 -> 1.2.0 |
-| dom4j | -> 2.1.4 (NEW) |
-| gcs-connector | hadoop3-2.2.28 -> REMOVED |
 | gson | 2.11.0 -> 2.13.2 |
 | guava | 33.4.8-jre -> 33.6.0-jre |
 | hadoop-aliyun | 3.4.2 -> 3.5.0 |
@@ -536,7 +524,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | hadoop-client-api | 3.4.2 -> 3.5.0 |
 | hadoop-client-runtime | 3.4.2 -> 3.5.0 |
 | hadoop-cloud-storage | 3.4.2 -> 3.5.0 |
-| hadoop-gcp | -> 3.5.0 (NEW) |
 | hadoop-huaweicloud | 3.4.2 -> 3.5.0 |
 | hadoop-shaded-guava | 1.4.0 -> 1.5.0 |
 | icu4j | 77.1 -> 78.3 |
@@ -551,7 +538,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | jakarta.servlet-api | 5.0.0 -> 6.0.0 |
 | jakarta.ws.rs-api | 3.0.0 -> 3.1.0 |
 | jakarta.xml.bind-api | 4.0.2 -> 4.0.5 |
-| java-trace-api | -> 0.2.11-beta (NEW) |
 | jaxb-core | 4.0.5 -> 4.0.6 |
 | jaxb-runtime | 4.0.5 -> 4.0.6 |
 | jdom2 | 2.0.6 -> 2.0.6.1 |
@@ -561,8 +547,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | jersey-container-servlet-core | 3.0.18 -> 3.1.11 |
 | jersey-hk2 | 3.0.18 -> 3.1.11 |
 | jersey-server | 3.0.18 -> 3.1.11 |
-| jetty-util | 11.0.26 -> REMOVED |
-| jetty-util-ajax | 11.0.26 -> REMOVED |
 | jjwt-api | 0.12.6 -> 0.13.0 |
 | jjwt-impl | 0.12.6 -> 0.13.0 |
 | jjwt-jackson | 0.12.6 -> 0.13.0 |
@@ -603,15 +587,10 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | netty-buffer | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec-base | 4.2.7.Final -> 4.2.13.Final |
-| netty-codec-classes-quic | 4.2.7.Final -> REMOVED |
 | netty-codec-compression | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec-dns | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec-http | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec-http2 | 4.2.7.Final -> 4.2.13.Final |
-| netty-codec-http3 | 4.2.7.Final -> REMOVED |
-| netty-codec-marshalling | 4.2.7.Final -> REMOVED |
-| netty-codec-native-quic | 4.2.7.Final -> REMOVED |
-| netty-codec-protobuf | 4.2.7.Final -> REMOVED |
 | netty-codec-socks | 4.2.7.Final -> 4.2.13.Final |
 | netty-common | 4.2.7.Final -> 4.2.13.Final |
 | netty-handler | 4.2.7.Final -> 4.2.13.Final |
@@ -622,15 +601,11 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | netty-tcnative-classes | 2.0.74.Final -> 2.0.76.Final |
 | netty-transport | 4.2.7.Final -> 4.2.13.Final |
 | netty-transport-classes-epoll | 4.2.7.Final -> 4.2.13.Final |
-| netty-transport-classes-io_uring | 4.2.7.Final -> REMOVED |
 | netty-transport-classes-kqueue | 4.2.7.Final -> 4.2.13.Final |
 | netty-transport-native-epoll | 4.2.7.Final -> 4.2.13.Final |
-| netty-transport-native-io_uring | 4.2.7.Final -> REMOVED |
 | netty-transport-native-kqueue | 4.2.7.Final -> 4.2.13.Final |
 | netty-transport-native-unix-common | 4.2.7.Final -> 4.2.13.Final |
 | objenesis | 3.4 -> 3.5 |
-| opentelemetry-api | -> 1.49.0 (NEW) |
-| opentelemetry-context | -> 1.49.0 (NEW) |
 | orc-core | 2.2.1 -> 2.3.0 |
 | orc-mapreduce | 2.2.1 -> 2.3.0 |
 | orc-shims | 2.2.1 -> 2.3.0 |
@@ -640,7 +615,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | parquet-format-structures | 1.16.0 -> 1.17.0 |
 | parquet-hadoop | 1.16.0 -> 1.17.0 |
 | parquet-jackson | 1.16.0 -> 1.17.0 |
-| reactive-streams | -> 1.0.3 (NEW) |
 | scala-compiler | 2.13.17 -> 2.13.18 |
 | scala-library | 2.13.17 -> 2.13.18 |
 | scala-reflect | 2.13.17 -> 2.13.18 |
@@ -649,11 +623,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | tink | 1.16.0 -> 1.20.0 |
 | vertx-auth-common | 4.5.14 -> 4.5.26 |
 | vertx-core | 4.5.14 -> 4.5.26 |
-| vertx-uri-template | -> 4.5.26 (NEW) |
 | vertx-web-client | 4.5.14 -> 4.5.26 |
 | vertx-web-common | 4.5.14 -> 4.5.26 |
-| volcano-client | -> 7.6.1 (NEW) |
-| volcano-model | -> 7.6.1 (NEW) |
 | xbean-asm9-shaded | 4.28 -> 4.30 |
 | xz | 1.10 -> 1.12 |
 | zjsonpatch | 7.4.0 -> 7.6.1 |
@@ -663,4 +634,4 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 
 ### Credits
 
-Last but not least, this release would not have been possible without the following contributors: AbinayaJayaprakasam, Adam Binford, Adithya Ajith, Aditya Nambiar, Akash Nayar, Alex Khakhlyuk, Allison Wang, Amanda Liu, Anastasiia Terenteva, Andreas Chatzistergiou, Andreas Neumann, Angerszhuuuu, AnishMahto, Anshul Baliga, Anton Lykov, Anton Okolnychyi, Antonio Blanco, Anupam Yadav, Ashrith Bandla, Asif, Attila Zsolt Piros, Babatunde Micheal Okutubo, Biruk Tesfaye, Bjørn Jørgensen, Bo Zhang, Bobby Wang, Boyang Jerry Peng, Brooks Walls, Burak Yavuz, Canadian Data Guy, Celeste Horgan, Chang Chen, Chao Sun, Chen Wang, Cheng Pan, Chhida, Chirag Singh, Chloe Xia, Chris Boumalhab, ChuckLin2025, CuiYanxiang, DB Tsai, DS, Daniel Tenedorio, David, David Milicevic, David Tagatac, Deninelu, Devin Petersohn, Dhruv, Dilip Biswal, Dima Fedoriaka, Dmytro Fedoriaka, Dongjoon Hyun, Dylan Wong, Dzeri96, Eren Avsarogullari, Eric Marnadi, Eric Yang, Eugen, Fangchen Li, Felipe Pessoto, Felix, Filip Davidovic, Fu Chen, Garland Zhang, Gengliang Wang, Gera Shegalov, Gurpreet Nanda, Haiyang Sun, Harsh Motwani, Helios He, Herman van Hovell, Holden Karau, Hongze Zhang, Huanli Wang, Hyukjin Kwon, Ivan Sadikov, Jacek Laskowski, Jacky Wang, Jahnavi Nelavelli, James Willis, Jarek Potiuk, Jason Teoh, Jerry Zheng, JiaKe, Jiaan Geng, Jiang Xingbo, Jim Halfpenny, Jiwon Park, Johan Lasperas, John Xu, John Zhuge, Jon Mio, Jonathan Chang, Joon Ro, Judyzzz, Juliusz Sompolski, Jungtaek Lim, Junyu Chen, KAZUYUKI TANIMURA, Karthik Prabhakar, Karuppayya, Kavpreet Grewal, Kelvin Jiang, Kent Yao, Kiyeon Jeon, Kousuke Saruta, Kris Mok, Kristin Cowalcijk, Leon Windheuser, Liang-Chi Hsieh, Linhong Liu, Livia Zhu, Luca Canali, Manu Zhang, Marcin Wojtyczka, Marco Gaido, Mark Jarvin, Mark Molinaro, Marko Ilić, Martin Grund, Matt Zhang, Mihailo Aleksic, Mihailo Timotic, Mikhail NIkoliukin, Milan Dankovic, Mingliang Zhu, Nicholas Chew, Nikolina Vraneš, Nishanth28, Pablo Langa, Parth Chandra, Pavle Martinovic, Petar Nikić, Peter Toth, Pranav Dev, Pratham Manja, Puneet Dixit, Qiegang Long, Rahul Sharma, Rishbha, Rito Takeuchi, Robert Dillitz, Ruifeng Zheng, Sahil Kumar Singh, Sandro Sp, Sandy Ryza, Serge Rielau, Shilong Duan, Shrirang Mhalgi, Shuai Lu, Shubhambhusate, Shujing Yang, Simola Nayak, Siying Dong, Stanley Yao, Stefan Kandic, Stefan Savić, Steven Tran, Stevo Mitric, Sven Weber, Szehon Ho, Takuya UESHIN, Tengfei Huang, Thang Long Vu, Tian Gao, Tim Lee, TongWei, Uros Bojanic, Uros Stankovic, VINDHYA G BHAT, Vinod KC, Vlad Rozov, Vladan Vasić, Vladimir Golubev, WHJian, Wei Liu, WeichenXu, Wenchen Fan, Wojciech Szlachta, Xi Lyu, Xiang Li, Xianming Lei, Xianzhe Ma, Xiaonan Yang, Xiaoxuan, Xin Huang, Xinyi, YangJie, Yash Botadra, Yicong Huang, Yihong He, Yuchen Liu, Yuchuan Huang, Yuming Wang, Yuyuan Tang, Zequn Lin, Zero Qu, Zerui Bao, Zhen Wang, Zifei Feng, Ziya Mukhtarov, Zoey, Zouxxyy, aleksandr-chernousov-db, alexis-schlomer_data, cafri.sun, chenhao-db, cookiedough77, cty, cxzl25, donaldchai, eddiebkheet, efaracci018, ganeshas-db, gaoyajun02, haoyangeng-db, holyvolcano, huangxiaoping, jbharadw-oai, jdavidroberts, kepler62f, lepan, marko-sisovic-db, naveenp2708, nyaapa, qindongliang, raksoras, richardc-db, ruanwenjun, tugce-applied, victors-oai, wuyi, xihuan_mstr, yamayuki-hub, yyanyy.
+Last but not least, this release would not have been possible without the following contributors: AbinayaJayaprakasam, Adam Binford, Adithya Ajith, Aditya Nambiar, Akash Nayar, Aleksandr Chernousov, Alex Khakhlyuk, Alexis Schlomer, Allison Wang, Amanda Liu, Anastasiia Terenteva, Anastasiia Terenteva, Andreas Chatzistergiou, Andreas Neumann, Angerszhuuuu, AnishMahto, Anshul Baliga, antban, Anton Lykov, Anton Okolnychyi, Antonio Blanco, Anupam Yadav, ashrithb, Asif Hussain Shahid, Attila Zsolt Piros, beliefer, Biruk Tesfaye, Bjørn Jørgensen, Bo Zhang, Bobby Wang, Brooks Walls, Burak Yavuz, cafri.sun, Celeste Horgan, Chang chen, Chao Sun, Chen Wang, Cheng Pan, Chenhao Li, Chirag Singh, Chris Boumalhab, ChuckLin2025, cty123, cuiyanxiang, Daniel Tenedorio, David Milicevic, David Roberts, David Tagatac, David Young, DB Tsai, DenineLu, Devin Petersohn, DhruvArya, Dilip Biswal, Dmytro Fedoriaka, Dmytro Fedoriaka, donaldchai, Dongjoon Hyun, Dylan Wong, Eddie Bkheet, Emilie Faracci, Eren Avsarogullari, Eric Yang, ericm-db, EugenYushin, Fangchen Li, fanyue-xia, Felipe Fujiy Pessoto, Felix, Filip Darmanovic, Filip Davidovic, Fu Chen, Ganesha S, gaoyajun02, Garland Zhang, Gengliang Wang, Gera Shegalov, Gurpreet Nanda, Haiyang Sun, haoyangeng-db, Harsh Motwani, Helios He, Herman van Hövell, Holden Karau, holyvolcano, Hongze Zhang, huangxiaoping, huanliwang-db, Hyukjin Kwon, ibenchhida, ilicmarkodb, Ivan Sadikov, Jacek Laskowski, Jacky Wang, Jahnavi Nelavelli, jameswillis, Jarek Potiuk, jbharadw-oai, Jerry Peng, Jerry Zheng, Jessie Luo, Jia Teoh, Jim Halfpenny, Jitesh Soni, Jiwon Park, Johan Lasperas, John Xu, John Zhuge, Jon Mio, Joon Ro, judy, Juliusz Sompolski, Juliusz Sompolski, Jungtaek Lim, Junyu Chen, Karthik Prabhakar, Karuppayya Rajendran, Kavpreet Grewal, Kazuyuki Tanimura, Ke Jia, Kelvin Jiang, Kent Yao, kepler62f, Kiyeon Jeon, Kousuke Saruta, Kris Mok, Kristin Cowalcijk, Leon Windheuser, lepan, Liang-Chi Hsieh, Linhong Liu, Livia Zhu, Luca Canali, manuzhang, Marcin Wojtyczka, Marco Gaido, mariaselvam.nishanth, Mark Jarvin, Mark Molinaro, Marko Sisovic, Martin Grund, Matt Zhang, micheal-o, Mihailo Timotic, mihailoale-db, Mikhail Nikoliukin, Milan Dankovic, Naveen Kumar Puppala, Nicholas Chew, Nikolina Vraneš, nyaapa, Pablo Langa, Parth Chandra, pavle-martinovic_data, Petar Nikić, Peter Toth, pranavdev022, Pratham Manja, Pratham Manja, Puneet Dixit, Qiegang Long, qindongliang, Rahul Sharma, Richard Chen, RishbhaJain, Rito Takeuchi, Robert Dillitz, ruanwenjun, Ruifeng Zheng, sahilkumarsingh, Sandro Sp, Sandy Ryza, Serge Rielau, Shilong Duan, Shrirang Mhalgi, Shuai Lu, Shubhambhusate, Shujing Yang, Simola Nayak, Siying Dong, st-tran, Stanley Yao, Stefan Kandic, Stefan Savić, Stevo Mitric, susheel-aroskar, Sven Weber, sychen, Szehon Ho, Takuya Ueshin, tangrizzly, Tengfei Huang, Thang Long VU, Tian Gao, Tim Lee, TongWei1105, tugce-applied, Ubuntu, Uros Bojanic, Uros Stankovic, Victor Sunderland, VINDHYA G BHAT, vinodkc, Vlad Rozov, Vladan Vasić, Vladimir Golubev, Wei Liu, Weichen Xu, Wenchen Fan, wforget, WHJian, Wojciech Szlachta, Xi Lyu, Xiang Li, Xiang LI, Xianming Lei, xianzhe-databricks, Xiaonan Yang, Xiaoxuan Li, xihuan_mstr, Xin Huang, Xingbo Jiang, Xinyi Yu, yamayuki-hub, Yan Yan, yangjie01, Yash Botadra, yhuang-db, Yi Wu, Yicong-Huang, Yihong He, Yuchen Liu, Yuheng Chang, Yuming Wang, Zequn Lin, zeruibao, zhidongqu-db, zifeif2, Ziya Mukhtarov, zml1206, Zoey Han, zouxxyy
