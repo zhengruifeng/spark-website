@@ -248,15 +248,12 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Monitor behaviour changes from upstream** ([[SPARK-54936]](https://issues.apache.org/jira/browse/SPARK-54936))
 - **Micro-benchmark PySpark Eval Types** ([[SPARK-55724]](https://issues.apache.org/jira/browse/SPARK-55724))
 - **Refactor PythonEvalType processing logic** ([[SPARK-55388]](https://issues.apache.org/jira/browse/SPARK-55388))
+- **Extract Arrow batch transformers from serializers for better composability** ([[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159))
 - **Polish type annotations for pyspark** ([[SPARK-56223]](https://issues.apache.org/jira/browse/SPARK-56223))
 - **Refactor PySpark Serializers** ([[SPARK-55384]](https://issues.apache.org/jira/browse/SPARK-55384))
 - **Improve lint on PySpark** ([[SPARK-54543]](https://issues.apache.org/jira/browse/SPARK-54543))
 - **Python worker logging infrastructure** ([[SPARK-53754]](https://issues.apache.org/jira/browse/SPARK-53754))
 - **Improve test coverage on pyspark** ([[SPARK-54453]](https://issues.apache.org/jira/browse/SPARK-54453))
-- **Extract Arrow batch transformers from serializers for better composability** ([[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159))
-  - [[SPARK-55168]](https://issues.apache.org/jira/browse/SPARK-55168) Refactor GroupArrowUDFSerializer to use ArrowBatchTransformer.flatten_struct
-  - [[SPARK-55169]](https://issues.apache.org/jira/browse/SPARK-55169) Refactor ArrowStreamArrowUDTFSerializer to use ArrowBatchTransformer.flatten_struct
-  - [[SPARK-55336]](https://issues.apache.org/jira/browse/SPARK-55336) Factor out ArrowStreamPandasSerializer._create_batch logic for createDataFrame
 - [[SPARK-53615]](https://issues.apache.org/jira/browse/SPARK-53615) Introduce iterator API for arrow grouped agg UDF
 - [[SPARK-53616]](https://issues.apache.org/jira/browse/SPARK-53616) Introduce iterator API for pandas grouped agg UDF
 - [[SPARK-54337]](https://issues.apache.org/jira/browse/SPARK-54337) Expose __dataframe__ interchange protocol on pyspark RDD, SQL DataFrame, and pandas DataFrame APIs
