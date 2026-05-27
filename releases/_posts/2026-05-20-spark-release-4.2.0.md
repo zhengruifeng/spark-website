@@ -109,15 +109,9 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-51518]](https://issues.apache.org/jira/browse/SPARK-51518) Support | as an alternative to |> for the operator pipe token
 - [[SPARK-51712]](https://issues.apache.org/jira/browse/SPARK-51712) Swallow non-fatal Throwables when resolving tables in spark.catalog.listTables()
 - [[SPARK-52729]](https://issues.apache.org/jira/browse/SPARK-52729) Add MetadataOnlyTable and CREATE/ALTER VIEW support for DS v2 catalogs
-- [[SPARK-54063]](https://issues.apache.org/jira/browse/SPARK-54063) Trigger snapshot generation for next batch when lag is detected
-- [[SPARK-54106]](https://issues.apache.org/jira/browse/SPARK-54106) State Store Row Checksum implementation
 - [[SPARK-54179]](https://issues.apache.org/jira/browse/SPARK-54179) Add Native Support for Apache Tuple Sketches
 - [[SPARK-54292]](https://issues.apache.org/jira/browse/SPARK-54292) Support aggregation in |> SELECT operators
-- [[SPARK-54411]](https://issues.apache.org/jira/browse/SPARK-54411) [SS] Introduce Writer for Repartition - support multiple column families
-- [[SPARK-54419]](https://issues.apache.org/jira/browse/SPARK-54419) Support State Reader for Multi-col-family operator
-- [[SPARK-54420]](https://issues.apache.org/jira/browse/SPARK-54420) Introduce State Writer for offline repartitioning - support single column family
 - [[SPARK-54446]](https://issues.apache.org/jira/browse/SPARK-54446) FPGrowth supports local filesystem
-- [[SPARK-54675]](https://issues.apache.org/jira/browse/SPARK-54675) Add configurable force shutdown timeout for StateStore maintenance thread pool
 - [[SPARK-54682]](https://issues.apache.org/jira/browse/SPARK-54682) Improve DescribeProcedureCommand
 - [[SPARK-54713]](https://issues.apache.org/jira/browse/SPARK-54713) Add support for vector similarity/distance functions
 - [[SPARK-54718]](https://issues.apache.org/jira/browse/SPARK-54718) Preserve attributes names during CTE newInstance()
@@ -143,12 +137,10 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55533]](https://issues.apache.org/jira/browse/SPARK-55533) Support IGNORE NULLS / RESPECT NULLS for collect_set
 - [[SPARK-55558]](https://issues.apache.org/jira/browse/SPARK-55558) Add Support for Tuple/Theta Set Operations
 - [[SPARK-55596]](https://issues.apache.org/jira/browse/SPARK-55596) DSV2 Enhanced Partition Stats Filtering
-- [[SPARK-55601]](https://issues.apache.org/jira/browse/SPARK-55601) Hook StreamingSourceIdentifyingName into MicrobatchExecution for source naming
 - [[SPARK-55631]](https://issues.apache.org/jira/browse/SPARK-55631) ALTER TABLE should invalidate cache
 - [[SPARK-55689]](https://issues.apache.org/jira/browse/SPARK-55689) Support schema evolution in DSv2 INSERTs
 - [[SPARK-55690]](https://issues.apache.org/jira/browse/SPARK-55690) Implement schema evolution for DSv2 AppendData, OverwriteByExpression, OverwritePartitionsDynamic
 - [[SPARK-55702]](https://issues.apache.org/jira/browse/SPARK-55702) Support filter predicate in window aggregate functions
-- [[SPARK-55729]](https://issues.apache.org/jira/browse/SPARK-55729) Support state format v4 of stream-stream join in state data source (reader)
 - [[SPARK-55855]](https://issues.apache.org/jira/browse/SPARK-55855) Add foundations for the DSv2 Transaction API
 - [[SPARK-55857]](https://issues.apache.org/jira/browse/SPARK-55857) [SQL] Support ignoreMissingFiles when inferring schema during schema evolution
 - [[SPARK-55964]](https://issues.apache.org/jira/browse/SPARK-55964) By default, prevent shadowing of system schemas
@@ -161,7 +153,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56182]](https://issues.apache.org/jira/browse/SPARK-56182) Allow SPJ reducing identity to other transforms
 - [[SPARK-56221]](https://issues.apache.org/jira/browse/SPARK-56221) Feature parity between spark.catalog.* vs DDL commands
 - [[SPARK-56251]](https://issues.apache.org/jira/browse/SPARK-56251) Avoid loading all data to memory by default for PostgresSQL jdbc connector
-- [[SPARK-56384]](https://issues.apache.org/jira/browse/SPARK-56384) Support Update mode in Stream-Stream Non-Outer Join
 - [[SPARK-56489]](https://issues.apache.org/jira/browse/SPARK-56489) Support for PATH syntax
 - [[SPARK-56501]](https://issues.apache.org/jira/browse/SPARK-56501) SET PATH syntax
 - [[SPARK-56509]](https://issues.apache.org/jira/browse/SPARK-56509) SparkSQL Last Attempt Metrics
@@ -320,18 +311,27 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55123]](https://issues.apache.org/jira/browse/SPARK-55123) Add SequentialUnionOffset for tracking sequential source processing
   - [[SPARK-55317]](https://issues.apache.org/jira/browse/SPARK-55317) Introduce the SequentialUnion Logical Node
   - [[SPARK-55471]](https://issues.apache.org/jira/browse/SPARK-55471) Adding optimizer support for Sequential Union
+- [[SPARK-54063]](https://issues.apache.org/jira/browse/SPARK-54063) Trigger snapshot generation for next batch when lag is detected
+- [[SPARK-54106]](https://issues.apache.org/jira/browse/SPARK-54106) State Store Row Checksum implementation
 - [[SPARK-54121]](https://issues.apache.org/jira/browse/SPARK-54121) Automatic Snapshot Repair for State store
+- [[SPARK-54411]](https://issues.apache.org/jira/browse/SPARK-54411) [SS] Introduce Writer for Repartition - support multiple column families
+- [[SPARK-54419]](https://issues.apache.org/jira/browse/SPARK-54419) Support State Reader for Multi-col-family operator
+- [[SPARK-54420]](https://issues.apache.org/jira/browse/SPARK-54420) Introduce State Writer for offline repartitioning - support single column family
 - [[SPARK-54423]](https://issues.apache.org/jira/browse/SPARK-54423) Create the OffsetMap to enable tracking of streaming progress via name
 - [[SPARK-54583]](https://issues.apache.org/jira/browse/SPARK-54583) Add SQLConf to enable use of OffsetMap
 - [[SPARK-54590]](https://issues.apache.org/jira/browse/SPARK-54590) State Writer supports checkpoint V2
 - [[SPARK-54660]](https://issues.apache.org/jira/browse/SPARK-54660) Add RTM trigger to python and tests
+- [[SPARK-54675]](https://issues.apache.org/jira/browse/SPARK-54675) Add configurable force shutdown timeout for StateStore maintenance thread pool
 - [[SPARK-55058]](https://issues.apache.org/jira/browse/SPARK-55058) Throw an error if the /metadata file is not present, but offset or commit directories are non-empty
 - [[SPARK-55129]](https://issues.apache.org/jira/browse/SPARK-55129) Introduce State Store API and key encoders for event-time as a first class
 - [[SPARK-55145]](https://issues.apache.org/jira/browse/SPARK-55145) Reflect the new RocksDB key encoders in SPARK-55129 to Avro
+- [[SPARK-55601]](https://issues.apache.org/jira/browse/SPARK-55601) Hook StreamingSourceIdentifyingName into MicrobatchExecution for source naming
 - [[SPARK-55628]](https://issues.apache.org/jira/browse/SPARK-55628) Integrate state format version 4 state manager to stream-stream join operator
 - [[SPARK-55728]](https://issues.apache.org/jira/browse/SPARK-55728) Introduce RocksDB conf for file checksum threadpool size
+- [[SPARK-55729]](https://issues.apache.org/jira/browse/SPARK-55729) Support state format v4 of stream-stream join in state data source (reader)
 - [[SPARK-55751]](https://issues.apache.org/jira/browse/SPARK-55751) Add metrics on how often state stores are loaded from cloud storage
 - [[SPARK-56216]](https://issues.apache.org/jira/browse/SPARK-56216) Integrate checkpoint V2 with auto-repair snapshot
+- [[SPARK-56384]](https://issues.apache.org/jira/browse/SPARK-56384) Support Update mode in Stream-Stream Non-Outer Join
 
 ### MLlib
 - [[SPARK-41916]](https://issues.apache.org/jira/browse/SPARK-41916) Address General Fixes
