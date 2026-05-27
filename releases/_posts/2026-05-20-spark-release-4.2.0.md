@@ -105,6 +105,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-51518]](https://issues.apache.org/jira/browse/SPARK-51518) Support | as an alternative to |> for the operator pipe token
 - [[SPARK-51712]](https://issues.apache.org/jira/browse/SPARK-51712) Swallow non-fatal Throwables when resolving tables in spark.catalog.listTables()
 - [[SPARK-52729]](https://issues.apache.org/jira/browse/SPARK-52729) Add MetadataOnlyTable and CREATE/ALTER VIEW support for DS v2 catalogs
+- [[SPARK-53469]](https://issues.apache.org/jira/browse/SPARK-53469) Ability to cleanup shuffle generated from SQL executed in thrift server
 - [[SPARK-54179]](https://issues.apache.org/jira/browse/SPARK-54179) Add Native Support for Apache Tuple Sketches
 - [[SPARK-54292]](https://issues.apache.org/jira/browse/SPARK-54292) Support aggregation in |> SELECT operators
 - [[SPARK-54682]](https://issues.apache.org/jira/browse/SPARK-54682) Improve DescribeProcedureCommand
@@ -132,6 +133,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55702]](https://issues.apache.org/jira/browse/SPARK-55702) Support filter predicate in window aggregate functions
 - [[SPARK-55855]](https://issues.apache.org/jira/browse/SPARK-55855) Add foundations for the DSv2 Transaction API
 - [[SPARK-55857]](https://issues.apache.org/jira/browse/SPARK-55857) Support ignoreMissingFiles when inferring schema during schema evolution
+- [[SPARK-55928]](https://issues.apache.org/jira/browse/SPARK-55928) New linter for config effectiveness in views, UDFs and procedures
 - [[SPARK-55964]](https://issues.apache.org/jira/browse/SPARK-55964) By default, prevent shadowing of system schemas
 - [[SPARK-55995]](https://issues.apache.org/jira/browse/SPARK-55995) Support TIMESTAMP WITH LOCAL TIME ZONE in SQL syntax
 - [[SPARK-55999]](https://issues.apache.org/jira/browse/SPARK-55999) Enable `spark.sql.streaming.stateStore.forceSnapshotUploadOnLag` by default
@@ -334,10 +336,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56491]](https://issues.apache.org/jira/browse/SPARK-56491) Add `ReadOnlySparkConf.getAllAsJavaMap`
 - [[SPARK-54553]](https://issues.apache.org/jira/browse/SPARK-54553) Supports receiving podgroup JSON format configurations when using Volcano
 - [[SPARK-54916]](https://issues.apache.org/jira/browse/SPARK-54916) Enable `volcano` profile by default
-
-### Connectors
-- [[SPARK-53469]](https://issues.apache.org/jira/browse/SPARK-53469) Ability to cleanup shuffle generated from SQL executed in thrift server
-- [[SPARK-55928]](https://issues.apache.org/jira/browse/SPARK-55928) New linter for config effectiveness in views, UDFs and procedures
 
 ### Build and Infrastructure
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
