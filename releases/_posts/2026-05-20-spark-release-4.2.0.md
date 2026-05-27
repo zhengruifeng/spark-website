@@ -493,10 +493,12 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 
 ### Version upgrade of Java and Scala libraries
 
-| Library | Change |
-|---|---|
+| Library Name                     | Version Change      |
+| :------------------------------- | :------------------ |
+| HdrHistogram | -> 2.1.12 (NEW) |
 | RoaringBitmap | 1.3.0 -> 1.6.10 |
 | aircompressor | 2.0.2 -> 2.0.3 |
+| aliyun-java-core | -> 0.2.11-beta (NEW) |
 | aliyun-sdk-oss | 3.13.2 -> 3.18.1 |
 | analyticsaccelerator-s3 | 1.3.0 -> 1.3.1 |
 | arpack | 3.0.4 -> 3.2.0 |
@@ -514,6 +516,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | commons-lang3 | 3.19.0 -> 3.20.0 |
 | commons-text | 1.14.0 -> 1.15.0 |
 | compress-lzf | 1.1.2 -> 1.2.0 |
+| dom4j | -> 2.1.4 (NEW) |
 | gson | 2.11.0 -> 2.13.2 |
 | guava | 33.4.8-jre -> 33.6.0-jre |
 | hadoop-aliyun | 3.4.2 -> 3.5.0 |
@@ -524,6 +527,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | hadoop-client-api | 3.4.2 -> 3.5.0 |
 | hadoop-client-runtime | 3.4.2 -> 3.5.0 |
 | hadoop-cloud-storage | 3.4.2 -> 3.5.0 |
+| hadoop-gcp | -> 3.5.0 (NEW) |
 | hadoop-huaweicloud | 3.4.2 -> 3.5.0 |
 | hadoop-shaded-guava | 1.4.0 -> 1.5.0 |
 | icu4j | 77.1 -> 78.3 |
@@ -538,6 +542,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | jakarta.servlet-api | 5.0.0 -> 6.0.0 |
 | jakarta.ws.rs-api | 3.0.0 -> 3.1.0 |
 | jakarta.xml.bind-api | 4.0.2 -> 4.0.5 |
+| java-trace-api | -> 0.2.11-beta (NEW) |
 | jaxb-core | 4.0.5 -> 4.0.6 |
 | jaxb-runtime | 4.0.5 -> 4.0.6 |
 | jdom2 | 2.0.6 -> 2.0.6.1 |
@@ -547,6 +552,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | jersey-container-servlet-core | 3.0.18 -> 3.1.11 |
 | jersey-hk2 | 3.0.18 -> 3.1.11 |
 | jersey-server | 3.0.18 -> 3.1.11 |
+| jetty-util | 11.0.26 -> REMOVED |
+| jetty-util-ajax | 11.0.26 -> REMOVED |
 | jjwt-api | 0.12.6 -> 0.13.0 |
 | jjwt-impl | 0.12.6 -> 0.13.0 |
 | jjwt-jackson | 0.12.6 -> 0.13.0 |
@@ -587,10 +594,15 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | netty-buffer | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec-base | 4.2.7.Final -> 4.2.13.Final |
+| netty-codec-classes-quic | 4.2.7.Final -> REMOVED |
 | netty-codec-compression | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec-dns | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec-http | 4.2.7.Final -> 4.2.13.Final |
 | netty-codec-http2 | 4.2.7.Final -> 4.2.13.Final |
+| netty-codec-http3 | 4.2.7.Final -> REMOVED |
+| netty-codec-marshalling | 4.2.7.Final -> REMOVED |
+| netty-codec-native-quic | 4.2.7.Final -> REMOVED |
+| netty-codec-protobuf | 4.2.7.Final -> REMOVED |
 | netty-codec-socks | 4.2.7.Final -> 4.2.13.Final |
 | netty-common | 4.2.7.Final -> 4.2.13.Final |
 | netty-handler | 4.2.7.Final -> 4.2.13.Final |
@@ -601,11 +613,15 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | netty-tcnative-classes | 2.0.74.Final -> 2.0.76.Final |
 | netty-transport | 4.2.7.Final -> 4.2.13.Final |
 | netty-transport-classes-epoll | 4.2.7.Final -> 4.2.13.Final |
+| netty-transport-classes-io_uring | 4.2.7.Final -> REMOVED |
 | netty-transport-classes-kqueue | 4.2.7.Final -> 4.2.13.Final |
 | netty-transport-native-epoll | 4.2.7.Final -> 4.2.13.Final |
+| netty-transport-native-io_uring | 4.2.7.Final -> REMOVED |
 | netty-transport-native-kqueue | 4.2.7.Final -> 4.2.13.Final |
 | netty-transport-native-unix-common | 4.2.7.Final -> 4.2.13.Final |
 | objenesis | 3.4 -> 3.5 |
+| opentelemetry-api | -> 1.49.0 (NEW) |
+| opentelemetry-context | -> 1.49.0 (NEW) |
 | orc-core | 2.2.1 -> 2.3.0 |
 | orc-mapreduce | 2.2.1 -> 2.3.0 |
 | orc-shims | 2.2.1 -> 2.3.0 |
@@ -615,6 +631,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | parquet-format-structures | 1.16.0 -> 1.17.0 |
 | parquet-hadoop | 1.16.0 -> 1.17.0 |
 | parquet-jackson | 1.16.0 -> 1.17.0 |
+| reactive-streams | -> 1.0.3 (NEW) |
 | scala-compiler | 2.13.17 -> 2.13.18 |
 | scala-library | 2.13.17 -> 2.13.18 |
 | scala-reflect | 2.13.17 -> 2.13.18 |
@@ -623,8 +640,11 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 | tink | 1.16.0 -> 1.20.0 |
 | vertx-auth-common | 4.5.14 -> 4.5.26 |
 | vertx-core | 4.5.14 -> 4.5.26 |
+| vertx-uri-template | -> 4.5.26 (NEW) |
 | vertx-web-client | 4.5.14 -> 4.5.26 |
 | vertx-web-common | 4.5.14 -> 4.5.26 |
+| volcano-client | -> 7.6.1 (NEW) |
+| volcano-model | -> 7.6.1 (NEW) |
 | xbean-asm9-shaded | 4.28 -> 4.30 |
 | xz | 1.10 -> 1.12 |
 | zjsonpatch | 7.4.0 -> 7.6.1 |
