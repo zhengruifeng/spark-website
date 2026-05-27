@@ -28,14 +28,14 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55668]](https://issues.apache.org/jira/browse/SPARK-55668) Change Data Capture (CDC) Support (12 commits)
 - [[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167) Build and Run Spark on Java 25 (10 commits)
 - [[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156) Add missing parameters for Pandas API on Spark (8 commits)
+- [[SPARK-56249]](https://issues.apache.org/jira/browse/SPARK-56249) Auto CDC support (8 commits)
 - [[SPARK-55400]](https://issues.apache.org/jira/browse/SPARK-55400) Reduce K8s control plane overhead (6 commits)
 - [[SPARK-55556]](https://issues.apache.org/jira/browse/SPARK-55556) Improve Web Security (5 commits)
 - [[SPARK-54274]](https://issues.apache.org/jira/browse/SPARK-54274) Support `MERGE INTO` Schema Evolution (4 commits)
 - [[SPARK-54953]](https://issues.apache.org/jira/browse/SPARK-54953) Upgrade mypy to latest version (4 commits)
+- [[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806) Search path support (4 commits)
 - [[SPARK-56287]](https://issues.apache.org/jira/browse/SPARK-56287) Improve Spark History Server Scalability (4 commits)
 - [[SPARK-33392]](https://issues.apache.org/jira/browse/SPARK-33392) Align DSv2 commands to DSv1 implementation (4 commits)
-- [[SPARK-55159]](https://issues.apache.org/jira/browse/SPARK-55159) Extract Arrow batch transformers from serializers for better composability (3 commits)
-- [[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806) Search path support (3 commits)
 
 ### Spark Core
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
@@ -90,19 +90,23 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-53327]](https://issues.apache.org/jira/browse/SPARK-53327) Datasketches does not support Java 25
   - [[SPARK-55682]](https://issues.apache.org/jira/browse/SPARK-55682) ServiceLoader returned iterator may throw NoClassDefFoundError on hasNext()
   - [[SPARK-55714]](https://issues.apache.org/jira/browse/SPARK-55714) JDK 25 might throw ArithmeticException without message
+- **Search path support** ([[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806))
+  - [[SPARK-54807]](https://issues.apache.org/jira/browse/SPARK-54807) Support SYSTEM.BUILTIN and SYSTEM.SESSION for function resolution
+  - [[SPARK-56639]](https://issues.apache.org/jira/browse/SPARK-56639) Frozen PATH semantics
+  - [[SPARK-56939]](https://issues.apache.org/jira/browse/SPARK-56939) Resolve deadlock between USE and function lookup
 - **Align DSv2 commands to DSv1 implementation** ([[SPARK-33392]](https://issues.apache.org/jira/browse/SPARK-33392))
   - [[SPARK-33902]](https://issues.apache.org/jira/browse/SPARK-33902) CREATE TABLE LIKE FOR V2
   - [[SPARK-39660]](https://issues.apache.org/jira/browse/SPARK-39660) Support v2 DESCRIBE TABLE .. PARTITION
   - [[SPARK-49543]](https://issues.apache.org/jira/browse/SPARK-49543) Support v2 SHOW COLLATIONS
+- **Metrics & semantic modeling in Spark** ([[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119))
+  - [[SPARK-54405]](https://issues.apache.org/jira/browse/SPARK-54405) Query metric view with dimensions and measures
+  - [[SPARK-54403]](https://issues.apache.org/jira/browse/SPARK-54403) YAML parser to read metric view definition
 - **Sql Scripting support for Spark SQL** ([[SPARK-48338]](https://issues.apache.org/jira/browse/SPARK-48338))
   - [[SPARK-55005]](https://issues.apache.org/jira/browse/SPARK-55005) CONTINUE handler not working properly when exception occurs inside loops
   - [[SPARK-55119]](https://issues.apache.org/jira/browse/SPARK-55119) CONTINUE handler should not interrupt conditional if exception thrown by previous statement
 - **RDD API compatibility** ([[SPARK-55227]](https://issues.apache.org/jira/browse/SPARK-55227))
   - [[SPARK-55385]](https://issues.apache.org/jira/browse/SPARK-55385) Mitigate the recomputation in zipWithIndex
   - [[SPARK-55395]](https://issues.apache.org/jira/browse/SPARK-55395) Disable RDD cache in DataFrame.zipWithIndex
-- **Search path support** ([[SPARK-54806]](https://issues.apache.org/jira/browse/SPARK-54806))
-  - [[SPARK-54807]](https://issues.apache.org/jira/browse/SPARK-54807) Support SYSTEM.BUILTIN and SYSTEM.SESSION for function resolution
-  - [[SPARK-56639]](https://issues.apache.org/jira/browse/SPARK-56639) Frozen PATH semantics
 - **Optimize Vectorized Data Loading** ([[SPARK-55722]](https://issues.apache.org/jira/browse/SPARK-55722))
   - [[SPARK-55962]](https://issues.apache.org/jira/browse/SPARK-55962) Use `getShort` instead of `getInt` casting in `putShortsFromIntsLittleEndian` on Little Endian platforms
   - [[SPARK-56522]](https://issues.apache.org/jira/browse/SPARK-56522) Batch PACKED null/non-null runs in VectorizedRleValuesReader
@@ -118,10 +122,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-51712]](https://issues.apache.org/jira/browse/SPARK-51712) Swallow non-fatal Throwables when resolving tables in spark.catalog.listTables()
 - [[SPARK-52729]](https://issues.apache.org/jira/browse/SPARK-52729) Add MetadataOnlyTable and CREATE/ALTER VIEW support for DS v2 catalogs
 - [[SPARK-53469]](https://issues.apache.org/jira/browse/SPARK-53469) Ability to cleanup shuffle generated from SQL executed in thrift server
-- [[SPARK-54119]](https://issues.apache.org/jira/browse/SPARK-54119) Metrics & semantic modeling in Spark
 - [[SPARK-54179]](https://issues.apache.org/jira/browse/SPARK-54179) Add Native Support for Apache Tuple Sketches
 - [[SPARK-54292]](https://issues.apache.org/jira/browse/SPARK-54292) Support aggregation in |> SELECT operators
-- [[SPARK-54405]](https://issues.apache.org/jira/browse/SPARK-54405) Query metric view with dimensions and measures
 - [[SPARK-54682]](https://issues.apache.org/jira/browse/SPARK-54682) Improve DescribeProcedureCommand
 - [[SPARK-54713]](https://issues.apache.org/jira/browse/SPARK-54713) Add support for vector similarity/distance functions
 - [[SPARK-54718]](https://issues.apache.org/jira/browse/SPARK-54718) Preserve attributes names during CTE newInstance()
@@ -181,7 +183,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56605]](https://issues.apache.org/jira/browse/SPARK-56605) Wire resolution engine to use SQL PATH for table, function, and variable lookup
 - [[SPARK-56677]](https://issues.apache.org/jira/browse/SPARK-56677) Propagate filter conditions through Join nodes in PlanMerger
 - [[SPARK-56680]](https://issues.apache.org/jira/browse/SPARK-56680) DSv2 INSERT Operation Metrics
-- [[SPARK-56771]](https://issues.apache.org/jira/browse/SPARK-56771) Flip the config for geospatial support to true
+- [[SPARK-56771]](https://issues.apache.org/jira/browse/SPARK-56771) Enable `spark.sql.geospatial.enabled` by default
 - [[SPARK-56883]](https://issues.apache.org/jira/browse/SPARK-56883) Improve DESCRIBE FUNCTION for SQL UDF
 
 ### Spark Connect
@@ -367,6 +369,15 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-41916]](https://issues.apache.org/jira/browse/SPARK-41916) Address General Fixes
 
 ### Declarative Pipelines
+- **Auto CDC support** ([[SPARK-56249]](https://issues.apache.org/jira/browse/SPARK-56249))
+  - [[SPARK-56650]](https://issues.apache.org/jira/browse/SPARK-56650) Add AutoCDC connect APIs
+  - [[SPARK-56651]](https://issues.apache.org/jira/browse/SPARK-56651) Add AutoCDC Python API
+  - [[SPARK-56838]](https://issues.apache.org/jira/browse/SPARK-56838) Introduce AutoCDC parameters dataclass
+  - [[SPARK-56856]](https://issues.apache.org/jira/browse/SPARK-56856) Implement SCD1 Batch Processor; Microbatch Deduplication
+  - [[SPARK-56870]](https://issues.apache.org/jira/browse/SPARK-56870) Implement SCD1 Batch Processor; Extend Microbatch with CDC Metadata
+  - [[SPARK-56882]](https://issues.apache.org/jira/browse/SPARK-56882) Implement SCD1 Batch Processor; Target Column Projection
+  - [[SPARK-56953]](https://issues.apache.org/jira/browse/SPARK-56953) Implement SCD1 Batch Processor; foreachBatch Callback
+  - [[SPARK-56956]](https://issues.apache.org/jira/browse/SPARK-56956) AutoCDC Flow Execution; Introduce AutoCDC Flow Dataclasses
 - **SPIP: Declarative Pipelines** ([[SPARK-51727]](https://issues.apache.org/jira/browse/SPARK-51727))
   - [[SPARK-54562]](https://issues.apache.org/jira/browse/SPARK-54562) Block eager analysis / execution inside flow function from server side rather than client side
   - [[SPARK-55945]](https://issues.apache.org/jira/browse/SPARK-55945) Support structured identifiers for flows in SDP eager analysis protos
@@ -481,8 +492,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 ### Build and Infrastructure
 - **Upgrade Ubuntu to 24.04 in CI** ([[SPARK-55482]](https://issues.apache.org/jira/browse/SPARK-55482))
 - **Remove pre-built test JAR and class files from the repository** ([[SPARK-56352]](https://issues.apache.org/jira/browse/SPARK-56352))
-- **Upgrade Major Python Version to 3.12 in CI** ([[SPARK-55481]](https://issues.apache.org/jira/browse/SPARK-55481))
 - **Share compile artifact across CI jobs** ([[SPARK-56830]](https://issues.apache.org/jira/browse/SPARK-56830))
+- **Upgrade Major Python Version to 3.12 in CI** ([[SPARK-55481]](https://issues.apache.org/jira/browse/SPARK-55481))
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
   - [[SPARK-55670]](https://issues.apache.org/jira/browse/SPARK-55670) Add `-Dio.netty.noUnsafe=false` to enable Arrow Java 25 support
   - [[SPARK-55678]](https://issues.apache.org/jira/browse/SPARK-55678) Add daily test for Java 25
@@ -652,4 +663,4 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 
 ### Credits
 
-Last but not least, this release would not have been possible without the following contributors: AbinayaJayaprakasam, Adam Binford, Adithya Ajith, Aditya Nambiar, Akash Nayar, Alex Khakhlyuk, Alexis Schlomer, Allison Wang, Amanda Liu, Anastasiia Terenteva, Andreas Chatzistergiou, Andreas Neumann, Angerszhuuuu, AnishMahto, Anshul Baliga, Anton Lykov, Anton Okolnychyi, Antonio Blanco, Anupam Yadav, Ashrith Bandla, Asif, Attila Zsolt Piros, Babatunde Micheal Okutubo, Biruk Tesfaye, Bjørn Jørgensen, Bo Zhang, Bobby Wang, Boyang Jerry Peng, Brooks Walls, Burak Yavuz, Canadian Data Guy, Celeste Horgan, Chang Chen, Chao Sun, Chen Wang, Cheng Pan, Chhida, Chirag Singh, Chloe Xia, Chris Boumalhab, ChuckLin2025, CuiYanxiang, DB Tsai, DS, Daniel Tenedorio, David, David Milicevic, David Tagatac, Deninelu, Devin Petersohn, Dhruv, Dilip Biswal, Dima Fedoriaka, Dmytro Fedoriaka, Dongjoon Hyun, Dylan Wong, Dzeri96, Eren Avsarogullari, Eric Marnadi, Eric Yang, Eugen, Fangchen Li, Felipe Pessoto, Felix, Filip Davidovic, Fu Chen, Garland Zhang, Gengliang Wang, Gera Shegalov, Gurpreet Nanda, Haiyang Sun, Harsh Motwani, Helios He, Herman van Hovell, Holden Karau, Hongze Zhang, Huanli Wang, Hyukjin Kwon, Ivan Sadikov, Jacek Laskowski, Jacky Wang, James Willis, Jason Teoh, Jerry Zheng, JiaKe, Jiaan Geng, Jiang Xingbo, Jim Halfpenny, Jiwon Park, Johan Lasperas, John Xu, John Zhuge, Jon Mio, Jonathan Chang, Joon Ro, Judyzzz, Juliusz Sompolski, Jungtaek Lim, Junyu Chen, KAZUYUKI TANIMURA, Karthik Prabhakar, Karuppayya, Kavpreet Grewal, Kelvin Jiang, Kent Yao, Kiyeon Jeon, Kousuke Saruta, Kris Mok, Kristin Cowalcijk, Leon Windheuser, Liang-Chi Hsieh, Linhong Liu, Livia Zhu, Luca Canali, Manu Zhang, Marcin Wojtyczka, Marco Gaido, Mark Jarvin, Mark Molinaro, Marko Ilić, Martin Grund, Matt Zhang, Mihailo Aleksic, Mihailo Timotic, Mikhail NIkoliukin, Milan Dankovic, Mingliang Zhu, Nicholas Chew, Nikolina Vraneš, Nishanth28, Pablo Langa, Parth Chandra, Pavle Martinovic, Petar Nikić, Peter Toth, Pranav Dev, Pratham Manja, Qiegang Long, Rahul Sharma, Rishbha, Rito Takeuchi, Robert Dillitz, Ruifeng Zheng, Sahil Kumar Singh, Sandro Sp, Sandy Ryza, Serge Rielau, Shilong Duan, Shrirang Mhalgi, Shuai Lu, Shubhambhusate, Shujing Yang, Simola Nayak, Siying Dong, Stanley Yao, Stefan Kandic, Stefan Savić, Steven Tran, Stevo Mitric, Sven Weber, Szehon Ho, Takuya UESHIN, Tengfei Huang, Thang Long Vu, Tian Gao, Tim Lee, TongWei, Uros Bojanic, Uros Stankovic, VINDHYA G BHAT, Vinod KC, Vlad Rozov, Vladan Vasić, Vladimir Golubev, WHJian, Wei Liu, WeichenXu, Wenchen Fan, Wojciech Szlachta, Xi Lyu, Xiang Li, Xianming Lei, Xianzhe Ma, Xiaonan Yang, Xiaoxuan, Xin Huang, Xinyi, YangJie, Yash Botadra, Yicong Huang, Yihong He, Yuchen Liu, Yuchuan Huang, Yuming Wang, Yuyuan Tang, Zequn Lin, Zero Qu, Zerui Bao, Zhen Wang, Zifei Feng, Ziya Mukhtarov, Zoey, Zouxxyy, aleksandr-chernousov-db, cafri.sun, chenhao-db, cookiedough77, cty, cxzl25, donaldchai, eddiebkheet, efaracci018, ganeshas-db, gaoyajun02, holyvolcano, huangxiaoping, jbharadw-oai, jdavidroberts, kepler62f, lepan, marko-sisovic-db, naveenp2708, nyaapa, qindongliang, raksoras, richardc-db, ruanwenjun, tugce-applied, victors-oai, wuyi, xihuan_mstr, yamayuki-hub, yyanyy.
+Last but not least, this release would not have been possible without the following contributors: AbinayaJayaprakasam, Adam Binford, Adithya Ajith, Aditya Nambiar, Akash Nayar, Alex Khakhlyuk, Allison Wang, Amanda Liu, Anastasiia Terenteva, Andreas Chatzistergiou, Andreas Neumann, Angerszhuuuu, AnishMahto, Anshul Baliga, Anton Lykov, Anton Okolnychyi, Antonio Blanco, Anupam Yadav, Ashrith Bandla, Asif, Attila Zsolt Piros, Babatunde Micheal Okutubo, Biruk Tesfaye, Bjørn Jørgensen, Bo Zhang, Bobby Wang, Boyang Jerry Peng, Brooks Walls, Burak Yavuz, Canadian Data Guy, Celeste Horgan, Chang Chen, Chao Sun, Chen Wang, Cheng Pan, Chhida, Chirag Singh, Chloe Xia, Chris Boumalhab, ChuckLin2025, CuiYanxiang, DB Tsai, DS, Daniel Tenedorio, David, David Milicevic, David Tagatac, Deninelu, Devin Petersohn, Dhruv, Dilip Biswal, Dima Fedoriaka, Dmytro Fedoriaka, Dongjoon Hyun, Dylan Wong, Dzeri96, Eren Avsarogullari, Eric Marnadi, Eric Yang, Eugen, Fangchen Li, Felipe Pessoto, Felix, Filip Davidovic, Fu Chen, Garland Zhang, Gengliang Wang, Gera Shegalov, Gurpreet Nanda, Haiyang Sun, Harsh Motwani, Helios He, Herman van Hovell, Holden Karau, Hongze Zhang, Huanli Wang, Hyukjin Kwon, Ivan Sadikov, Jacek Laskowski, Jacky Wang, Jahnavi Nelavelli, James Willis, Jarek Potiuk, Jason Teoh, Jerry Zheng, JiaKe, Jiaan Geng, Jiang Xingbo, Jim Halfpenny, Jiwon Park, Johan Lasperas, John Xu, John Zhuge, Jon Mio, Jonathan Chang, Joon Ro, Judyzzz, Juliusz Sompolski, Jungtaek Lim, Junyu Chen, KAZUYUKI TANIMURA, Karthik Prabhakar, Karuppayya, Kavpreet Grewal, Kelvin Jiang, Kent Yao, Kiyeon Jeon, Kousuke Saruta, Kris Mok, Kristin Cowalcijk, Leon Windheuser, Liang-Chi Hsieh, Linhong Liu, Livia Zhu, Luca Canali, Manu Zhang, Marcin Wojtyczka, Marco Gaido, Mark Jarvin, Mark Molinaro, Marko Ilić, Martin Grund, Matt Zhang, Mihailo Aleksic, Mihailo Timotic, Mikhail NIkoliukin, Milan Dankovic, Mingliang Zhu, Nicholas Chew, Nikolina Vraneš, Nishanth28, Pablo Langa, Parth Chandra, Pavle Martinovic, Petar Nikić, Peter Toth, Pranav Dev, Pratham Manja, Puneet Dixit, Qiegang Long, Rahul Sharma, Rishbha, Rito Takeuchi, Robert Dillitz, Ruifeng Zheng, Sahil Kumar Singh, Sandro Sp, Sandy Ryza, Serge Rielau, Shilong Duan, Shrirang Mhalgi, Shuai Lu, Shubhambhusate, Shujing Yang, Simola Nayak, Siying Dong, Stanley Yao, Stefan Kandic, Stefan Savić, Steven Tran, Stevo Mitric, Sven Weber, Szehon Ho, Takuya UESHIN, Tengfei Huang, Thang Long Vu, Tian Gao, Tim Lee, TongWei, Uros Bojanic, Uros Stankovic, VINDHYA G BHAT, Vinod KC, Vlad Rozov, Vladan Vasić, Vladimir Golubev, WHJian, Wei Liu, WeichenXu, Wenchen Fan, Wojciech Szlachta, Xi Lyu, Xiang Li, Xianming Lei, Xianzhe Ma, Xiaonan Yang, Xiaoxuan, Xin Huang, Xinyi, YangJie, Yash Botadra, Yicong Huang, Yihong He, Yuchen Liu, Yuchuan Huang, Yuming Wang, Yuyuan Tang, Zequn Lin, Zero Qu, Zerui Bao, Zhen Wang, Zifei Feng, Ziya Mukhtarov, Zoey, Zouxxyy, aleksandr-chernousov-db, alexis-schlomer_data, cafri.sun, chenhao-db, cookiedough77, cty, cxzl25, donaldchai, eddiebkheet, efaracci018, ganeshas-db, gaoyajun02, haoyangeng-db, holyvolcano, huangxiaoping, jbharadw-oai, jdavidroberts, kepler62f, lepan, marko-sisovic-db, naveenp2708, nyaapa, qindongliang, raksoras, richardc-db, ruanwenjun, tugce-applied, victors-oai, wuyi, xihuan_mstr, yamayuki-hub, yyanyy.
