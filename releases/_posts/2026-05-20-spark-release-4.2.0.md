@@ -62,6 +62,14 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 
 ### SQL Foundation
 - **Improve JDBC example and test coverage** ([[SPARK-55581]](https://issues.apache.org/jira/browse/SPARK-55581))
+- **Enabling addition, removal and reordering of streaming sources** ([[SPARK-54909]](https://issues.apache.org/jira/browse/SPARK-54909))
+  - [[SPARK-55039]](https://issues.apache.org/jira/browse/SPARK-55039) Add IDENTIFIED BY syntax for naming streaming sources
+  - [[SPARK-55054]](https://issues.apache.org/jira/browse/SPARK-55054) Add IDENTIFIED BY support for streaming table-valued functions
+  - [[SPARK-55057]](https://issues.apache.org/jira/browse/SPARK-55057) Add streaming source naming infrastructure and resolution pipeline
+  - [[SPARK-54907]](https://issues.apache.org/jira/browse/SPARK-54907) Introduce NameStreamingSources analyzer rule for streaming source evolution
+  - [[SPARK-55013]](https://issues.apache.org/jira/browse/SPARK-55013) Add SQL parser support for streaming source naming infrastructure
+  - [[SPARK-54910]](https://issues.apache.org/jira/browse/SPARK-54910) Add streamingSourceIdentifyingName field to StreamingRelationV2
+  - [[SPARK-55029]](https://issues.apache.org/jira/browse/SPARK-55029) Propagate streaming source identifying name through resolution pipeline
 - **SPIP: Add geospatial types in Spark** ([[SPARK-51658]](https://issues.apache.org/jira/browse/SPARK-51658))
   - [[SPARK-55238]](https://issues.apache.org/jira/browse/SPARK-55238) Move the SRS mapping Java classes to sql/api/src/main/java
   - [[SPARK-55259]](https://issues.apache.org/jira/browse/SPARK-55259) Implement Parquet schema conversion for Geo types
@@ -78,6 +86,11 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56687]](https://issues.apache.org/jira/browse/SPARK-56687) Post Process for CDC streaming query: compute net changes
   - [[SPARK-55951]](https://issues.apache.org/jira/browse/SPARK-55951) The schema of ChangeLog must contain _change_type/_commit_version/_commit_timestamp
   - [[SPARK-56711]](https://issues.apache.org/jira/browse/SPARK-56711) CDC: Restricting data type of _commit_version to Long / String
+- **Structured Streaming - Offline State Repartitioning** ([[SPARK-54345]](https://issues.apache.org/jira/browse/SPARK-54345))
+  - [[SPARK-54346]](https://issues.apache.org/jira/browse/SPARK-54346) Introduce repartition API and repartition runner
+  - [[SPARK-54388]](https://issues.apache.org/jira/browse/SPARK-54388) State Reader - repartition dataframe format (with read support for single column family stores e.g. agg, dedup etc.)
+  - [[SPARK-54984]](https://issues.apache.org/jira/browse/SPARK-54984) State Repartition execution and integrate with State Rewriter
+  - [[SPARK-54365]](https://issues.apache.org/jira/browse/SPARK-54365) Test repartition for Agg, Dedup, session window, FMGWS
 - **Spark Web UI Modernization** ([[SPARK-55760]](https://issues.apache.org/jira/browse/SPARK-55760))
   - [[SPARK-55881]](https://issues.apache.org/jira/browse/SPARK-55881) Add missing fields to SQL execution REST API (queryId, errorMessage, subExecutionIds)
   - [[SPARK-56140]](https://issues.apache.org/jira/browse/SPARK-56140) Add server-side pagination for SQL tab query listing
@@ -101,6 +114,9 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Pandas UDF with PyArrow Backend** ([[SPARK-54955]](https://issues.apache.org/jira/browse/SPARK-54955))
   - [[SPARK-55044]](https://issues.apache.org/jira/browse/SPARK-55044) Keep the metadata in toArrowSchema/fromArrowSchema
   - [[SPARK-55366]](https://issues.apache.org/jira/browse/SPARK-55366) Remove `errorOnDuplicatedFieldNames` from Python UDFs
+- **Allow seamless and sequential source switching for streaming queries** ([[SPARK-55122]](https://issues.apache.org/jira/browse/SPARK-55122))
+  - [[SPARK-55317]](https://issues.apache.org/jira/browse/SPARK-55317) Introduce the SequentialUnion Logical Node
+  - [[SPARK-55471]](https://issues.apache.org/jira/browse/SPARK-55471) Adding optimizer support for Sequential Union
 - **Build and Run Spark on Java 25** ([[SPARK-51167]](https://issues.apache.org/jira/browse/SPARK-51167))
   - [[SPARK-55682]](https://issues.apache.org/jira/browse/SPARK-55682) ServiceLoader returned iterator may throw NoClassDefFoundError on hasNext()
   - [[SPARK-55714]](https://issues.apache.org/jira/browse/SPARK-55714) JDK 25 might throw ArithmeticException without message
@@ -125,8 +141,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54106]](https://issues.apache.org/jira/browse/SPARK-54106) State Store Row Checksum implementation
 - [[SPARK-54179]](https://issues.apache.org/jira/browse/SPARK-54179) Add Native Support for Apache Tuple Sketches
 - [[SPARK-54292]](https://issues.apache.org/jira/browse/SPARK-54292) Support aggregation in |> SELECT operators
-- [[SPARK-54346]](https://issues.apache.org/jira/browse/SPARK-54346) Introduce repartition API and repartition runner
-- [[SPARK-54388]](https://issues.apache.org/jira/browse/SPARK-54388) State Reader - repartition dataframe format (with read support for single column family stores e.g. agg, dedup etc.)
 - [[SPARK-54411]](https://issues.apache.org/jira/browse/SPARK-54411) [SS] Introduce Writer for Repartition - support multiple column families
 - [[SPARK-54419]](https://issues.apache.org/jira/browse/SPARK-54419) Support State Reader for Multi-col-family operator
 - [[SPARK-54420]](https://issues.apache.org/jira/browse/SPARK-54420) Introduce State Writer for offline repartitioning - support single column family
@@ -146,16 +160,10 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54864]](https://issues.apache.org/jira/browse/SPARK-54864) Add plan normalization for recursive CTEs
 - [[SPARK-54870]](https://issues.apache.org/jira/browse/SPARK-54870) collation support for char/varchar and CTAS/RTAS
 - [[SPARK-54878]](https://issues.apache.org/jira/browse/SPARK-54878) Support sort_keys option inside to_json
-- [[SPARK-54907]](https://issues.apache.org/jira/browse/SPARK-54907) Introduce NameStreamingSources analyzer rule for streaming source evolution
 - [[SPARK-54971]](https://issues.apache.org/jira/browse/SPARK-54971) Recognizing the existence of the SQL Syntax WITH SCHEMA EVOLUTION for SQL INSERT statements in the Parser
-- [[SPARK-54984]](https://issues.apache.org/jira/browse/SPARK-54984) State Repartition execution and integrate with State Rewriter
-- [[SPARK-55013]](https://issues.apache.org/jira/browse/SPARK-55013) Add SQL parser support for streaming source naming infrastructure
 - [[SPARK-55019]](https://issues.apache.org/jira/browse/SPARK-55019) Allow DROP TABLE to drop VIEW
 - [[SPARK-55030]](https://issues.apache.org/jira/browse/SPARK-55030) Add support for vector_norm, vector_normalize functions
 - [[SPARK-55031]](https://issues.apache.org/jira/browse/SPARK-55031) Add support for vector_sum, vector_avg functions
-- [[SPARK-55039]](https://issues.apache.org/jira/browse/SPARK-55039) Add IDENTIFIED BY syntax for naming streaming sources
-- [[SPARK-55054]](https://issues.apache.org/jira/browse/SPARK-55054) Add IDENTIFIED BY support for streaming table-valued functions
-- [[SPARK-55057]](https://issues.apache.org/jira/browse/SPARK-55057) Add streaming source naming infrastructure and resolution pipeline
 - [[SPARK-55256]](https://issues.apache.org/jira/browse/SPARK-55256) [SQL] Support IGNORE NULLS / RESPECT NULLS for array_agg and collect_list
 - [[SPARK-55304]](https://issues.apache.org/jira/browse/SPARK-55304) Introduce Admission Control and Trigger.AvailableNow into Python Data Source - reader
 - [[SPARK-55322]](https://issues.apache.org/jira/browse/SPARK-55322) Add Overload for MaxBy / MinBy with k > 1
@@ -344,12 +352,14 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55662]](https://issues.apache.org/jira/browse/SPARK-55662) pyspark.pandas.DataFrame.idxmin axis implementation
 
 ### Structured Streaming
+- **Structured Streaming - Offline State Repartitioning** ([[SPARK-54345]](https://issues.apache.org/jira/browse/SPARK-54345))
+  - [[SPARK-54443]](https://issues.apache.org/jira/browse/SPARK-54443) Partition key extraction for all streaming stateful operators
+  - [[SPARK-54924]](https://issues.apache.org/jira/browse/SPARK-54924) State Rewriter to Read + transform + Write
+  - [[SPARK-55111]](https://issues.apache.org/jira/browse/SPARK-55111) Failed repartitioning detection on query restart
 - [[SPARK-54121]](https://issues.apache.org/jira/browse/SPARK-54121) Automatic Snapshot Repair for State store
 - [[SPARK-54423]](https://issues.apache.org/jira/browse/SPARK-54423) Create the OffsetMap to enable tracking of streaming progress via name
-- [[SPARK-54443]](https://issues.apache.org/jira/browse/SPARK-54443) Partition key extraction for all streaming stateful operators
 - [[SPARK-54583]](https://issues.apache.org/jira/browse/SPARK-54583) Add SQLConf to enable use of OffsetMap
 - [[SPARK-54590]](https://issues.apache.org/jira/browse/SPARK-54590) State Writer supports checkpoint V2
-- [[SPARK-54924]](https://issues.apache.org/jira/browse/SPARK-54924) State Rewriter to Read + transform + Write
 - [[SPARK-55058]](https://issues.apache.org/jira/browse/SPARK-55058) Throw an error if the /metadata file is not present, but offset or commit directories are non-empty
 - [[SPARK-55123]](https://issues.apache.org/jira/browse/SPARK-55123) Add SequentialUnionOffset for tracking sequential source processing
 - [[SPARK-55129]](https://issues.apache.org/jira/browse/SPARK-55129) Introduce State Store API and key encoders for event-time as a first class
