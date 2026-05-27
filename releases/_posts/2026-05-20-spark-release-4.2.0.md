@@ -352,7 +352,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 ### MLlib
 - [[SPARK-41916]](https://issues.apache.org/jira/browse/SPARK-41916) Address General Fixes
 - [[SPARK-54706]](https://issues.apache.org/jira/browse/SPARK-54706) Make DistributedLDAModel work with local file system
-- [[SPARK-7008]](https://issues.apache.org/jira/browse/SPARK-7008) An implementation of Factorization Machine (LibFM)
 
 ### Declarative Pipelines
 - **Auto CDC support** ([[SPARK-56249]](https://issues.apache.org/jira/browse/SPARK-56249))
