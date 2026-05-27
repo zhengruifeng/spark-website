@@ -115,7 +115,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-52729]](https://issues.apache.org/jira/browse/SPARK-52729) Add MetadataOnlyTable and CREATE/ALTER VIEW support for DS v2 catalogs
 - [[SPARK-54179]](https://issues.apache.org/jira/browse/SPARK-54179) Add Native Support for Apache Tuple Sketches
 - [[SPARK-54292]](https://issues.apache.org/jira/browse/SPARK-54292) Support aggregation in |> SELECT operators
-- [[SPARK-54446]](https://issues.apache.org/jira/browse/SPARK-54446) FPGrowth supports local filesystem
 - [[SPARK-54682]](https://issues.apache.org/jira/browse/SPARK-54682) Improve DescribeProcedureCommand
 - [[SPARK-54713]](https://issues.apache.org/jira/browse/SPARK-54713) Add support for vector similarity/distance functions
 - [[SPARK-54718]](https://issues.apache.org/jira/browse/SPARK-54718) Preserve attributes names during CTE newInstance()
@@ -131,7 +130,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55019]](https://issues.apache.org/jira/browse/SPARK-55019) Allow DROP TABLE to drop VIEW
 - [[SPARK-55030]](https://issues.apache.org/jira/browse/SPARK-55030) Add support for vector_norm, vector_normalize functions
 - [[SPARK-55031]](https://issues.apache.org/jira/browse/SPARK-55031) Add support for vector_sum, vector_avg functions
-- [[SPARK-55256]](https://issues.apache.org/jira/browse/SPARK-55256) [SQL] Support IGNORE NULLS / RESPECT NULLS for array_agg and collect_list
+- [[SPARK-55256]](https://issues.apache.org/jira/browse/SPARK-55256) Support IGNORE NULLS / RESPECT NULLS for array_agg and collect_list
 - [[SPARK-55304]](https://issues.apache.org/jira/browse/SPARK-55304) Introduce Admission Control and Trigger.AvailableNow into Python Data Source - reader
 - [[SPARK-55322]](https://issues.apache.org/jira/browse/SPARK-55322) Add Overload for MaxBy / MinBy with k > 1
 - [[SPARK-55356]](https://issues.apache.org/jira/browse/SPARK-55356) Support alias in Spark SQL PIVOT
@@ -140,7 +139,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55631]](https://issues.apache.org/jira/browse/SPARK-55631) ALTER TABLE should invalidate cache
 - [[SPARK-55702]](https://issues.apache.org/jira/browse/SPARK-55702) Support filter predicate in window aggregate functions
 - [[SPARK-55855]](https://issues.apache.org/jira/browse/SPARK-55855) Add foundations for the DSv2 Transaction API
-- [[SPARK-55857]](https://issues.apache.org/jira/browse/SPARK-55857) [SQL] Support ignoreMissingFiles when inferring schema during schema evolution
+- [[SPARK-55857]](https://issues.apache.org/jira/browse/SPARK-55857) Support ignoreMissingFiles when inferring schema during schema evolution
 - [[SPARK-55964]](https://issues.apache.org/jira/browse/SPARK-55964) By default, prevent shadowing of system schemas
 - [[SPARK-55995]](https://issues.apache.org/jira/browse/SPARK-55995) Support TIMESTAMP WITH LOCAL TIME ZONE in SQL syntax
 - [[SPARK-55999]](https://issues.apache.org/jira/browse/SPARK-55999) Enable `spark.sql.streaming.stateStore.forceSnapshotUploadOnLag` by default
@@ -180,9 +179,9 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-56412]](https://issues.apache.org/jira/browse/SPARK-56412) Implement WorkerDispatcher for direct worker that are spawned as local processes
 - [[SPARK-50111]](https://issues.apache.org/jira/browse/SPARK-50111) PySpark and PS Plotting Improvement
 - [[SPARK-54314]](https://issues.apache.org/jira/browse/SPARK-54314) Improve Server-Side debuggability in Spark Connect by capturing client application's file name and line numbers in PySpark
-- [[SPARK-55047]](https://issues.apache.org/jira/browse/SPARK-55047) [CONNECT] Add client-side limit for local relation size
-- [[SPARK-55606]](https://issues.apache.org/jira/browse/SPARK-55606) [CONNECT] Server-side implementation of GetStatus API
-- [[SPARK-55691]](https://issues.apache.org/jira/browse/SPARK-55691) [CONNECT] Client-side implementation of GetStatus API
+- [[SPARK-55047]](https://issues.apache.org/jira/browse/SPARK-55047) Add client-side limit for local relation size
+- [[SPARK-55606]](https://issues.apache.org/jira/browse/SPARK-55606) Server-side implementation of GetStatus API
+- [[SPARK-55691]](https://issues.apache.org/jira/browse/SPARK-55691) Client-side implementation of GetStatus API
 
 ### PySpark
 - **Monitor behaviour changes from upstream** ([[SPARK-54936]](https://issues.apache.org/jira/browse/SPARK-54936))
@@ -206,6 +205,13 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Polish type annotations for pyspark** ([[SPARK-56223]](https://issues.apache.org/jira/browse/SPARK-56223))
 - **Refactor PySpark Serializers** ([[SPARK-55384]](https://issues.apache.org/jira/browse/SPARK-55384))
 - **Improve lint on PySpark** ([[SPARK-54543]](https://issues.apache.org/jira/browse/SPARK-54543))
+- **Add missing parameters for Pandas API on Spark** ([[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156))
+  - [[SPARK-46162]](https://issues.apache.org/jira/browse/SPARK-46162) Improve axis parameter for DataFrame.nunique to support columns
+  - [[SPARK-46163]](https://issues.apache.org/jira/browse/SPARK-46163) Add filter_func and errors parameter for DataFrame.update
+  - [[SPARK-46165]](https://issues.apache.org/jira/browse/SPARK-46165) Improve axis parameter for DataFrame.all to support columns
+  - [[SPARK-46167]](https://issues.apache.org/jira/browse/SPARK-46167) Add axis, pct and na_option parameter to DataFrame.rank
+  - [[SPARK-46168]](https://issues.apache.org/jira/browse/SPARK-46168) Add axis parameter to DataFrame idxmax
+  - [[SPARK-46166]](https://issues.apache.org/jira/browse/SPARK-46166) Add axis and skipna parameters to DataFrame.any
 - **Python worker logging infrastructure** ([[SPARK-53754]](https://issues.apache.org/jira/browse/SPARK-53754))
 - **Improve test coverage on pyspark** ([[SPARK-54453]](https://issues.apache.org/jira/browse/SPARK-54453))
 - [[SPARK-53615]](https://issues.apache.org/jira/browse/SPARK-53615) Introduce iterator API for arrow grouped agg UDF
@@ -221,20 +227,11 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55161]](https://issues.apache.org/jira/browse/SPARK-55161) Support profilers on python data source
 - [[SPARK-55179]](https://issues.apache.org/jira/browse/SPARK-55179) Skip eager column name validation in df.col_name
 - [[SPARK-55610]](https://issues.apache.org/jira/browse/SPARK-55610) Introduce getExecutorInfos to SparkStatusTracker in PySpark
+- [[SPARK-55662]](https://issues.apache.org/jira/browse/SPARK-55662) pyspark.pandas.DataFrame.idxmin axis implementation
 - [[SPARK-55788]](https://issues.apache.org/jira/browse/SPARK-55788) Support ExtensionDType for integers in Pandas UDF
-- [[SPARK-56322]](https://issues.apache.org/jira/browse/SPARK-56322) [CONNECT][PYTHON] Self-joining an observed DataFrame raises TypeError in observations property
+- [[SPARK-56322]](https://issues.apache.org/jira/browse/SPARK-56322) Self-joining an observed DataFrame raises TypeError in observations property
 - [[SPARK-56518]](https://issues.apache.org/jira/browse/SPARK-56518) Add current_path to PySpark functions
 - [[SPARK-56614]](https://issues.apache.org/jira/browse/SPARK-56614) Add config for strict DataFrame column resolution
-
-#### Pandas API on Spark
-- **Add missing parameters for Pandas API on Spark** ([[SPARK-46156]](https://issues.apache.org/jira/browse/SPARK-46156))
-  - [[SPARK-46162]](https://issues.apache.org/jira/browse/SPARK-46162) Improve axis parameter for DataFrame.nunique to support columns
-  - [[SPARK-46163]](https://issues.apache.org/jira/browse/SPARK-46163) Add filter_func and errors parameter for DataFrame.update
-  - [[SPARK-46165]](https://issues.apache.org/jira/browse/SPARK-46165) Improve axis parameter for DataFrame.all to support columns
-  - [[SPARK-46167]](https://issues.apache.org/jira/browse/SPARK-46167) Add axis, pct and na_option parameter to DataFrame.rank
-  - [[SPARK-46168]](https://issues.apache.org/jira/browse/SPARK-46168) Add axis parameter to DataFrame idxmax
-  - [[SPARK-46166]](https://issues.apache.org/jira/browse/SPARK-46166) Add axis and skipna parameters to DataFrame.any
-- [[SPARK-55662]](https://issues.apache.org/jira/browse/SPARK-55662) pyspark.pandas.DataFrame.idxmin axis implementation
 
 ### Structured Streaming
 - **Enabling addition, removal and reordering of streaming sources** ([[SPARK-54909]](https://issues.apache.org/jira/browse/SPARK-54909))
@@ -265,7 +262,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54063]](https://issues.apache.org/jira/browse/SPARK-54063) Trigger snapshot generation for next batch when lag is detected
 - [[SPARK-54106]](https://issues.apache.org/jira/browse/SPARK-54106) State Store Row Checksum implementation
 - [[SPARK-54121]](https://issues.apache.org/jira/browse/SPARK-54121) Automatic Snapshot Repair for State store
-- [[SPARK-54411]](https://issues.apache.org/jira/browse/SPARK-54411) [SS] Introduce Writer for Repartition - support multiple column families
+- [[SPARK-54411]](https://issues.apache.org/jira/browse/SPARK-54411) Introduce Writer for Repartition - support multiple column families
 - [[SPARK-54419]](https://issues.apache.org/jira/browse/SPARK-54419) Support State Reader for Multi-col-family operator
 - [[SPARK-54420]](https://issues.apache.org/jira/browse/SPARK-54420) Introduce State Writer for offline repartitioning - support single column family
 - [[SPARK-54423]](https://issues.apache.org/jira/browse/SPARK-54423) Create the OffsetMap to enable tracking of streaming progress via name
@@ -286,6 +283,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 ### MLlib
 - **PyTorch Distributor** ([[SPARK-41589]](https://issues.apache.org/jira/browse/SPARK-41589))
   - [[SPARK-41916]](https://issues.apache.org/jira/browse/SPARK-41916) Address General Fixes
+- [[SPARK-54446]](https://issues.apache.org/jira/browse/SPARK-54446) FPGrowth supports local filesystem
 - [[SPARK-54706]](https://issues.apache.org/jira/browse/SPARK-54706) Make DistributedLDAModel work with local file system
 
 ### Declarative Pipelines
