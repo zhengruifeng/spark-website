@@ -44,12 +44,12 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **Sql Scripting support for Spark SQL** ([[SPARK-48338]](https://issues.apache.org/jira/browse/SPARK-48338))
   - [[SPARK-55005]](https://issues.apache.org/jira/browse/SPARK-55005) CONTINUE handler not working properly when exception occurs inside loops
   - [[SPARK-55119]](https://issues.apache.org/jira/browse/SPARK-55119) CONTINUE handler should not interrupt conditional if exception thrown by previous statement
-- [[SPARK-46830]](https://issues.apache.org/jira/browse/SPARK-46830) Introducing collation concept into Spark
+- **Introducing collation concept into Spark** ([[SPARK-46830]](https://issues.apache.org/jira/browse/SPARK-46830))
+  - [[SPARK-55528]](https://issues.apache.org/jira/browse/SPARK-55528) Default collation support for SQL UDFs
 - [[SPARK-53807]](https://issues.apache.org/jira/browse/SPARK-53807) Fix a race condition issue between `unlock` and `releaseAllLocksForTask` in `BlockInfoManager for write locks
 - [[SPARK-54219]](https://issues.apache.org/jira/browse/SPARK-54219) Driver can't create thread causing ContextCleaner stuck and stuck stop process
 - [[SPARK-55051]](https://issues.apache.org/jira/browse/SPARK-55051) Byte string accepts KiB, MiB, GiB, TiB, PiB
 - [[SPARK-55064]](https://issues.apache.org/jira/browse/SPARK-55064) Query level indeterminate shuffle retry
-- [[SPARK-55528]](https://issues.apache.org/jira/browse/SPARK-55528) Default collation support for SQL UDFs
 - [[SPARK-56279]](https://issues.apache.org/jira/browse/SPARK-56279) Enable zero-copy sendfile for FileRegion in native Netty transports
 - [[SPARK-56298]](https://issues.apache.org/jira/browse/SPARK-56298) Enable `spark.master.rest.virtualThread.enabled` by default
 - [[SPARK-56302]](https://issues.apache.org/jira/browse/SPARK-56302) Free memories as soon as possible to reduce memory pressure handling large task results
@@ -102,6 +102,16 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - **SPIP: Row-level operations in Data Source V2** ([[SPARK-35801]](https://issues.apache.org/jira/browse/SPARK-35801))
   - [[SPARK-53652]](https://issues.apache.org/jira/browse/SPARK-53652) Codegen For MergeRowExec
   - [[SPARK-56524]](https://issues.apache.org/jira/browse/SPARK-56524) UPDATE Operation Metrics
+- **ANSI SQL: Recursive query** ([[SPARK-24497]](https://issues.apache.org/jira/browse/SPARK-24497))
+  - [[SPARK-54864]](https://issues.apache.org/jira/browse/SPARK-54864) Add plan normalization for recursive CTEs
+- **Support schema evolution in DSv2 INSERTs** ([[SPARK-55689]](https://issues.apache.org/jira/browse/SPARK-55689))
+  - [[SPARK-55690]](https://issues.apache.org/jira/browse/SPARK-55690) Implement schema evolution for DSv2 AppendData, OverwriteByExpression, OverwritePartitionsDynamic
+- **Optimize Vectorized Data Loading** ([[SPARK-55722]](https://issues.apache.org/jira/browse/SPARK-55722))
+  - [[SPARK-56522]](https://issues.apache.org/jira/browse/SPARK-56522) Batch PACKED null/non-null runs in VectorizedRleValuesReader
+- **DSV2 Enhanced Partition Stats Filtering** ([[SPARK-55596]](https://issues.apache.org/jira/browse/SPARK-55596))
+  - [[SPARK-56521]](https://issues.apache.org/jira/browse/SPARK-56521) Support PartitionPredicate in runtime filters
+- **SPIP: Add the TIME data type** ([[SPARK-51162]](https://issues.apache.org/jira/browse/SPARK-51162))
+  - [[SPARK-56152]](https://issues.apache.org/jira/browse/SPARK-56152) Support implicit cast from string to time
 - [[SPARK-31561]](https://issues.apache.org/jira/browse/SPARK-31561) Add QUALIFY Clause
 - [[SPARK-43752]](https://issues.apache.org/jira/browse/SPARK-43752) default column value should support v2 write commands
 - [[SPARK-44571]](https://issues.apache.org/jira/browse/SPARK-44571) Eliminate the Join by combine multiple Aggregates
@@ -123,7 +133,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54812]](https://issues.apache.org/jira/browse/SPARK-54812) Make executable commands not execute on resultDf.cache()
 - [[SPARK-54840]](https://issues.apache.org/jira/browse/SPARK-54840) OrcList Pre-allocation
 - [[SPARK-54854]](https://issues.apache.org/jira/browse/SPARK-54854) Add queryId (UUIDv7) to SQL Execution Events
-- [[SPARK-54864]](https://issues.apache.org/jira/browse/SPARK-54864) Add plan normalization for recursive CTEs
 - [[SPARK-54870]](https://issues.apache.org/jira/browse/SPARK-54870) collation support for char/varchar and CTAS/RTAS
 - [[SPARK-54971]](https://issues.apache.org/jira/browse/SPARK-54971) Recognizing the existence of the SQL Syntax WITH SCHEMA EVOLUTION for SQL INSERT statements in the Parser
 - [[SPARK-55019]](https://issues.apache.org/jira/browse/SPARK-55019) Allow DROP TABLE to drop VIEW
@@ -136,10 +145,7 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-55453]](https://issues.apache.org/jira/browse/SPARK-55453) LIKE returns wrong results for emoji
 - [[SPARK-55533]](https://issues.apache.org/jira/browse/SPARK-55533) Support IGNORE NULLS / RESPECT NULLS for collect_set
 - [[SPARK-55558]](https://issues.apache.org/jira/browse/SPARK-55558) Add Support for Tuple/Theta Set Operations
-- [[SPARK-55596]](https://issues.apache.org/jira/browse/SPARK-55596) DSV2 Enhanced Partition Stats Filtering
 - [[SPARK-55631]](https://issues.apache.org/jira/browse/SPARK-55631) ALTER TABLE should invalidate cache
-- [[SPARK-55689]](https://issues.apache.org/jira/browse/SPARK-55689) Support schema evolution in DSv2 INSERTs
-- [[SPARK-55690]](https://issues.apache.org/jira/browse/SPARK-55690) Implement schema evolution for DSv2 AppendData, OverwriteByExpression, OverwritePartitionsDynamic
 - [[SPARK-55702]](https://issues.apache.org/jira/browse/SPARK-55702) Support filter predicate in window aggregate functions
 - [[SPARK-55855]](https://issues.apache.org/jira/browse/SPARK-55855) Add foundations for the DSv2 Transaction API
 - [[SPARK-55857]](https://issues.apache.org/jira/browse/SPARK-55857) [SQL] Support ignoreMissingFiles when inferring schema during schema evolution
@@ -149,7 +155,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56001]](https://issues.apache.org/jira/browse/SPARK-56001) Recognizing the existence of the SQL Syntax REPLACE ON/USING for SQL INSERT statements in the Parser
 - [[SPARK-56045]](https://issues.apache.org/jira/browse/SPARK-56045) Parquet UNKNOWN Type Regression at Spark 4.1
 - [[SPARK-56046]](https://issues.apache.org/jira/browse/SPARK-56046) Typed SPJ partition key reducers
-- [[SPARK-56152]](https://issues.apache.org/jira/browse/SPARK-56152) Support implicit cast from string to time
 - [[SPARK-56182]](https://issues.apache.org/jira/browse/SPARK-56182) Allow SPJ reducing identity to other transforms
 - [[SPARK-56221]](https://issues.apache.org/jira/browse/SPARK-56221) Feature parity between spark.catalog.* vs DDL commands
 - [[SPARK-56251]](https://issues.apache.org/jira/browse/SPARK-56251) Avoid loading all data to memory by default for PostgresSQL jdbc connector
@@ -157,8 +162,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56501]](https://issues.apache.org/jira/browse/SPARK-56501) SET PATH syntax
 - [[SPARK-56509]](https://issues.apache.org/jira/browse/SPARK-56509) SparkSQL Last Attempt Metrics
 - [[SPARK-56520]](https://issues.apache.org/jira/browse/SPARK-56520) Persist PATH for VIEWs, FUNCTIONS, expose with DESCRIBE
-- [[SPARK-56521]](https://issues.apache.org/jira/browse/SPARK-56521) Support PartitionPredicate in runtime filters
-- [[SPARK-56522]](https://issues.apache.org/jira/browse/SPARK-56522) Batch PACKED null/non-null runs in VectorizedRleValuesReader
 - [[SPARK-56551]](https://issues.apache.org/jira/browse/SPARK-56551) DSv2 DELETE Operation Metrics
 - [[SPARK-56594]](https://issues.apache.org/jira/browse/SPARK-56594) Add time_bucket scalar function for interval-based timestamp bucketing
 - [[SPARK-56598]](https://issues.apache.org/jira/browse/SPARK-56598) Custom metrics support for TruncatableTable
@@ -308,6 +311,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
   - [[SPARK-55123]](https://issues.apache.org/jira/browse/SPARK-55123) Add SequentialUnionOffset for tracking sequential source processing
   - [[SPARK-55317]](https://issues.apache.org/jira/browse/SPARK-55317) Introduce the SequentialUnion Logical Node
   - [[SPARK-55471]](https://issues.apache.org/jira/browse/SPARK-55471) Adding optimizer support for Sequential Union
+- **Real-time Mode in Structured Streaming (Scala stateful and Pyspark support)** ([[SPARK-54699]](https://issues.apache.org/jira/browse/SPARK-54699))
+  - [[SPARK-54660]](https://issues.apache.org/jira/browse/SPARK-54660) Add RTM trigger to python and tests
 - [[SPARK-54063]](https://issues.apache.org/jira/browse/SPARK-54063) Trigger snapshot generation for next batch when lag is detected
 - [[SPARK-54106]](https://issues.apache.org/jira/browse/SPARK-54106) State Store Row Checksum implementation
 - [[SPARK-54121]](https://issues.apache.org/jira/browse/SPARK-54121) Automatic Snapshot Repair for State store
@@ -317,7 +322,6 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-54423]](https://issues.apache.org/jira/browse/SPARK-54423) Create the OffsetMap to enable tracking of streaming progress via name
 - [[SPARK-54583]](https://issues.apache.org/jira/browse/SPARK-54583) Add SQLConf to enable use of OffsetMap
 - [[SPARK-54590]](https://issues.apache.org/jira/browse/SPARK-54590) State Writer supports checkpoint V2
-- [[SPARK-54660]](https://issues.apache.org/jira/browse/SPARK-54660) Add RTM trigger to python and tests
 - [[SPARK-54675]](https://issues.apache.org/jira/browse/SPARK-54675) Add configurable force shutdown timeout for StateStore maintenance thread pool
 - [[SPARK-55058]](https://issues.apache.org/jira/browse/SPARK-55058) Throw an error if the /metadata file is not present, but offset or commit directories are non-empty
 - [[SPARK-55129]](https://issues.apache.org/jira/browse/SPARK-55129) Introduce State Store API and key encoders for event-time as a first class
@@ -331,7 +335,8 @@ You can consult JIRA for the <a href="https://issues.apache.org/jira/issues/?jql
 - [[SPARK-56384]](https://issues.apache.org/jira/browse/SPARK-56384) Support Update mode in Stream-Stream Non-Outer Join
 
 ### MLlib
-- [[SPARK-41916]](https://issues.apache.org/jira/browse/SPARK-41916) Address General Fixes
+- **PyTorch Distributor** ([[SPARK-41589]](https://issues.apache.org/jira/browse/SPARK-41589))
+  - [[SPARK-41916]](https://issues.apache.org/jira/browse/SPARK-41916) Address General Fixes
 - [[SPARK-54706]](https://issues.apache.org/jira/browse/SPARK-54706) Make DistributedLDAModel work with local file system
 
 ### Declarative Pipelines
